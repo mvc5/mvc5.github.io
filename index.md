@@ -71,15 +71,15 @@ layout: layout
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="col-md-offset-1" style="padding:55px 25px 35px 25px;">
-            <a class="btn btn-default btn-lg" style="margin-left:25px;margin-bottom:8px;" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>            
-            <a class="btn btn-default btn-lg" style="margin-left:25px;margin-bottom:8px;" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a>
-            <a class="btn btn-default btn-lg" style="margin-left:25px;margin-bottom:8px;" href="https://github.com/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>
+    <div class="row" style="margin-top:35px;margin-bottom:35px;">
+        <div class="col-md-offset-3">
+            <a class="btn btn-default btn-lg" style="margin-right:25px;margin-bottom:8px;" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>            
+            <a class="btn btn-default btn-lg" style="margin-right:25px;margin-bottom:8px;" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a>
+            <a class="btn btn-default btn-lg" style="margin-bottom:8px;" href="https://github.com/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-offset-1" style="padding-left:50px;">
+        <div class="col-md-offset-4">
         <p>
             <a href="https://travis-ci.org/mvc5/framework"><img src="https://api.travis-ci.org/mvc5/application.svg" alt="Build Status" /></a>
             <a href="https://codeclimate.com/github/mvc5/framework"><img src="https://codeclimate.com/github/mvc5/framework/badges/coverage.svg" alt="Test Coverage" /></a>
