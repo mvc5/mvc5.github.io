@@ -64,3 +64,38 @@ h2 {
         padding: 3px 15px;
     }
 }
+
+.page-masthead {
+    background-color:#33669b;
+}
+
+.page-title {
+    font-size:48px;
+    color:#fff;
+}
+
+@media (max-width: 768px) {
+    .page-masthead {
+        padding-left:0;
+        padding-right:0;
+    }
+
+    .page-masthead .page-title {
+        font-size:24px;
+    }
+
+    .page-masthead .page-title img {
+        width:65px;
+        height:65px;
+    }
+}
+
+.carousel {
+    height: 215px;
+}
+
+.carousel-indicators {
+    bottom: 0;
+    margin-bottom: 0;
+    left: 35%;
+}
