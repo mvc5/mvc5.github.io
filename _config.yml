@@ -1,0 +1,22 @@
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
+
+# Setup
+title:               Mvc5 Framework
+tagline:             Dependency Injection, Events, and Named Arguments.
+description:         An enhanced php programming with dependency injection, events, and named arguments.
+url:                 http://mvc5.github.io
+baseurl:             /
+
+# About/contact
+author:
+  name:              devosc
+  url:               https://twitter.com/devosc
+  email:             devosc@gmail.com

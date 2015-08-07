@@ -1,0 +1,61 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-bottom:25px;
+}
+
+h1, h2, h3 {
+    margin-top: 40px;
+}
+
+h1.page-title {
+    margin-top: 20px;
+}
+
+h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+    border: 0;
+}
+
+.navbar-brand {
+    padding:5px;
+}
+
+.navbar-brand img {
+    margin-right: 5px;
+}
+.nav .divider {
+    background-color: #e5e5e5;
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+}
+
+.nav > li > a {
+    padding: 5px 15px;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.sidebar.affix {
+    position: fixed;
+    top: 0px;
+}
