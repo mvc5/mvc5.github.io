@@ -30,20 +30,37 @@ h2 {
     overflow: hidden;
 }
 
+.navbar-toggle {
+    background-color: #33669b;
+}
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
 .main {
     font-size: 18px;
     line-height: 1.5;
 }
 
+/* Hide for mobile, show later */
 .sidebar {
-    margin-top:35px;
+    display: none;
 }
 
-.sidebar.affix {
-    position: fixed;
-    top: 0;
-}
+@media (min-width: 768px) {
+    .sidebar {
+        margin-top:35px;
+        z-index: 1000;
+        display: block;
+        overflow-x: hidden;
+    }
 
-.sidebar .nav > li > a {
-    padding: 3px 15px;
+    .sidebar.affix {
+        position: fixed;
+        top: 0;
+    }
+
+    .sidebar .nav > li > a {
+        padding: 3px 15px;
+    }
 }

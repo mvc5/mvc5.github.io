@@ -5,9 +5,9 @@ subtitle: An enhanced PHP programming environment that provides inversion of con
 ---
 <div class="row">
     <div class="col-md-offset-2" style="padding:55px 0px;">
-        <a class="btn btn-default btn-lg" style="margin-right:25px;" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>            
-        <a class="btn btn-default btn-lg" style="margin-right:25px;" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a>
-        <a class="btn btn-default btn-lg" href="https://github.com/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>
+        <a class="btn btn-default btn-lg" style="margin-left:25px;" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>            
+        <a class="btn btn-default btn-lg" style="margin-left:25px;" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a>
+        <a class="btn btn-default btn-lg" style="margin-left:25px;" href="https://github.com/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>
     </div>
 </div>
 <div class="row">
