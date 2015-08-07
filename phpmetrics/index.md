@@ -3,7 +3,7 @@ layout: default
 title: PhpMetrics Report
 ---
 <style type="text/css">{% include_relative phpmetrics.css %}</style>
-<div class="phpmetrics container">
+<div class="phpmetrics container" style="margin-top:35px;">
     <div class="row">
         <div class="well accessibility-box">
             <label>
