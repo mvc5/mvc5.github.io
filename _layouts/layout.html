@@ -3,12 +3,12 @@
 
 {% include head.html %}
 
-<body {% if page.sidebar %} data-spy="scroll" data-target="#nav-sidebar" {% endif %}>
+<body>
 
 {% include nav.html %}
 
 {% if page.title %}
-    <div class="container-fluid" style="background-color:#33669b;margin-bottom:35px;">
+    <div class="container-fluid" style="background-color:#33669b;">
         <div class="container" style="padding-bottom:10px;">
             <h1 class="page-title" style="font-size:48px;color:#fff;">
                 <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="{{ page.title }}">

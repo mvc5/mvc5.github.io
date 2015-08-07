@@ -1,4 +1,4 @@
-<ul id="nav-sidebar" class="nav nav-sidebar">
+<ul class="nav nav-sidebar">
     <li><a href="#features">Features</a></li>
     <li>
         <a href="#maintainability">Maintainability</a>
@@ -48,5 +48,5 @@
         </ul>
     </li>
     <li>&nbsp;</li>
-    <li><a href="#top"><small>Back to top</small></a></li>
+    <li><a href="#top"><small style="color:#999;">Back to top</small></a></li>
 </ul>
