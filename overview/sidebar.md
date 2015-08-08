@@ -1,4 +1,4 @@
-<div id="nav-sidebar" role="navigation">
+<nav data-spy="affix" data-offset-top="286" class="sidebar" id="nav-sidebar" role="navigation">
     <ul class="nav nav-pills nav-stacked">
         <li role="presentation" class="active"><a href="#features">Features</a></li>
         <li role="presentation">
@@ -48,10 +48,10 @@
                 <li role="presentation"><a href="#plugins-and-aliases">Plugins and Aliases</a></li>
             </ul>
         </li>
+        <li role="presentation">
+            <ul class="nav nav-pills nav-stacked" style="margin-top:20px;">
+                <li role="presentation"><a href="#"><small style="color:#999;">Back to top</small></a></li>
+            </ul>
+        </li>
     </ul>
-</div>
-<div role="navigation" style="margin-top:25px;">
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation"><a href="#top"><small style="color:#999;">Back to top</small></a></li>
-    </ul>
-</div>
+</nav>

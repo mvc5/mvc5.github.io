@@ -1,4 +1,4 @@
-<nav class="navbar" style="background-color:#fff;min-height: 35px;margin-bottom:0px;" role="navigation">
+<nav class="page-navbar navbar" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -7,13 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="top" href="/" style="color:#aaa;margin-right:25px;" title="Mvc5 Framework"><img src="{{ site.baseUrl }}/images/mvc5.png" width="35" height="35" style="display:inline-block">Mvc5 Framework</a>
+            <a class="navbar-brand" href="{{ site.baseurl }}/" title="{{ site.title }}"><img src="{{ site.baseurl }}/images/mvc5.png" width="35" height="35">Mvc5</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li role="presentation"><a style="color:#33669b;" href="/overview"><span class="glyphicon glyphicon-book"></span> Overview</a></li>
-                <li role="presentation"><a style="color:#33669b;" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a></li>
-                <li role="presentation"><a style="color:#33669b;" href="https://github.com/mvc5"><span class="glyphicon glyphicon-hand-right"></span> Github</a></li>
+                <li role="presentation"><a href="{{ site.baseurl }}/overview"><span class="glyphicon glyphicon-book"></span> Overview</a></li>
+                <li role="presentation"><a href="{{ site.baseurl }}/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a></li>
+                <li role="presentation"><a href="https://github.com/mvc5"><span class="glyphicon glyphicon-hand-right"></span> Github</a></li>
             </ul>
         </div>
     </div>
