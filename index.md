@@ -2,7 +2,7 @@
 layout: layout
 ---
 <div class="page-masthead container-fluid">
-    <div class="container" style="padding-bottom:10px;">
+    <div class="container">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
