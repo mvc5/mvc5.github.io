@@ -46,7 +46,7 @@ h2 {
     color:#eee;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .page-masthead .container {
         padding-left:0;
         padding-right:0;
@@ -55,10 +55,9 @@ h2 {
     .page-masthead h1 {
         font-size:22px;
     }
-
     .page-masthead h1 img {
-        width:65px;
-        height:65px;
+        width:60px;
+        height:60px;
     }
 }
 
