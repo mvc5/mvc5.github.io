@@ -50,9 +50,8 @@
         </li>
     </ul>
 </div>
-<div role="navigation">
+<div role="navigation" style="margin-top:25px;">
     <ul class="nav nav-pills nav-stacked">
-        <li role="presentation">&nbsp;</li>
         <li role="presentation"><a href="#top"><small style="color:#999;">Back to top</small></a></li>
     </ul>
 </div>
