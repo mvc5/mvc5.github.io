@@ -46,12 +46,14 @@ h2 {
     color:#eee;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .page-masthead .container {
         padding-left:0;
         padding-right:0;
     }
+}
 
+@media (max-width: 480px) {
     .page-masthead h1 {
         font-size:22px;
     }
