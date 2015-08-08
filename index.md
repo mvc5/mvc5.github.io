@@ -31,7 +31,7 @@ layout: layout
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         No Bootstrap
                     </h1>
-                    <small style="font-style:italic;color:#eee;">Bootstrapping an application is not required with reactive dependency injection and inversion of control</small>
+                    <small style="font-style:italic;color:#eee;">Bootstrapping an application is not required with dependency injection and inversion of control</small>
                 </div>
                 <div class="item">
                     <h1 class="page-title">
@@ -66,14 +66,14 @@ layout: layout
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Plugins
                     </h1>
-                    <small style="font-style:italic;color:#eee;">Create your own application plugins for named arguments, view helpers or any purpose</small>
+                    <small style="font-style:italic;color:#eee;">Create your own plugins for named arguments, view helpers or any purpose</small>
                 </div>
                 <div class="item">
                     <h1 class="page-title">
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Event Behaviors
                     </h1>
-                    <small style="font-style:italic;color:#eee;">Improve inversion of control by creating custom event behaviors</small>
+                    <small style="font-style:italic;color:#eee;">Improve inversion of control by creating custom events</small>
                 </div>
                 <div class="item">
                     <h1 class="page-title">
