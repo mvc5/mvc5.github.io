@@ -13,13 +13,13 @@
 
 {% if page.title %}
     <div class="page-masthead container-fluid">
-        <div class="container" style="padding-bottom:10px;">
+        <div class="container">
             <h1 class="page-title">
                 <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="{{ page.title }}">
                 {{ page.title }}
             </h1>
             {% if page.subtitle %}
-            <small style="font-style:italic;color:#eee;">{{ page.subtitle }}</small>
+            <small class="page-subtitle">{{ page.subtitle }}</small>
             {% endif %}
         </div>
     </div>
@@ -29,7 +29,7 @@
 
 <div class="container">
     <hr>
-    <span style="font-size:10px;">&copy; 2015 Mvc5 Framework</span>
+    <small>&copy; 2015 Mvc5 Framework</small>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

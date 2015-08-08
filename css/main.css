@@ -4,36 +4,23 @@ body {
     padding-bottom:25px;
 }
 
-h1, h2, h3 {
-    margin-top: 40px;
-}
-
-h1.page-title {
-    margin-top: 20px;
-}
-
 h2 {
     border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
+    padding-bottom: 9px;
 }
 
 .navbar-brand {
-    padding:8px;
+    padding:9px;
 }
 
 .navbar-brand img {
-    margin-right: 5px;
-}
-.nav .divider {
-    background-color: #e5e5e5;
-    height: 1px;
-    margin: 9px 0;
-    overflow: hidden;
+    margin-right: 9px;
 }
 
 .navbar-toggle {
     background-color: #33669b;
 }
+
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -43,60 +30,62 @@ h2 {
     line-height: 1.5;
 }
 
+.page-masthead {
+    background-color:#33669b;
+    padding-bottom:10px;
+    margin-bottom:20px;
+}
+
+.page-masthead h1 {
+    font-size:48px;
+    color:#fff;
+}
+
+.page-masthead small {
+    font-style:italic;
+    color:#eee;
+}
+
+@media (max-width: 768px) {
+    .page-masthead h1 {
+        font-size:24px;
+    }
+
+    .page-masthead h1 img {
+        width:65px;
+        height:65px;
+    }
+}
+
 /* Hide for mobile, show later */
 .sidebar {
     display: none;
 }
 
-.sidebar .nav > li > a:active {
-    color:red;
-}
-
-.sidebar .nav  ul {
-    list-style: outside none none;
-    padding-left: 24px;
-}
-
 @media (min-width: 768px) {
     .sidebar {
-        margin-top:35px;
+        margin-top:20px;
         z-index: 1000;
         display: block;
         overflow-x: hidden;
     }
 
-    .sidebar.affix {
+    .sidebar .nav > li > a:active {
+        color:red;
+    }
+
+    .sidebar .nav  ul {
+        list-style: outside none none;
+        padding-left: 24px;
+    }
+
+    .sidebar .affix {
         position: fixed;
         top: 0;
     }
 
     .sidebar .nav > li > a {
         padding: 3px 15px;
-    }
-}
-
-.page-masthead {
-    background-color:#33669b;
-}
-
-.page-title {
-    font-size:48px;
-    color:#fff;
-}
-
-@media (max-width: 768px) {
-    .page-masthead {
-        padding-left:0;
-        padding-right:0;
-    }
-
-    .page-masthead .page-title {
-        font-size:24px;
-    }
-
-    .page-masthead .page-title img {
-        width:65px;
-        height:65px;
     }
 }
 
