@@ -13,6 +13,8 @@ layout: layout
             <li data-target="#carousel-example-generic" data-slide-to="4"></li>
             <li data-target="#carousel-example-generic" data-slide-to="5"></li>
             <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="8"></li>
           </ol>
         
           <!-- Wrapper for slides -->
@@ -34,6 +36,13 @@ layout: layout
                 <div class="item">
                     <h1 class="page-title">
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                        Improved Performance
+                    </h1>
+                    <small style="font-style:italic;color:#eee;">Efficient and effective implementation means more time for your own code to run</small>
+                </div>
+                <div class="item">
+                    <h1 class="page-title">
+                        <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Named Arguments
                     </h1>
                     <small style="font-style:italic;color:#eee;">Control and enhance function calls by providing named arguments and let the system handle the rest</small>
@@ -48,16 +57,23 @@ layout: layout
                 <div class="item">
                     <h1 class="page-title">
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                        Custom Service Providers
+                        Service Providers
                     </h1>
                     <small style="font-style:italic;color:#eee;">Create and integrate your own service configurations and providers</small>
                 </div>
                 <div class="item">
                     <h1 class="page-title">
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                        Event Behaviours
+                        Plugins
                     </h1>
-                    <small style="font-style:italic;color:#eee;">Improve inversion of control by creating custom event behaviours</small>
+                    <small style="font-style:italic;color:#eee;">Create your own application plugins for named arguments, view helpers or any purpose</small>
+                </div>
+                <div class="item">
+                    <h1 class="page-title">
+                        <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                        Event Behaviors
+                    </h1>
+                    <small style="font-style:italic;color:#eee;">Improve inversion of control by creating custom event behaviors</small>
                 </div>
                 <div class="item">
                     <h1 class="page-title">
@@ -65,7 +81,7 @@ layout: layout
                         Console Applications
                     </h1>
                     <small style="font-style:italic;color:#eee;">Create command line scripts just like any other class and have their dependencies automatically injected</small>
-                </div>
+                </div>                
           </div>
         </div>
     </div>
