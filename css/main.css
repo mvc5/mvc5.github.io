@@ -1,5 +1,6 @@
 
 body {
+    position: relative;
     padding-bottom:25px;
 }
 
@@ -45,6 +46,15 @@ h2 {
 /* Hide for mobile, show later */
 .sidebar {
     display: none;
+}
+
+.sidebar .nav > li > a:active {
+    color:red;
+}
+
+.sidebar .nav  ul {
+    list-style: outside none none;
+    padding-left: 24px;
 }
 
 @media (min-width: 768px) {
