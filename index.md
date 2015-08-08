@@ -3,7 +3,7 @@ layout: layout
 ---
 <div class="page-masthead container-fluid">
     <div class="container" style="padding-bottom:10px;">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="7500">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
