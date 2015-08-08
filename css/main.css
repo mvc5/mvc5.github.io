@@ -51,9 +51,8 @@ h2 {
         padding-left:0;
         padding-right:0;
     }
-    .page-masthead h1 img {
-        width:65px;
-        height:65px;
+    .page-masthead h1 {
+        font-size:36px;
     }
 }
 
