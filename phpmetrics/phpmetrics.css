@@ -823,7 +823,7 @@ Interactive Layer
     padding: 10px 15px;
 }
 .menu li.active {
-    background-color: #428bca;
+    background-color: #33669a;
     border-radius: 4px;
 }
 .menu li.active a {
@@ -842,14 +842,14 @@ Interactive Layer
 
 /* ----- fonts ----- */
 .phpmetrics a:hover, .phpmetrics a:focus {
-    color: #2a6496;
+    /*color: #2a6496;*/
     text-decoration: underline;
 }
 .phpmetrics a:active, .phpmetrics a:hover {
     outline: 0;
 }
 .phpmetrics a {
-    color: #428bca;
+    /*color: #428bca;*/
     text-decoration: none;
     cursor: pointer;
 }
