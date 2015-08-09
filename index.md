@@ -15,8 +15,7 @@ layout: layout
             <li data-target="#carousel-example-generic" data-slide-to="6"></li>
             <li data-target="#carousel-example-generic" data-slide-to="7"></li>
             <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-          </ol>
-        
+          </ol>        
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
                 <div class="item active">

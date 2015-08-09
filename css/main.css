@@ -9,7 +9,6 @@ h2 {
 }
 
 .page-navbar {
-    background-color:#fff;
     min-height: 35px;
     margin-bottom:0;
 }
@@ -77,30 +76,31 @@ h2 {
     }
 }
 
-/* Hide for mobile, show later */
 .sidebar {
-    display: none;
+    margin-top:20px;
+    overflow-x: hidden;
 }
 
-@media (min-width: 768px) {
+.sidebar .nav  ul li a {
+    padding-left: 24px;
+}
+
+.sidebar nav.affix {
+    position: fixed;
+    top: 0;
+}
+
+.sidebar ul.nav > li > a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+@media (max-width: 980px) {
     .sidebar {
-        display: block;
-        margin-top:20px;
-        overflow-x: hidden;
+        display: none;
     }
-
-    .sidebar .nav  ul {
-        list-style: outside none none;
-        padding-left: 24px;
-    }
-
-    .sidebar.affix {
-        position: fixed;
-        top: 0;
-    }
-
-    .sidebar .nav > li > a {
-        padding: 3px 15px;
+    .main {
+        width: 100%;
     }
 }
 
