@@ -2,6 +2,7 @@
 layout: sidebar
 title: Getting Started
 tagline: Download and explore the demo application
+scrollspy: sidebar
 ---
 ## Source Code
 <p>The Mvc5 Framework has no external dependencies and can be downloaded separately or <a href="#composer-install">installed via composer</a>. However, the best way to explore the Mvc5 Framework is to <a href="#install-demo-application">install the demo application</a>.</p>
