@@ -12,9 +12,9 @@ scrollspy: sidebar
 
 
 ## Composer Install
-```php
-$ composer.phar require mvc5/framework
-```
+<div style="padding-bottom:5px;">
+    <pre><code>$ composer.phar require mvc5/framework</code></pre>
+</div>
 
 ## Install Demo Application
 <ol>
