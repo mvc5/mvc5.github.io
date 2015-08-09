@@ -5,7 +5,7 @@
         <li role="presentation"><a href="#install-demo-application">Install Demo Application</a></li>
         <li role="presentation">
             <ul class="nav nav-pills nav-stacked" style="margin-top:20px;">
-                <li role="presentation"><a href="#"><small style="color:#999;">Back to top</small></a></li>
+                <li role="presentation"><a href="#"><small style="color:#aaa;">Back to top</small></a></li>
             </ul>
         </li>
     </ul>
