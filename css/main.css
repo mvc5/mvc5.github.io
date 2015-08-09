@@ -44,6 +44,10 @@ a {
     .page-masthead h1 {
         font-size:36px;
     }
+    .page-masthead h1 img {
+        width:80px;
+        height:80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -93,7 +97,7 @@ a {
 }
 
 .carousel {
-    height: 215px;
+    height: 205px;
 }
 
 .carousel-indicators {
@@ -101,10 +105,15 @@ a {
     margin-bottom: 0;
 }
 
+.carousel small {
+    font-style:italic;
+    color:#eee;
+}
+
 .main h2 {
     border-bottom: 1px solid #eee;
     padding-bottom: 9px;
-    margin-top:35px;
+    margin:40px 0 20px;
 }
 
 .main h2:first-child {
