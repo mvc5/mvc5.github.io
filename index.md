@@ -88,6 +88,7 @@ layout: layout
 <div class="container">
     <div class="row" style="margin-top:40px;">
         <div class="col-md-offset-3">
+            <a class="btn btn-default btn-lg" style="margin-right:25px;margin-bottom:8px;" href="/getting-started" role="button"><span class="glyphicon glyphicon-send"></span> Getting Started</a>            
             <a class="btn btn-default btn-lg" style="margin-right:25px;margin-bottom:8px;" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>            
             <a class="btn btn-default btn-lg" style="margin-right:25px;margin-bottom:8px;" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a>
             <a class="btn btn-default btn-lg" style="margin-right:25px;margin-bottom:8px;" href="https://github.com/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>

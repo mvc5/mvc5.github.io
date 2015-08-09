@@ -1,6 +1,6 @@
-<nav data-spy="affix" data-offset-top="286" id="nav-sidebar" role="navigation">
+<nav data-spy="affix" data-offset-top="286" id="sidebar" role="navigation">
     <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active"><a href="#features">Features</a></li>
+        <li role="presentation"><a href="#features">Features</a></li>
         <li role="presentation">
             <a href="#maintainability">Maintainability</a>
             <ul class="nav nav-pills nav-stacked">

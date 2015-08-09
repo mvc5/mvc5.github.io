@@ -1,16 +1,11 @@
 ---
-layout: layout
+layout: default
 ---
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9 main">
-            {{ content }}
-        </div>
-        <div class="col-sm-3 sidebar">
-            {% case page.sidebar %}
-                {% when 'overview' %}
-                {% include_relative sidebar.md %}
-            {% endcase %}
-        </div>
+<div class="row">
+    <div class="col-sm-9 main">
+        {{ content }}
+    </div>
+    <div class="col-sm-3 sidebar">
+        {% include_relative sidebar.md %}
     </div>
 </div>

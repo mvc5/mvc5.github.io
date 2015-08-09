@@ -86,7 +86,6 @@ h2 {
 }
 
 .sidebar nav.affix {
-    position: fixed;
     top: 0;
 }
 
@@ -111,4 +110,12 @@ h2 {
 .carousel-indicators {
     bottom: 0;
     margin-bottom: 0;
+}
+
+.main h2 {
+    margin-top:35px;
+}
+
+.main h2:first-child {
+    margin-top:20px;
 }
