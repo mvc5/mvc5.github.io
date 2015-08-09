@@ -6,13 +6,13 @@ scrollspy: sidebar
 ---
 ## Source Code
 <p>The Mvc5 Framework has no external dependencies and can be downloaded separately or <a href="#composer-install">installed via composer</a>. However, the best way to explore the Mvc5 Framework is to <a href="#install-demo-application">install the demo application</a>.</p>
-<p style="margin-top:20px;">
+<p style="margin-top:20px;padding-bottom:1px;">
     <a class="btn btn-default btn-lg" href="https://github.com/mvc5/framework/releases/latest"><span class="glyphicon glyphicon-hand-right"></span> Latest Release</a>
 </p>
 
 
 ## Composer Install
-<div style="padding-bottom:5px;">
+<div style="padding-bottom:1px;">
     <pre><code>$ composer.phar require mvc5/framework</code></pre>
 </div>
 
