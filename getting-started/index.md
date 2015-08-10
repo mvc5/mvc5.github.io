@@ -28,10 +28,10 @@ scrollspy: sidebar
     </li>
     <li>
         <p>Install composer.</p>
-        <pre><code class="language-php">$ cd mvc5playground<br>$ composer.phar install</code></pre>
+        <pre><code class="language-php">$ cd mvc5playground<br>$ composer.phar install --no-dev</code></pre>
     </li>
     <li>
-        <p>Open the demo application in web browser. The document root should point to the <code>public</code> directory.</p>
+        <p>Open the demo application in a web browser. The document root should point to the <code>public</code> directory.</p>
         <div class="panel panel-default">
             <div class="panel-body">
                 <img src="/images/mvc5playground.png" width="400" height="338" title="Mvc5 Demo Application">

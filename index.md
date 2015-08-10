@@ -3,18 +3,18 @@ layout: layout
 ---
 <div class="masthead container-fluid">
     <div class="container">
-        <div id="masthead-carousel" class="carousel slide" data-ride="carousel">
+        <div id="slides" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
-            <li data-target="#masthead-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#masthead-carousel" data-slide-to="1"></li>
-            <li data-target="#masthead-carousel" data-slide-to="2"></li>
-            <li data-target="#masthead-carousel" data-slide-to="3"></li>
-            <li data-target="#masthead-carousel" data-slide-to="4"></li>
-            <li data-target="#masthead-carousel" data-slide-to="5"></li>
-            <li data-target="#masthead-carousel" data-slide-to="6"></li>
-            <li data-target="#masthead-carousel" data-slide-to="7"></li>
-            <li data-target="#masthead-carousel" data-slide-to="8"></li>
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+            <li data-target="#slides" data-slide-to="3"></li>
+            <li data-target="#slides" data-slide-to="4"></li>
+            <li data-target="#slides" data-slide-to="5"></li>
+            <li data-target="#slides" data-slide-to="6"></li>
+            <li data-target="#slides" data-slide-to="7"></li>
+            <li data-target="#slides" data-slide-to="8"></li>
           </ol>        
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
