@@ -198,11 +198,11 @@ title: PhpMetrics Report
             <div class="col-sm-12">
                 <h3>Score</h3>
 
-                <div class="col-6">
+                <div class="col-6" style="width:58%">
                     <div id="chart-score"></div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-6" style="width:38%">
                     <p>
                         This score is not absolute. This chart is a comparison of your project relative to a representative average of recent PHP projects.
                     </p>
