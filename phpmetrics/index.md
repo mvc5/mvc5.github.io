@@ -199,7 +199,7 @@ title: PhpMetrics Report
                 <h3>Score</h3>
 
                 <div class="col-6" style="width:58%">
-                    <div id="chart-score"></div>
+                    <div id="chart-score" style="height: 580px;"></div>
                 </div>
 
                 <div class="col-6" style="width:38%">
