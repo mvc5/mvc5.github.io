@@ -72,7 +72,7 @@ return [
     'route'      => '/',
     'controller' => 'Home\Controller'
 ];</code></pre>
-<p>The above example is for the site home page, open the demo application in a web browser, it should show today's date. Read more about <a href="/overview/#routes">routes</a></p>
+<p>The above example is for the site home page, open the demo application in a web browser, it should show today's date. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
     <img style="margin-left:0;" src="/images/demo-home.png" width="400" height="113" title="Demo Home Page">
 </div>
