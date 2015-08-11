@@ -13,7 +13,7 @@ include __DIR__ . '/../init.php';
 
 <p>After loading the <a href="https://github.com/mvc5/framework/blob/master/src/Application/App.php">application</a> with its <a href="https://github.com/mvc5/application/blob/master/config/config.php">configuration</a>, its <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L63">call</a> method is invoked with the string parameter <a href="https://github.com/mvc5/framework/blob/master/config/alias.php#L19">web</a> as the name of the function to call. The parameter passed to the call method must resolve to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, which means the parameter provided can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a>.</p>
 ```php
-(new App(include __DIR__ . '/../config/config.php'))->call(function($request, $request) {
+(new App(include __DIR__ . '/../config/config.php'))->call(function($request, $response) {
     var_dump($request->getPathInfo());
 });
 ```
@@ -26,7 +26,7 @@ include __DIR__ . '/../init.php';
 <p>If there is no alias configuration for the name web, then an error would occur as there is no function in PHP with that name. However, one can be added to the main <a href="https://github.com/mvc5/application/blob/master/public/index.php">public/index.php</a> script. To easily test this, the name web2 should be used instead.</p>
 
 ```php
-function web2($request, $request) {
+function web2($request, $response) {
     var_dump($request->getPathInfo());
 }
 
@@ -36,7 +36,7 @@ function web2($request, $request) {
 <p>Additionally, since the call method argument must resolve to a callable type, the <a href="https://github.com/mvc5/framework/blob/master/config/alias.php#L19">web</a> alias configuration can also be an anonymous function.</p>
 
 ```php
-'web' => function($request, $request) {
+'web' => function($request, $response) {
     var_dump($request->getPathInfo());
 }
 ```
