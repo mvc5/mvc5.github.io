@@ -50,7 +50,7 @@ function web2($request, $request) {
 <p>Which means the <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L62">service configuration</a> can also be an anonymous function that is a factory function that returns an anonymous function as the function to invoke.</p>
 
 ```php
-'Mvc' => function($request, $response) {
+'Mvc' => function() {
     return function($request, $response) {
         var_dump($request->getPathInfo());
     };
