@@ -56,7 +56,7 @@ class Controller
     }
 }</code></pre>
 <p>When the system instantiates the controller and no model is passed to the constructor, the system will determine that its a required parameter and will use <a href="/overview/#constructor-autowiring">constructor autowiring</a> to instantiate a new instance of the view model and pass it to the constructor of the controller.</p>
-<p>In the above example, when the controller is invoked, it assigns the current date to the view model and returns it. The returned view model will then be the response model which is <a href="https://github.com/mvc5/framework/blob/master/src/Mvc/View/Renderer.php">rendered</a> prior to <a href="https://github.com/mvc5/framework/blob/master/src/Response/Send/Sender.php">sending the response</a>. Read more about the <a href="/overview/#model-view-controller">model view controller</a>.</p>
+<p>In the above example, when the controller is invoked, it assigns a variable to the view model and returns it. The returned view model will then be the response model which is <a href="https://github.com/mvc5/framework/blob/master/src/Mvc/View/Renderer.php">rendered</a> prior to <a href="https://github.com/mvc5/framework/blob/master/src/Response/Send/Sender.php">sending the response</a>. Read more about the <a href="/overview/#model-view-controller">model view controller</a>.</p>
 <p style="margin-top:25px;"><a id="view-template"></a><b>3.</b> Create a new template file in the <a href="https://github.com/mvc5/application/tree/master/view/home">view/home</a> directory named <a href="https://github.com/mvc5/application/blob/master/view/home/index.phtml">index.phtml</a></p>
 <pre style="line-height:1"><code><?php
                                  
@@ -74,5 +74,5 @@ return [
 ];</code></pre>
 <p>The above example is for the site home page, open the demo application in a web browser, it should show today's date. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
-    <img style="margin-left:0;" src="/images/demo-homepage.png" width="400" height="126" title="Demo Home Page">
+    <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="145" title="Demo Home Page">
 </div>
