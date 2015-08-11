@@ -60,7 +60,7 @@ class Controller
 <p style="margin-top:25px;"><a id="view-template"></a><b>3.</b> Create a new template file in the <a href="https://github.com/mvc5/application/tree/master/view/home">view/home</a> directory named <a href="https://github.com/mvc5/application/blob/master/view/home/index.phtml">index.phtml</a></p>
 <pre style="line-height:1"><code><?php
                                  
-  echo '&lt;b&gt;' . $msg . '&lt;/b&gt;';
+  echo '&lt;h1&gt;' . $msg . '&lt;/h1&gt;';
 
 </code></pre>
 <p>The variables assigned to a view model are available within the template as php variables, e.g <code>$date</code> or via the current object which is the view model, e.g. <code>$this->date</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
@@ -74,5 +74,5 @@ return [
 ];</code></pre>
 <p>The above example is for the site home page, open the demo application in a web browser, it should show today's date. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
-    <img style="margin-left:0;" src="/images/demo-home.png" width="400" height="113" title="Demo Home Page">
+    <img style="margin-left:0;" src="/images/demo-homepage.png" width="400" height="126" title="Demo Home Page">
 </div>
