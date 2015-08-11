@@ -50,7 +50,7 @@ class Controller
      */
     public function __invoke()
     {
-        $this->model->vars(['date' => date('m/d/Y')]);
+        $this->model->vars(['msg' => 'Hello World!']);
         
         return $this->model;
     }
@@ -60,7 +60,7 @@ class Controller
 <p style="margin-top:25px;"><a id="view-template"></a><b>3.</b> Create a new template file in the <a href="https://github.com/mvc5/application/tree/master/view/home">view/home</a> directory named <a href="https://github.com/mvc5/application/blob/master/view/home/index.phtml">index.phtml</a></p>
 <pre style="line-height:1"><code><?php
                                  
-  echo '&lt;h1&gt;' . $date . '&lt;/h1&gt;';
+  echo '&lt;b&gt;' . $msg . '&lt;/b&gt;';
 
 </code></pre>
 <p>The variables assigned to a view model are available within the template as php variables, e.g <code>$date</code> or via the current object which is the view model, e.g. <code>$this->date</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
