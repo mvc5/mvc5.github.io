@@ -1,6 +1,5 @@
-
 ## Events
-Events can be strings or classes that can manage the arguments used by the methods that invoked in that event.
+Events can be strings or classes that can manage the arguments used by the methods that invoked it.
 
 ```php
 class Event

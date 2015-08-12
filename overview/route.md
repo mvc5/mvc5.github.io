@@ -1,4 +1,3 @@
-
 ## Routes
 A route can be configured as an `array` or as a [route definition](https://github.com/mvc5/framework/blob/master/src/Route/Definition/Definition.php). If the configuration does not have a `regex`, then it will be compiled before matching against the request uri path. Each aspect of matching a route has a dedicated function, e.g. scheme, hostname, path, method, wildcard, and any other function can be configured to be called in the [route match event](https://github.com/mvc5/framework/blob/master/src/Route/Match/Match.php).
 

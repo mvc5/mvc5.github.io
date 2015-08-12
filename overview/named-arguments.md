@@ -1,4 +1,3 @@
-
 ## Named Arguments and Plugins
 This contrived example demonstrates named arguments and plugins.
 

@@ -1,4 +1,3 @@
-
 ## Usage
 The <a href="https://github.com/mvc5/application">mvc5/application</a> demonstrates its usage as a web application.
 

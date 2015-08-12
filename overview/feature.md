@@ -1,4 +1,3 @@
-
 ## Features
 * Configuration
 * Maintainability

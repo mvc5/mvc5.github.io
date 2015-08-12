@@ -42,4 +42,4 @@ Totals grouped by language (dominant language first):
 php:           3450 (100.00%)
 ```
 
-_Generated using [David A. Wheeler's 'SLOCCount'](http://www.dwheeler.com/sloccount)._
+_Generated using [David A. Wheeler's <b>SLOCCount</b>](http://www.dwheeler.com/sloccount)._
