@@ -63,7 +63,7 @@ class Controller
   echo '&lt;h1&gt;' . $msg . '&lt;/h1&gt;';
 
 </code></pre>
-<p>The variables assigned to a view model are available within the template as php variables, e.g <code>$date</code> or via the current object which is the view model, e.g. <code>$this->date</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
+<p>The variables assigned to a view model are available within the template as php variables, e.g <code>$msg</code> or via the current object which is the view model, e.g. <code>$this->date</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
 <p style="margin-top:25px;"><a id="route"></a><b>4.</b> Create a new route configuration file in the application <a href="https://github.com/mvc5/application/tree/master/config">config</a> directory named <a href="https://github.com/mvc5/application/blob/master/config/route.php">route.php</a></p>
 <pre style="line-height:1"><code><?php
 

@@ -23,7 +23,7 @@ include __DIR__ . '/../init.php';
 'web' => new Service('Mvc')
 ```
 
-<p>If there is no alias configuration for the name web, then an error would occur as there is no function in PHP with that name. However, one can be added to the main <a href="https://github.com/mvc5/application/blob/master/public/index.php">public/index.php</a> script. To easily test this, the name web2 should be used instead.</p>
+<p>If there is no alias or service configuration for the name web, then an error would occur as there is no function in PHP with that name. However, one can be added to the main <a href="https://github.com/mvc5/application/blob/master/public/index.php">public/index.php</a> script. To easily test this, the name web2 should be used instead.</p>
 
 ```php
 function web2($request, $response) {
@@ -41,13 +41,13 @@ function web2($request, $response) {
 }
 ```
 
-<p>However, because its default value is a <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Service/Service.php">Service</a> configuration, an actual <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L62">service configuration</a> must exist it.</p>
+<p>However, because its default value is a <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Service/Service.php">Service</a> configuration, an actual <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L62">service configuration</a> must exist.</p>
 
 ```php
 'Mvc' => new Service(Mvc\Mvc::class, [new ServiceManagerLink]),
 ```
 
-<p>Which means the <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L62">service configuration</a> can also be an anonymous function that is a factory function that returns an anonymous function as the function to invoke.</p>
+<p>Which means the <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L62">service configuration</a> can also be an anonymous factory function that returns another anonymous function as the one to invoke.</p>
 
 ```php
 'Mvc' => function() {
