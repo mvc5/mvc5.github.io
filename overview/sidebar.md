@@ -12,7 +12,7 @@
             <a href="#usage">Usage</a>
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="#web-application">Web Application</a></li>
-                <li role="presentation"><a href="#console-applications">Console Applications</a></li>
+                <li role="presentation"><a href="#console-application">Console Application</a></li>
                 <li role="presentation"><a href="#environment-aware-configurations">Environment Aware Configurations</a></li>
             </ul>
         </li>

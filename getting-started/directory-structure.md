@@ -9,7 +9,7 @@
     <h4 id="framework-directory">Framework Directory</h4>
     <p>The <a href="https://github.com/mvc5/framework/tree/master/src">src</a> directory contains the <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> composer autoloaded class files.</p>
     <p>The <a href="https://github.com/mvc5/framework/tree/master/config">config</a> directory contains the php array configuration files that can be included and overridden by the application.</p>
-    <p>The <a href="https://github.com/mvc5/framework/tree/master/view">view</a> directory contains template files for exceptions, page not found, layout and the home page. They do not need to be used and are configured by the application.</p>    
+    <p>The <a href="https://github.com/mvc5/framework/tree/master/view">view</a> directory contains template files for exceptions, page not found, layout and the home page. They do not need to be used and are <a href="https://github.com/mvc5/framework/blob/master/config/templates.php">configured</a> by the application.</p>    
   </div>
 </div>
 <div class="media media-left-sm-collapse">

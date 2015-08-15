@@ -1,4 +1,6 @@
 ## Maintainability
+Being able to makes changes to a project, especially beyond its initial development, is an important aspect of any project.
+   
 _[View the interactive PhpMetrics report](/phpmetrics)_
 
 [![](/phpmetrics/images/maintenability.png)](/phpmetrics/)[![](/phpmetrics/images/evaluation.png)](/phpmetrics/)  [![](/phpmetrics/images/eval-report.png)](/phpmetrics/)
