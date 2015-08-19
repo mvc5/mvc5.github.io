@@ -8,7 +8,7 @@
     </li>
     <li>
         <p>Extract archive and rename directory to <b>mvc5playground</b>.</p>
-        <pre><code class="language-php">$ unzip ./application-master.zip<br>$ mv application-master mvc5playground</code></pre>
+        <pre><code class="language-php">$ unzip ./master.zip<br>$ mv application-master mvc5playground</code></pre>
     </li>
     <li>
         <p>Install composer.</p>
