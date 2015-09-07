@@ -52,7 +52,7 @@ The above [hydrator](https://github.com/mvc5/framework/blob/master/src/Service/C
 'Route\Manager' => new Manager(Route\Manager\Manager::class)
 ```
 
-Because constructor arguments can also be real values it is sometimes desired to provide an array that contains values which only be resolved when the class is being instantiated. The [Args](https://github.com/mvc5/framework/blob/master/src/Service/Config/Args/Args.php) configuration can be used in place of an array and accepts an array of both real values and [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configuration types. 
+Because constructor arguments can also be real values it is sometimes desired to provide an array that contains values which only need to be resolved when the class is being instantiated. The [Args](https://github.com/mvc5/framework/blob/master/src/Service/Config/Args/Args.php) configuration can be used in place of an array and accepts an array of both real values and [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configuration types. 
 <pre><code>new Args([new Service('Mvc'), 'foo', new Dependency('Controller\Manager')])</code></pre>
 
 The [service container](https://github.com/mvc5/framework/blob/master/src/Service/Container/Container.php) is part of the main application [config](https://github.com/mvc5/application/blob/master/config/config.php). This allows a [Param](https://github.com/mvc5/framework/blob/master/src/Service/Config/Param/Param.php) configuration to be used to retrieve other configuration values, e.g
