@@ -1,68 +1,41 @@
 ## Dependency Injection
-The [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) implements the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface by extending the [service container](https://github.com/mvc5/framework/blob/master/src/Service/Container/ServiceContainer.php). The [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface provides access to existing services, and the [service container](https://github.com/mvc5/framework/blob/master/src/Service/Container/ServiceContainer.php) provides access to the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) object that contains the configuration values for the services that the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) provides.
-
-Typically the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) is the application's main [configuration object](https://github.com/mvc5/framework/blob/master/config/config.php).
+An [array](https://github.com/mvc5/framework/blob/master/config/service.php) is used for the configuration of a [service container](https://github.com/mvc5/framework/blob/master/src/Service/Container/Container.php). It can contain string, array, anonymous functions, [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configuration types and real values.
 
 ```php
-return [
-    'alias'     => include __DIR__ . '/alias.php',
-    'events'    => include __DIR__ . '/event.php',
-    'services'  => new Container(include __DIR__ . '/service.php'),
-    'routes'    => include __DIR__ . '/route.php',
-    'templates' => include __DIR__ . '/templates.php'
+[
+    'Home' => Home::class,
+    'Blog' => [Blog\Controller::class, 'template' => 'blog'],
+    'Mvc'  => function(Configuration $sm) {
+        return new Mvc($sm);
+    },
+    'Mvc\View' => new Hydrator(
+        Mvc\View\Renderer::class,
+        ['setViewManager' => new Dependency('View\Manager')]
+    ),    
+    'Request' => new Request\HttpRequest($_GET, $_POST, [], $_COOKIE, $_FILES, $_SERVER),
+    'Route\Builder'   => Route\Builder\Builder::class,
+    'Route\Generator' => new Service(
+        Route\Generator\Generator::class,
+        [new Param('routes'), new Dependency('Route\Builder')]
+    )        
 ];
 ```
 
-This allows the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) to use the [param()](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php#L40) method to retrieve other configuration values, e.g 
+A string configuration is used when the class to instantiate has no dependencies or it can be [autowired](#constructor-autowiring). An array configuration is used when the class does have dependencies, and if desired, only the required constructor arguments that can not be [autowired](#constructor-autowiring) need to be specified. And when the instantiation of a class requires its own logic, an anonymous function can be used; various [plugins](https://github.com/mvc5/framework/blob/master/config/alias.php) are available as [named arguments](#named-arguments-and-plugins).
 
-```
-new Param('templates.home')
-```
+However, anonymous functions can not be [serialized](http://php.net/manual/en/function.serialize.php) and there are times when additional methods need to be called after instantiation. This is when a [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) [Service](https://github.com/mvc5/framework/blob/master/src/Service/Config/Service/Service.php) configuration can be used which has a third parameter that accepts an array of methods and arguments to invoke. For example, in the above, the [Hydrator](https://github.com/mvc5/framework/blob/master/src/Service/Config/Hydrator/Hydrator.php) uses just the class name and an array of calls.
+ 
+When the dependencies of a class require their own dependencies, either an anonymous function or a [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configuration can be used, see for example the route generator configuration.
 
-When a service is called by the service manager's [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface, it will check that the service exists, and if it does not, it will use its [configuration](https://github.com/mvc5/framework/blob/master/config/service.php) to create a new service. Configuration values can also be actual values e.g 
+Custom service configurations and providers can also be created. The service configuration must be [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) and the service provider must be a callable function that has been added to the [service provider](https://github.com/mvc5/framework/blob/master/config/event.php#L45) event; it can also optionally implement the [service provider](https://github.com/mvc5/framework/blob/master/src/Service/Provider/ServiceProvider.php) interface. The [service provider](https://github.com/mvc5/framework/blob/master/config/event.php#L45) event is invoked after it has been determined that the [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configuration is not one of the [default](https://github.com/mvc5/framework/tree/master/src/Service/Config) configuration types.  
+
+When a [Dependency](https://github.com/mvc5/framework/blob/master/src/Service/Config/Dependency/Dependency.php) is to be shared, the service manager will check to see if the service exists and if it doesn't it will use its [configuration](https://github.com/mvc5/framework/blob/master/config/service.php) value to create the new service. This allows the configuration value to also be a real value, e.g
 
 ```php
 'Request' => new HttpRequest($_GET, $_POST, $_SERVER ...)
 ```
-
-They can also be strings that specify the <a href="https://en.wikipedia.org/wiki/Fully_qualified_name">FQCN</a> of the class to instantiate and their required dependencies are automatically injected via [constructor autowiring](#constructor-autowiring). E.g 
-
-```php
-'Route\Match\Wildcard' => Route\Match\Wildcard\Wildcard::class,
-```
-
-Constructor arguments can also be passed as arguments to the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) when calling the service via the [create](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ManageService.php#L29) or [get](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ManageService.php#L57) method, e.g 
-
-```php
-$sm->get('HomeController', [new Dependency('HomeManager')])
-```
-
-Arguments passed to [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) will be used as constructor arguments. If no arguments are passed, the service can still be configured with constructor arguments via the [service configuration](https://github.com/mvc5/framework/blob/master/config/service.php).
-
-```php
-'Route\Generator' => new Service(
-    Route\Generator\Generator::class,
-    [new Param('routes'), new Dependency('Route\Builder')]
-),
-```
-
-In the example above the [route generator](https://github.com/mvc5/framework/blob/master/src/Route/Generator/Generator.php) is created with the [routes](#routes) configuration passed as a constructor argument.
-
-Sometimes only <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L147">calls</a> to the setter methods are needed, in which case the [hydrator](https://github.com/mvc5/framework/blob/master/src/Service/Config/Hydrator/Hydrator.php) configuration object can be used.
-
-```php
-'Controller\Manager' => new Hydrator(
-    Controller\Manager\Manager::class,
-    [
-        'aliases'       => new Param('alias'),
-        'configuration' => new ConfigLink,
-        'events'        => new Param('events'),
-        'services'      => new Param('services')
-    ]
-),
-```
-
-A [service configuration](https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php) can have parent configurations which allows either the parent constructor arguments to be used, if none are provided, or the parent configuration may specify the <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php#L21">calls</a> to use. It is also possible for a <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php">service configuration</a> to <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L258">merge</a> <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php#L21">calls</a> together.
+  
+A [Service](https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php) configuration can have parent configurations which allows either the parent constructor arguments to be used, if none are provided, or the parent configuration may specify the <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php#L21">calls</a> to use. It is also possible for a <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php">service configuration</a> to <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L258">merge</a> <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php#L21">calls</a> together.
 
 ```php
 'Manager' => new Hydrator(null, [
@@ -79,4 +52,11 @@ The above [hydrator](https://github.com/mvc5/framework/blob/master/src/Service/C
 'Route\Manager' => new Manager(Route\Manager\Manager::class)
 ```
 
-A [dependency configuration object](https://github.com/mvc5/framework/blob/master/src/Service/Config/Dependency/Dependency.php) is used to <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L345">retrieve</a> a shared service.
+Because constructor arguments can also be real values it is sometimes desired to provide an array that contains values which only be resolved when the class is being instantiated. The [Args](https://github.com/mvc5/framework/blob/master/src/Service/Config/Args/Args.php) configuration can be used in place of an array and accepts an array of both real values and [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configuration types. 
+<pre><code>new Args([new Service('Mvc'), 'foo', new Dependency('Controller\Manager')])</code></pre>
+
+The [service container](https://github.com/mvc5/framework/blob/master/src/Service/Container/Container.php) is part of the main application [config](https://github.com/mvc5/application/blob/master/config/config.php). This allows a [Param](https://github.com/mvc5/framework/blob/master/src/Service/Config/Param/Param.php) configuration to be used to retrieve other configuration values, e.g
+ 
+```
+new Param('templates.home')
+```
