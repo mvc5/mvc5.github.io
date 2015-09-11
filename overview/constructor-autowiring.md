@@ -1,5 +1,5 @@
 ## Constructor Autowiring
-When a [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) creates a class that either
+When the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) [creates](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ManageService.php#L29) a class that either
 
 * Does not have a service configuration, or
 * No arguments are passed to the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php), or
