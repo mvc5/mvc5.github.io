@@ -1,18 +1,29 @@
 ## Events
-Events can be strings or classes that can manage the arguments used by the methods that invoked it.
+An [event](https://github.com/mvc5/framework/blob/master/src/Event/Event.php) is a function just like any other function. However, instead of having a single function for its implementation, it can be implemented across multiple functions. Which via its [configuration](https://github.com/mvc5/framework/blob/master/config/event.php), allows the function to be easily extended.       
 
 ```php
-class Event
+function dispatch(callable $controller, array $args = [])
 {
+    return $this->trigger([Controller::DISPATCH, $controller], $args, $this);
+}
+```
+
+For example, rather than directly invoking the controller, the [dispatch](https://github.com/mvc5/framework/blob/master/src/Controller/Manager/Manager.php#L47) method triggers the [controller dispatch](https://github.com/mvc5/framework/blob/master/src/Controller/Dispatch/Dispatch.php) event and returns its result. This allows additional functions to be [configured](https://github.com/mvc5/framework/blob/master/config/event.php#L7) so that they can be invoked before and after calling the controller. In the above, the first parameter passed to the trigger method is a service configuration array containing the event class name and its constructor arguments. This parameter can be a string, i.e the name of the event, an array (or a [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php)) service configuration, or an event object.   
+
+When the first parameter of the trigger method is a string, then the result of the last method called will be returned as the outcome for that event. This causes the event to be a list of functions that cannot be stopped and its result cannot be controlled from outside of the functions being called. In order to allow the event to be [stopped](https://github.com/mvc5/framework/blob/master/src/Event/Event.php#L23) and for better inversion of control, an event class should be used.
+
+```php
+class Dispatch
+    implements Event
+{
+    use EventSignal;
+    
     function args()
     {
         return [
-        Args::EVENT      => $this,
-        Args::RESPONSE   => $this->response(),
-        Args::ROUTE      => $this->route(),
-        Args::VIEW_MODEL => $this->viewModel(),
-        Args::CONTROLLER => $this->route()->controller()
-        ];
+            Args::EVENT      => $this,
+            Args::CONTROLLER => $this->controller
+        ];        
     }
     
     function __invoke(callable $listener, array $args = [], callable $callback = null)
@@ -20,7 +31,7 @@ class Event
         $response = $this->signal($listener, $this->args() + $args, $callback);
         
         if ($response instanceof Response) {
-        $this->stop();
+            $this->stop();
         }
         
         return $response;
@@ -28,15 +39,7 @@ class Event
 }
 ```
 
-The <a href="http://php.net/manual/en/language.types.callable.php">callable</a> $callback parameter can be used to provide any additional parameters not in the named $args array. It can be a [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php), e.g $this, or any callable type.
-
-```php
-$this->trigger([Dispatch::CONTROLLER, $controller], $args, $this);
-```
-
-Similar to $args in <a href="#named-arguments-and-plugins">named arguments</a>, adding $event will provide the current event.
-
-The [trigger()](https://github.com/mvc5/framework/blob/master/src/Event/Manager/EventManager.php#L18) method of the [event manager](https://github.com/mvc5/framework/blob/master/src/Event/Manager/EventManager.php) accepts either the string name of the event, the event object itself or an array containing the event class name and its constructor arguments. In the example above, $controller is a constructor argument for the [controller dispatch event](https://github.com/mvc5/framework/blob/master/src/Controller/Dispatch/Dispatch.php).
+The above shows an event class that uses the [signal](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Signal.php) method to provide support for [named arguments](#named-arguments-and-plugins) to the functions for that event. These functions can specify in their method signature any of the parameters available from the args function, or the $args array, or from the callable $callback function (which can be a [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) that provides support for [plugins](#named-arguments-and-plugins)).  
 
 ## Event Configuration
 Events and listeners are <a href="https://github.com/mvc5/application/blob/master/config/event.php">configurable</a> and support various types of configuration that must resolve to being a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type.
