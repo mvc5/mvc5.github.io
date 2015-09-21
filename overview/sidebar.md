@@ -34,6 +34,7 @@
             <a href="#events">Events</a>
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="#event-configuration">Event Configuration</a></li>
+                <li role="presentation"><a href="#event-iterators">Event Iterators</a></li>
             </ul>
         </li>
         <li role="presentation">
