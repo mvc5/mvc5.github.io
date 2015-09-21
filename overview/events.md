@@ -42,7 +42,7 @@ class Dispatch
 The above shows an event class that uses the [signal](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Signal.php) method to provide support for [named arguments](#named-arguments-and-plugins) to the functions for that event. The method signature of these functions can specify any of the parameters available from the args function, or the $args array, or the [$callback](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L423) function which can be a [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) that provides support for [named arguments and plugins](#named-arguments-and-plugins).  
 
 ## Event Configuration
-Events and listeners are <a href="https://github.com/mvc5/application/blob/master/config/event.php">configurable</a> and support various types of configuration that must [resolve](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L186) to being a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type. Its configuration can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object. 
+Events are <a href="https://github.com/mvc5/application/blob/master/config/event.php">configurable</a> and can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object. Each item returned must [resolve](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L186) to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type.
 
 ```php
 'Mvc' => new \ArrayIterator([
@@ -57,4 +57,4 @@ Events and listeners are <a href="https://github.com/mvc5/application/blob/maste
 ]),
 ```
 
-The event class itself be [traversable](http://php.net/manual/en/class.traversable.php) and contain its own configuration. See the [action controller](https://github.com/mvc5/framework/blob/master/src/Controller/Action/Action.php) event as an example. 
+The event class itself can be [traversable](http://php.net/manual/en/class.traversable.php) and contain its own configuration. See the [action controller](https://github.com/mvc5/framework/blob/master/src/Controller/Action/Action.php) event as an example. 
