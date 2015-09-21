@@ -58,7 +58,7 @@ Events and listeners are <a href="https://github.com/mvc5/application/blob/maste
 ```
 
 ## Event Iterators
-An event configuration can be array or a [traversable](http://php.net/manual/en/class.traversable.php) object.
+An event configuration can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object.
 
 ```php
 'Mvc' => new \ArrayObject([
