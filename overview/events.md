@@ -57,4 +57,4 @@ Events are <a href="https://github.com/mvc5/application/blob/master/config/event
 ]),
 ```
 
-The event class itself can be [traversable](http://php.net/manual/en/class.traversable.php) and contain its own configuration. See the [action controller](https://github.com/mvc5/framework/blob/master/src/Controller/Action/Action.php) event as an example. 
+The event class itself can be [traversable](http://php.net/manual/en/class.traversable.php) and contain its own configuration. See the [action controller](https://github.com/mvc5/framework/blob/master/src/Controller/Action/Action.php) event as an [example](#controller-action). 
