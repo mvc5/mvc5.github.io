@@ -9,10 +9,15 @@ Controller configurations that are prefixed with an [@](https://github.com/mvc5/
 
 Constraints have named keys that match their corresponding [regex](https://github.com/mvc5/framework/blob/master/src/Route/Definition/Definition.php#L56) parameter and optional parameters are enclosed with square brackets `[]`. This implementation is from the [DASPRiD/Dash](https://github.com/DASPRiD/Dash) router project.
 
+Custom [definitons](https://github.com/mvc5/framework/blob/master/src/Route/Definition/Definition.php) can also be configured by adding its [class](https://github.com/mvc5/framework/blob/master/src/Route/Definition/Definition.php#L21) name to the array, or the configuration itself can be a [definiton](https://github.com/mvc5/framework/blob/master/src/Route/Definition/Definition.php) object.   
+
+The [call](https://github.com/mvc5/framework/blob/master/src/Route/Manager/Manager.php#L32) to create a new route [definition](https://github.com/mvc5/framework/blob/master/src/Route/Definition/Definition.php) uses the alias [route:create](https://github.com/mvc5/framework/blob/master/config/alias.php#L15) so that if necessary, further customizations can be made by changing its [service configuration](https://github.com/mvc5/framework/blob/master/config/service.php#L100).  
+
 ```php
 return [
     'name'       => 'home', //for the url plugin in view templates
     'route'      => '/',
+    'class'      => RouteDefinition::class, //optional
     'controller' => 'Home\Controller', //callable
     'children' => [
         'blog' => [
