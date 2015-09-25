@@ -13,10 +13,10 @@ When a class is [created](https://github.com/mvc5/framework/blob/master/src/Serv
         ['setViewManager' => new Dependency('View\Manager')]
     ),    
     'Request' => new Request\HttpRequest($_GET, $_POST, [], $_COOKIE, $_FILES, $_SERVER),
-    'Route\Builder'   => Route\Builder\Builder::class,
+    'Route\Definition\Url' => Route\Definition\Url\Url::class,
     'Route\Generator' => new Service(
         Route\Generator\Generator::class,
-        [new Param('routes'), new Dependency('Route\Builder')]
+        [new Param('routes'), new Dependency('Route\Definition\Url')]
     )        
 ];
 ```

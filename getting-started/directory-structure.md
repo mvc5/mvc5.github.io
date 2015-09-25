@@ -20,7 +20,7 @@
   </div>
   <div class="media-body">
   <h4 id="application-directory">Application Directory</h4>
-    <p>The <a href="https://github.com/mvc5/application/tree/master/config">config</a> directory contains the php array configuration files that includes and overrides the default framework configuration. These configuration files can also be made to be <a href="/overview/#environment-aware-configurations">environment aware</a>.</p>
+    <p>The <a href="https://github.com/mvc5/application/tree/master/config">config</a> directory contains the php array configuration files that includes and overrides the default framework configuration. These configuration files can also be <a href="/overview/#environment-aware-configurations">environment aware</a>.</p>
     <p>The <a href="https://github.com/mvc5/application/tree/master/public">public</a> directory is the web site document root and contains the main <a href="https://github.com/mvc5/application/blob/master/public/index.php">index.php</a> script.</p>
     <p>The <a href="https://github.com/mvc5/application/tree/master/src">src</a> directory contains the application class files and the demo uses the <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> autoloading standard.</p>
     <p>The vendor directory is used for external libraries and contains the framework directory.</p>
