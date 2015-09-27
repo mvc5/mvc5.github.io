@@ -55,7 +55,7 @@ class Controller
         return $this->model;
     }
 }</code></pre>
-<p>When the system instantiates the controller and no model is passed to the constructor, the system will <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L242">determine</a> that it is a required parameter and will use <a href="/overview/#constructor-autowiring">constructor autowiring</a> to instantiate a new instance of the view model and pass it to the constructor of the controller.</p>
+<p>When the system instantiates the controller and no model is passed to its constructor. The system will <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L242">determine</a> that it is a required parameter and use <a href="/overview/#constructor-autowiring">constructor autowiring</a> to create a new instance of the view model and pass it to the constructor of the controller.</p>
 <p>In the above, when the controller is invoked, it assigns a variable to the view model and returns it. The returned view model will then be the <a href="https://github.com/mvc5/framework/blob/master/src/Mvc/Mvc.php#L59">response model</a> which is <a href="https://github.com/mvc5/framework/blob/master/src/Mvc/View/Renderer.php">rendered</a> prior to <a href="https://github.com/mvc5/framework/blob/master/src/Response/Send/Sender.php">sending the response</a>. Read more about the <a href="/overview/#model-view-controller">model view controller</a>.</p>
 <p style="margin-top:25px;"><a id="view-template"></a><b>3.</b> Create a new template file in the <a href="https://github.com/mvc5/application/tree/master/view/home">view/home</a> directory named <a href="https://github.com/mvc5/application/blob/master/view/home/index.phtml">index.phtml</a></p>
 <pre style="line-height:1"><code><?php
@@ -63,7 +63,7 @@ class Controller
   echo '&lt;h1&gt;' . $msg . '&lt;/h1&gt;';
 
 </code></pre>
-<p>The variables assigned to a view model are available within the template as php variables, e.g <code>$msg</code> or via the current object which is the view model, e.g. <code>$this->msg</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
+<p>The variables assigned to a view model are available within the template as php variables, e.g <code>$msg</code> or via the current object, which is the view model, e.g. <code>$this->msg</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
 <p style="margin-top:25px;"><a id="route"></a><b>4.</b> Create a new route configuration file in the application <a href="https://github.com/mvc5/application/tree/master/config">config</a> directory named <a href="https://github.com/mvc5/application/blob/master/config/route.php">route.php</a></p>
 <pre style="line-height:1"><code><?php
 
@@ -72,7 +72,7 @@ return [
     'route'      => '/',
     'controller' => 'Home\Controller'
 ];</code></pre>
-<p>The above example is for the site home page, open the demo application in a web browser, it should display the hello world message. Read more about <a href="/overview/#routes">routes</a>.</p>
+<p>The above example is for the site home page. Open the demo application in a web browser, it should display the hello world message. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
-    <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="145" title="Demo Home Page">
+    <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="131" title="Demo Home Page">
 </div>

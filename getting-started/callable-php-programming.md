@@ -23,7 +23,7 @@ include __DIR__ . '/../init.php';
 'web' => new Service('Mvc')
 ```
 
-<p>In the following order, if there is no <a href="https://github.com/mvc5/framework/blob/master/config/alias.php">alias</a>, <a href="https://github.com/mvc5/framework/blob/master/config/service.php">service</a> or <a href="https://github.com/mvc5/framework/blob/master/config/event.php">event</a> configuration for the name web, then an error would occur as there isn't a callable PHP function with that name. However, one can be added to the main <a href="https://github.com/mvc5/application/blob/master/public/index.php">public/index.php</a> script. To easily test this, the name web2 should be used instead.</p>
+<p>In the following order, if there is not an <a href="https://github.com/mvc5/framework/blob/master/config/alias.php">alias</a>, <a href="https://github.com/mvc5/framework/blob/master/config/service.php">service</a> or <a href="https://github.com/mvc5/framework/blob/master/config/event.php">event</a> configuration, for the name web, then an error will occur because PHP does not have a function with that name. However, one can be added to the main <a href="https://github.com/mvc5/application/blob/master/public/index.php">public/index.php</a> script. To easily test this, the name web2 should be used instead.</p>
 
 ```php
 function web2($request, $response) {
@@ -47,7 +47,7 @@ function web2($request, $response) {
 'Mvc' => [Mvc\Mvc::class, new ServiceManagerLink],
 ```
 
-<p>Which means the <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L63">service configuration</a> can also be an anonymous function that returns another one as the one to invoke.</p>
+<p>This <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L63">service configuration</a> can also be an anonymous function that returns another anonymous function as the one to invoke.</p>
 
 ```php
 'Mvc' => function() {
@@ -57,4 +57,4 @@ function web2($request, $response) {
 },
 ```
 
-<p>However, there is a limit as to how much functionality can be obtained from a single function. Functions can become large and separating them into a list of functions is beneficial since the function becomes an extensible list of functions each with their own specific dependencies injected. Consequently, the outcome of the function does not have to depend on the list of functions. By using an <a href="/overview/#events">event</a> class it is possible to control the outcome of each function and consequently the function itself.</p>
+<p>However, there is a limit as to how much functionality can be obtained from a single function. Functions can become large and separating them into a list of functions is beneficial since the function becomes an extensible list of functions, each with their own specific dependencies. Consequently, the outcome of the function does not have to depend on the list of functions. By using an <a href="/overview/#events">event</a> class it is possible to control the outcome of each function and consequently the function itself.</p>
