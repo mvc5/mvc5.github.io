@@ -4,16 +4,16 @@ Each plugin has a configuration specific to its own use and they are resolved ea
 
 ```php
 return [
-    'blog:create'  => new Service('Blog\Create'),
-    'config'       => new Dependency('Config'),
-    'layout'       => new Dependency('Layout'),
-    'request'      => new Dependency('Request'),
-    'response'     => new Dependency('Response'),
-    'route:create' => new Dependency('Route\Create'),
-    'sm'           => new Dependency('Service\Manager'),
-    'url'          => new Dependency('Route\Plugin'),
-    'web'          => new Service('Mvc'),
-    'vm'           => new Dependency('View\Manager')
+    'blog:create'      => new Service('Blog\Create'),
+    'config'           => new Dependency('Config'),
+    'layout'           => new Dependency('Layout'),
+    'request'          => new Dependency('Request'),
+    'response'         => new Dependency('Response'),
+    'route:definition' => new Dependency('Route\Definition'),
+    'sm'               => new Dependency('Service\Manager'),
+    'url'              => new Dependency('Route\Plugin'),
+    'web'              => new Service('Mvc'),
+    'vm'               => new Dependency('View\Manager')
 ];
 ```
 
@@ -45,7 +45,7 @@ And with named arguments
 $app->call('Home\Factory', ['config' => $config, 'vm' => $vm]);
 ```
 
-To get all of the available arguments that are not plugin arguments, add $args to the method signature
+To get all of the available arguments that are not plugin arguments, add $args to the method signature.
 
 ```php
 public function __invoke(Config $config, ViewManager $vm, array $args = [])

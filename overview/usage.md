@@ -29,7 +29,7 @@ new App(include __DIR__ . '/../vendor/mvc5/framework/config/config.php')->call('
 ```
 
 ## Console Application
-A simple [console application](https://github.com/mvc5/application/blob/master/src/Console/Example.php) can be created by passing the [command line arguments](http://php.net/manual/en/reserved.variables.argv.php) to the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L63) method. E.g
+A simple [console application](https://github.com/mvc5/application/blob/master/src/Console/Example.php) can be created by passing the [command line arguments](http://php.net/manual/en/reserved.variables.argv.php) to the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L63) method.
 
 ```php
 ./app.php 'Console\Example' Monday January
@@ -41,7 +41,7 @@ include './init.php';
 (new App('./config/config.php'))->call($argv[1], array_slice($argv, 2));
 ```
 
-The first argument is the name of the function and the remaining arguments are its parameters. E.g.
+The first argument is the name of the function and the remaining arguments are its parameters.
 
 ```php
 namespace Console;
@@ -65,7 +65,7 @@ class Example
 }
 ```
 
-Read more about <a href="#dependency-injection">dependency injection</a> and <a href="#constructor-autowiring">constructor autowiring</a> on how the dependencies of a function can be resolved. Note, that it is also possible to create a console application similar to a [web application](#web-application) with [routes](#routes) and controllers.
+Read more about <a href="#dependency-injection">dependency injection</a> and <a href="#constructor-autowiring">constructor autowiring</a> for how the dependencies of a function can be resolved. Note, that it is also possible to create a console application similar to a [web application](#web-application) with [routes](#routes) and controllers.
 
 ## Environment Aware Configurations
 Development configurations can override production values using [array_merge](http://php.net/manual/en/function.array-merge.php) since each [configuration](https://github.com/mvc5/application/blob/master/config/config.php) file returns an array of values. E.g

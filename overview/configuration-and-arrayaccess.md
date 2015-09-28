@@ -24,7 +24,7 @@ interface Configuration
 }
 ```
 
-Implementing the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface allows components to only have to specify their immutable methods and allows the component to choose whether or not to extend the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface or to implement it separately. The idea is that most of the time, only the immutable methods are of interest and the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface provides a consistent way of instantiating it.
+Implementing the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface allows components to only need to specify their immutable methods and the component can choose whether to extend the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface or to implement it separately. Most of the time, only the immutable methods are of interest and the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface provides a consistent way of instantiating it.
 
 ```php
 interface Route
