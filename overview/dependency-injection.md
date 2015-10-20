@@ -23,43 +23,10 @@ When a class is [created](https://github.com/mvc5/framework/blob/master/src/Serv
 
 A string configuration is used to map a short name or an interface to a class name. Because it is a string configuration, the class either has no dependencies or it can be [autowired](#constructor-autowiring). An array configuration is used when there are required dependencies and its configuration can be further reduced by using array key names for the arguments that can not be [autowired](#constructor-autowiring). An anonymous function is used when the class instantiation requires custom logic and various [plugins](https://github.com/mvc5/framework/blob/master/config/alias.php) are available as [named arguments](#named-arguments-and-plugins).
 
-However, anonymous functions can not be [serialized](http://php.net/manual/en/function.serialize.php) and there are times when additional methods need to be called after the instantiation of the class. In which case, a [service](https://github.com/mvc5/framework/blob/master/src/Service/Config/Service/Service.php) configuration can be used. It has a third parameter that accepts an array of methods and arguments to invoke, see the above [hydrator](https://github.com/mvc5/framework/blob/master/src/Service/Config/Hydrator/Hydrator.php) for an example of the array of calls.
- 
-When the dependencies of a class require their own dependencies, then the depth of the dependency graph increases. In this case a composite [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) set of configurations can be used. Various types of [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) configurations are [available](https://github.com/mvc5/framework/tree/master/src/Service/Config) for specific purposes.
+However, when the dependencies of a class have their own dependencies, then the depth of the dependency graph increases. In this case, a class object can also be created using a resolvable service configuration instead of using an anonymous function, factory or service provider method. This provides inversion of control and is a configuration domain specific language. Each configuration must implement the [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) type interface so that the system can distinguish them from other objects and invoke their associated function. These configurations can be used by each other and chained together to form a composite set of [resolvable service configurations](#resolvable-service-configurations).
 
-[Custom](https://github.com/mvc5/application/blob/master/src/Service/Config/Manager/Manager.php) service configurations and [providers](https://github.com/mvc5/application/blob/master/src/Service/Resolver/Manager/Resolver.php) can also be created. These configurations must be [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) and their respective service provider must be a callable function that has been added to the [service provider](https://github.com/mvc5/framework/blob/master/config/event.php#L45) event; it can optionally implement the [service provider](https://github.com/mvc5/framework/blob/master/src/Service/Provider/ServiceProvider.php) interface. The [service provider](https://github.com/mvc5/framework/blob/master/config/event.php#L45) event is [invoked](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L393) after it has been determined that the configuration is not one of the [default](https://github.com/mvc5/framework/tree/master/src/Service/Config) [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) types.  
-
-A [service](https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php) configuration can have parent configurations. This allows the parent constructor arguments to be used if none are provided by the child configuration. The parent configuration can also specify the setter <a href="https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php#L21">calls</a> to use and it is possible to <a href="https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L258">merge</a> them together.
+A dependency can be any positive value and when the name of a service configuration is a <a href="https://en.wikipedia.org/wiki/Fully_qualified_name">FQCN</a>, it must have a value different to its string name, otherwise a recursion will occur. Service configurations are only required when an explicit configuration is needed.
 
 ```php
-'Manager' => new Hydrator(null, [
-    'aliases'       => new Param('alias'),
-    'configuration' => new ConfigLink,
-    'events'        => new Param('events'),
-    'services'      => new Param('services'),
-]),
-```
-
-The above [hydrator](https://github.com/mvc5/framework/blob/master/src/Service/Config/Hydrator/Hydrator.php) is used as a parent configuration for all <a href="https://github.com/mvc5/framework/blob/master/config/service.php#L57">Managers</a>.
-
-```php
-'Route\Manager' => new Manager(Route\Manager\Manager::class)
-```
-
-Because constructor arguments can also be real values, it is sometimes desired to provide an array that contains values which are resolved when the class is being instantiated. The [Args](https://github.com/mvc5/framework/blob/master/src/Service/Config/Args/Args.php) configuration can be used in place of an array and accepts both real and [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php) type values, e.g 
-<pre><code>'Route' => new Service(
-    Route\Config::class,
-    [
-        new Args([
-            'hostname' => new Call('request.getHost'),
-            'method'   => new Call('request.getMethod'),
-            'path'     => new Call('request.getPathInfo'),
-            'scheme'   => new Call('request.getScheme')
-        ])
-    ])</code></pre>
-
-The [service container](https://github.com/mvc5/framework/blob/master/src/Service/Container/Container.php) is part of the main application [config](https://github.com/mvc5/application/blob/master/config/config.php) and other configuration values can be retrieved using the [param](https://github.com/mvc5/framework/blob/master/src/Service/Config/Param/Param.php) configuration, e.g
- 
-```
-new Param('templates.home')
+Home\Model::class => Home\Model::class //not allowed
 ```

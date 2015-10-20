@@ -20,9 +20,6 @@
         <li role="presentation"><a id="routing" href="#routes">Routes</a></li>
         <li role="presentation">
             <a href="#model-view-controller">Model View Controller</a>
-            <ul class="nav nav-pills nav-stacked">
-                <li role="presentation"><a href="#controller-action">Controller Action</a></li>
-            </ul>
         </li>
         <li role="presentation">
             <a href="#rendering-view-models">Rendering View Models</a>
@@ -40,6 +37,8 @@
             <a href="#dependency-injection">Dependency Injection</a>
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="#constructor-autowiring">Constructor Autowiring</a></li>
+                <li role="presentation"><a href="#resolvable-service-configurations">Resolvable Service Configurations</a></li>
+                <li role="presentation"><a href="#custom-service-providers">Custom Service Providers</a></li>
             </ul>
         </li>    
         <li role="presentation">

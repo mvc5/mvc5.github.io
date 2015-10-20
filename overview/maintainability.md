@@ -29,19 +29,19 @@ Time per request:       3.167 [ms] (mean, across all concurrent requests)
 
 ```
 SLOC	Directory	SLOC-by-Language (Sorted)
-1144    Service         php=1144
-1030    Route           php=1030
-381     View            php=381
-249     Controller      php=249
+1208    Service         php=1208
+1066    Route           php=1066
+387     View            php=387
+255     Controller      php=255
 213     Mvc             php=213
-199     Response        php=199
+205     Response        php=205
 110     Event           php=110
 92      Config          php=92
 32      Application     php=32
 
 
 Totals grouped by language (dominant language first):
-php:           3450 (100.00%)
+php:           3568 (100.00%)
 ```
 
 _Generated using [David A. Wheeler's <b>SLOCCount</b>](http://www.dwheeler.com/sloccount)._

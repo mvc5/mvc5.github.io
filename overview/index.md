@@ -10,10 +10,11 @@ scrollspy: sidebar
 {% include_relative configuration-and-arrayaccess.md %}
 {% include_relative routes.md %}
 {% include_relative model-view-controller.md %}
-{% include_relative controller-action.md %}
 {% include_relative rendering-view-models.md %}
 {% include_relative events.md %}
 {% include_relative dependency-injection.md %}
 {% include_relative constructor-autowiring.md %}
+{% include_relative resolvable-service-configurations.md %}
+{% include_relative custom-service-providers.md %}
 {% include_relative named-arguments-and-plugins.md %}
 {% include_relative plugins-and-aliases.md %}
