@@ -35,11 +35,13 @@ A [calls](https://github.com/mvc5/framework/blob/master/src/Service/Config/Calls
 
 ### [Child](https://github.com/mvc5/framework/blob/master/src/Service/Config/Child/Child.php)
 ```php
-'Factory'    => new Service(null, [new ServiceManagerLink]),
-'My\Service' => new Child(My\Service::class, 'Factory'),
+'Controller'      => new Service(null, [new ServiceManagerLink]),
+'IndexController' => new Child(IndexController::class, 'Controller'),
 ```
 
 A [child](https://github.com/mvc5/framework/blob/master/src/Service/Config/Child/Child.php) configuration is [used](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L346) to extend a parent configuration. The first parameter is the name of the class to create and the second parameter is the name of the parent configuration to use.
+
+Custom child configurations can also be created. This allows another [config](#confighttpsgithubcommvc5frameworkblobmastersrcserviceconfigconfigphp) configuration, such as a [service](#servicehttpsgithubcommvc5frameworkblobmastersrcserviceconfigserviceservicephp) configuration, to be used without having to specify the name of its parent configuration. Examples are the [controller](#controllerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigcontrollercontrollerphp), [factory](#factoryhttpsgithubcommvc5frameworkblobmastersrcserviceconfigfactoryfactoryphp), [form](#formhttpsgithubcommvc5frameworkblobmastersrcserviceconfigformformphp) and [manager](#managerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigmanagermanagerphp) configurations. 
 
 ### [Config](https://github.com/mvc5/framework/blob/master/src/Service/Config/Config.php)
 ```php
@@ -55,7 +57,7 @@ A [config](https://github.com/mvc5/framework/blob/master/src/Service/Config/Conf
 
 ### [ConfigLink](https://github.com/mvc5/framework/blob/master/src/Service/Config/ConfigLink/ConfigLink.php)
 ```php
-'My\Service' => new Service(My\Service::class, 'config' => new ConfigLink)
+'My\Service' => new Service(My\Service::class, ['config' => new ConfigLink])
 ```
  
 The [config link](https://github.com/mvc5/framework/blob/master/src/Service/Config/ConfigLink/ConfigLink.php) configuration is [used](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L370) to provide the main configuration array or object. 
@@ -216,4 +218,4 @@ A [service manager link](https://github.com/mvc5/framework/blob/master/src/Servi
 'Service\Resolver\Manager' => new ServiceProvider(ManagerResolver::class)
 ```
 
-A [service provider](https://github.com/mvc5/framework/blob/master/src/Service/Config/ServiceProvider/ServiceProvider.php) configuration is similar to a [service](#servicehttpsgithubcommvc5frameworkblobmastersrcserviceconfigserviceservicephp) configuration object. It adds a call to a method named [provider](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Provider.php#L77) which is used to set the current service manager for the service provider class to use.  
+A [service provider](https://github.com/mvc5/framework/blob/master/src/Service/Config/ServiceProvider/ServiceProvider.php) configuration is similar to a [service](#servicehttpsgithubcommvc5frameworkblobmastersrcserviceconfigserviceservicephp) configuration object. It adds a call to a method named [provider](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Provider.php#L77) which is used to set the current service manager for the service provider class to use. It's purpose is to return a callable function that when invoked will inspect the configuration passed to it and returns it if it can not or resolves it by returning a new instance of the class object.  

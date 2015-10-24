@@ -12,7 +12,7 @@ $response = $web->call(
 var_dump($response instanceof Response);
 ```
 
-The application is instantiated and a call is made to the valid method of the controller class with its parameters resolved from either the array of arguments explicitly passed to the [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L58) method or by the [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L58) method retrieving a plugin with the same name as the parameter. Methods can be chained together and each will have their parameters resolved similarly.
+The application is instantiated and a [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L63) is made to the valid method of the controller class with its parameters resolved from either the array of arguments explicitly passed to the [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L58) method or by the [call](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L58) method retrieving a plugin with the same name as the parameter. Methods can be chained together and each will have their parameters resolved similarly.
 
 ```php
 class Controller
