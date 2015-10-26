@@ -1,6 +1,6 @@
 ## Plugins and Aliases
-The parameter names of the additional arguments can be aliases or service names. An alias maps a string of varying characters excluding the [call separator](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Args.php#L23) `.` to any positive value. If the value is a [service configuration](https://github.com/mvc5/framework/blob/master/src/Service/Config/Configuration.php) object, then it will be resolved and its value returned.
-Each plugin has a configuration specific to its own use and they are resolved each time they are used. This enables them to be used in various ways for different purposes, e.g to provide a value, or to trigger an event, or to call a particular service method.
+The parameter names of the additional arguments can be aliases or service names. An alias maps a string of varying characters excluding the [call separator](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Args.php#L23) `.` to any positive value. If the value is [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php), it will be resolved and its result returned.
+Each plugin has a configuration specific to its own use and they are [resolved](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L333) each time they are used. This allows them to be used in various ways for different purposes, e.g to provide a value, or to trigger an event, or to call a particular service method.
 
 ```php
 return [

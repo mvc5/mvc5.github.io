@@ -6,12 +6,10 @@ include __DIR__ . '/../vendor/autoload.php';
 ```
 
 ```php
-use Mvc5\Service\Container\Container;
-
 $config = [
     'alias'     => include __DIR__ . '/alias.php',
     'events'    => include __DIR__ . '/event.php',
-    'services'  => new Container(include __DIR__ . '/service.php'),
+    'services'  => include __DIR__ . '/service.php',
     'routes'    => include __DIR__ . '/route.php',
     'templates' => include __DIR__ . '/templates.php'
 ];
