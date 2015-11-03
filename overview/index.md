@@ -13,6 +13,7 @@ scrollspy: sidebar
 {% include_relative rendering-view-models.md %}
 {% include_relative events.md %}
 {% include_relative dependency-injection.md %}
+{% include_relative service-container.md %}
 {% include_relative constructor-autowiring.md %}
 {% include_relative resolvable-service-configurations.md %}
 {% include_relative custom-service-providers.md %}

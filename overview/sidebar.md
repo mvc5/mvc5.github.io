@@ -36,6 +36,7 @@
         <li role="presentation">
             <a href="#dependency-injection">Dependency Injection</a>
             <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#service-container">Service Container</a></li>
                 <li role="presentation"><a href="#constructor-autowiring">Constructor Autowiring</a></li>
                 <li role="presentation"><a href="#resolvable-service-configurations">Resolvable Service Configurations</a></li>
                 <li role="presentation"><a href="#custom-service-providers">Custom Service Providers</a></li>
