@@ -18,7 +18,7 @@ function match($definition, $route)
 }
 ```
 
-When the [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) method is used to [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L73) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) that does not have a plugin configuration, an instance the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L183). This allows a common model parameter to be used by the functions of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event.php) to contain a value that is not null.
+When the [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) method is used to [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L73) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) that does not have a plugin configuration, an instance of the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L183). This allows a common model parameter to be used by the functions of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event.php) to contain a value that is not null.
 
 ```php
 function __invoke(callable $callable, array $args = [], callable $callback = null)

@@ -45,15 +45,15 @@ class Controller
     /**
      * @return Model
      */
-    public function __invoke(Model $model)
+    public function __invoke()
     {
         $this->model->vars(['msg' => 'Hello World!']);
         
         return $this->model;
     }
 }</code></pre>
-<p>When the system instantiates the controller and no model is passed to its constructor. The system will <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L151">determine</a> that it is a required parameter and <a href="/overview/#autowiring">autowire</a> the controller with a new instance of the <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Model.php">view model</a>.</p>
-<p>In the above, when the controller is invoked, it assigns a variable to the <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Model.php">view model</a> and returns it. The returned <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Model.php">view model</a> will then be the <a href="https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L53">response model</a> which is <a href="https://github.com/mvc5/mvc5/blob/master/src/View/Template/Renderer.php#L36">rendered</a> prior to <a href="https://github.com/mvc5/mvc5/blob/master/src/Response/Send.php#L13">sending the response</a>. Read more about the <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
+<p>When the system instantiates the controller and no model is passed to its constructor, the system will <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L151">determine</a> that it is a required parameter and <a href="/overview/#autowiring">autowire</a> the controller with a new instance of the <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Model.php">view model</a>.</p>
+<p>In the above, when the controller is invoked, it assigns a variable to the <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Model.php">view model</a> and returns it. The returned <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Model.php">view model</a> will become the <a href="https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L53">response model</a>, which is <a href="https://github.com/mvc5/mvc5/blob/master/src/View/Template/Renderer.php#L36">rendered</a> prior to <a href="https://github.com/mvc5/mvc5/blob/master/src/Response/Send.php#L13">sending the response</a>.</p>
 <p style="margin-top:25px;"><a id="view-template"></a><b>3.</b> Create a new template file in the <a href="https://github.com/mvc5/mvc5-application/tree/master/view/home">view/home</a> directory named <a href="https://github.com/mvc5/mvc5-application/blob/master/view/home/index.phtml">index.phtml</a></p>
 <pre style="line-height:1"><code><?php
                                  
@@ -69,7 +69,7 @@ return [
     'route'      => '/',
     'controller' => 'Home\Controller'
 ];</code></pre>
-<p>The above example is for the home page. Open the demo application in a web browser, it will display the hello world message. Read more about <a href="/overview/#routes">routes</a>.</p>
+<p>Open the demo application in a web browser. It will display the hello world message on the home page. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
     <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="131" title="Demo Home Page">
 </div>

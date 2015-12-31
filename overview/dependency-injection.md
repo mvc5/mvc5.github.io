@@ -1,5 +1,5 @@
 ## Dependency Injection
-When a class is [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L251) and it can not be [autowired](#autowiring), then a service configuration is required. Different types of configurations can be used depending on the requirements of the class. These configurations can be either a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value. An [array](https://github.com/mvc5/mvc5/blob/master/config/service.php) is used for the configuration of a [service container](https://github.com/mvc5/mvc5/blob/master/src/Service/Container.php).
+When a class is [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L251) and it can not be [autowired](#autowiring), then a service configuration is required. Different types of configurations can be used depending on the requirements of the class. These configurations can be either a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value.
 
 ```php
 [

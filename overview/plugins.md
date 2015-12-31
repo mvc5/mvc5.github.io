@@ -36,7 +36,7 @@ The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugi
 'service\manager' => new Child(Service\Manager::class, 'manager'),
 ```
 
-A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L352) to extend a parent plugin. The first parameter is the name of the class to create and the second is the name of the parent plugin. Custom child configurations can also be created, this allows another [plugin](#confighttpsgithubcommvc5frameworkblobmastersrcserviceconfigconfigphp) to be used without having to specify the name of its parent plugin. Examples are the [controller](#controllerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigcontrollercontrollerphp), [factory](#factoryhttpsgithubcommvc5frameworkblobmastersrcserviceconfigfactoryfactoryphp), [form](#formhttpsgithubcommvc5frameworkblobmastersrcserviceconfigformformphp) and [manager](#managerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigmanagermanagerphp) plugins. 
+A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L352) to extend a parent plugin. The first parameter is the name of the class to create and the second is the name of the parent plugin. Custom child configurations can also be created to allow another [plugin](#confighttpsgithubcommvc5frameworkblobmastersrcserviceconfigconfigphp) to be used without having to specify the name of its parent. Examples are the [controller](#controllerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigcontrollercontrollerphp), [factory](#factoryhttpsgithubcommvc5frameworkblobmastersrcserviceconfigfactoryfactoryphp), [form](#formhttpsgithubcommvc5frameworkblobmastersrcserviceconfigformformphp) and [manager](#managerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigmanagermanagerphp) plugins. 
 
 ### [Config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php)
 ```php
@@ -126,7 +126,7 @@ class Object
 $response = $app->call(new Invokable(new Plugin('response')));
 ```
 
-An [invokable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invokable.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L398) to return an anonymous function that when invoked will resolve and return its configured value.
+An [invokable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invokable.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L398) to return an anonymous function. When invoked, it will resolve and return its configured value.
 
 ### [Invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php)
 ```php
@@ -135,7 +135,7 @@ new Invoke(new Args([new Plugin('response'), 'setStatusCode']), [500]),
 new Invoke(function() { var_dump(func_get_args()); }),
 ```
 
-An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L392) to return an anonymous function that when invoked will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
+An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L392) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
 
 ```php
 $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('Request')])

@@ -4,7 +4,7 @@
 ```php
 $config = include __DIR__ . '/../config/config.php';
 
-$config['events']['web2'] = [
+$config['events']['web'] = [
     function($model, $msg) {
         return $model . ' ' . $msg;
     },    
@@ -14,5 +14,5 @@ $config['events']['web2'] = [
     }
 ];
 
-(new App($config))->call('web2', ['model' => 'Hello', 'msg' => 'World!']);
+(new App($config))->call('web', ['model' => 'Hello', 'msg' => 'World!']);
 ```

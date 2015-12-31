@@ -1,5 +1,5 @@
 ## Functional Programming
-<p>When the application is opened in the web browser the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script is called. However for this example, a simpler version is provided below without any exception handling.</p>
+<p>When the application is opened in the web browser the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script is called. However, for this example, a simpler version is provided below without any exception handling.</p>
 
 ```php
 <?php
@@ -27,14 +27,14 @@ include __DIR__ . '/../init.php';
 'web' => new Response('web')
 ```
 
-<p>If no <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php">service</a> or <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">event</a> configuration exists for the name <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L313">web</a>, then an error will occur because a function with that name does not exist. However, one can be added to the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script. To easily test this, the name web2 should be used instead.</p>
+<p>If no <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php">service</a> or <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">event</a> configuration exists for the name <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L313">web</a>, then an exception will <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L62">occur</a> because a plugin for that name does not exist. Instead, a function with that name can be added to the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script.</p>
 
 ```php
-function web2($request, $response) {
+function web($request, $response) {
     var_dump($request->getPathInfo());
 }
 
-(new App(include __DIR__ . '/../config/config.php'))->call('@web2');
+(new App(include __DIR__ . '/../config/config.php'))->call('@web');
 ```
 
 <p>By default, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67">call</a> method assumes that a string is the name of an object, or an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> to invoke. However, since it is a function, its name must be prefixed with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L18">@</a> sign to indicate that it is a function or <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L32">static class method</a> and should be invoked directly instead of creating an object.</p>
