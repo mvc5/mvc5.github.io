@@ -1,5 +1,5 @@
 ## Configuration and ArrayAccess
-A standard [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface is used consistently throughout each component in order to provide a standard set of *concrete* configuration methods. Its [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface enables the [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) to [retrieve](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L276) nested configuration values, e.g.
+A standard [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface is used consistently throughout each component and provides a concrete set of methods to use. Its [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface enables the [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) to [retrieve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L224) composite configuration values. E.g.
 
 ```php
 new Param('templates.error');
@@ -11,7 +11,7 @@ Resolves to
 $config['templates']['error'];
 ```
 
-Which makes it possible to use either an array or a [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) object when [references](http://php.net/manual/en/language.references.php) are needed, e.g [templates and aliases](https://github.com/mvc5/framework/blob/master/config/config.php#L13).
+Which makes it possible to use an array or a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) object when [references](http://php.net/manual/en/language.references.php) are needed, e.g [templates](https://github.com/mvc5/mvc5-application/blob/master/config/config.php).
 
 ```php
 interface Configuration
@@ -24,23 +24,21 @@ interface Configuration
 }
 ```
 
-Implementing the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface allows components to only need to specify their immutable methods and the component can choose whether to extend the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface or to implement it separately. Most of the time, only the immutable methods are of interest and the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) interface provides a consistent way of instantiating it.
+Implementing the [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface allows components to only need to specify their immutable methods.
 
 ```php
 interface Route
     extends Configuration
 {
-    const CONTROLLER = 'controller';
-    const PATH = 'path';
     function controller();
     function path();
 }
 ```
 
-Constants can be used by other components to update the [configuration](https://github.com/mvc5/framework/blob/master/src/Config/Configuration.php) object via [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php).
+[Constants](https://github.com/mvc5/mvc5/blob/master/src/Arg.php) can be used by other components to update a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) object via its [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface.
 
 ```php
-$route[Route::PATH] = '/home';
+$route[Arg::PATH] = '/home';
 //or
-$route->set(Route::PATH, '/home');
+$route->set(Arg::PATH, '/home');
 ```

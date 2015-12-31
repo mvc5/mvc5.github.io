@@ -6,16 +6,18 @@ scrollspy: sidebar
 ---
 {% include_relative features.md %}
 {% include_relative maintainability.md %}
-{% include_relative usage.md %}
+{% include_relative web-application.md %}
+{% include_relative console-application.md %}
+{% include_relative environment-aware.md %}
 {% include_relative configuration-and-arrayaccess.md %}
 {% include_relative routes.md %}
-{% include_relative model-view-controller.md %}
+{% include_relative action-controller.md %}
+{% include_relative view-models.md %}
 {% include_relative rendering-view-models.md %}
 {% include_relative events.md %}
 {% include_relative dependency-injection.md %}
 {% include_relative service-container.md %}
-{% include_relative constructor-autowiring.md %}
-{% include_relative resolvable-service-configurations.md %}
-{% include_relative custom-service-providers.md %}
-{% include_relative named-arguments-and-plugins.md %}
-{% include_relative plugins-and-aliases.md %}
+{% include_relative autowiring.md %}
+{% include_relative plugins.md %}
+{% include_relative service-providers.md %}
+{% include_relative named-arguments.md %}

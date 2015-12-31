@@ -3,12 +3,13 @@
     <li>
         <p>Download the demo application.</p>
         <p style="margin-top:20px;">
-            <a class="btn btn-default btn-lg" href="https://github.com/mvc5/application/archive/master.zip"><span class="glyphicon glyphicon-download"></span> Demo Application</a>
+            <a class="btn btn-default btn-lg" href="https://github.com/mvc5/mvc5-application/archive/master.zip"><span class="glyphicon glyphicon-download"></span> Demo Application</a>
         </p>
     </li>
     <li>
         <p>Extract archive and rename directory to <b>mvc5playground</b>.</p>
-        <pre><code class="language-php">$ unzip ./master.zip<br>$ mv application-master mvc5playground</code></pre>
+        <pre><code class="language-php">$ unzip ./mvc5-application-master.zip</code></pre>
+        <pre><code class="language-php">$ mv mvc5-application-master mvc5playground</code></pre>
     </li>
     <li>
         <p>Install composer.</p>

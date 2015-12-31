@@ -1,60 +1,49 @@
 ## Events
-An [event](https://github.com/mvc5/framework/blob/master/src/Event/Event.php) is a function just like any other function. However, instead of having a single function for its implementation, it can be implemented across multiple functions. Which via its [configuration](https://github.com/mvc5/framework/blob/master/config/event.php), allows the function to be easily extended.       
+An [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) is a function just like any other function. However, instead of being implemented as a single function, it can be implemented across multiple functions that can be easily extended via its [configuration](https://github.com/mvc5/mvc5/blob/master/config/event.php).       
 
 ```php
-function dispatch(callable $controller, array $args = [])
+function action($controller, array $args = [])
 {
-    return $this->trigger([Controller::DISPATCH, Args::CONTROLLER => $controller], $args, $this);
+    return $this->call($controller, $args);
 }
 ```
 
-For example, rather than directly invoking the controller, the [dispatch](https://github.com/mvc5/framework/blob/master/src/Controller/Manager/Manager.php#L47) method triggers the [controller dispatch](https://github.com/mvc5/framework/blob/master/src/Controller/Dispatch/Dispatch.php) event and returns a result. This allows additional functions to be [configured](https://github.com/mvc5/framework/blob/master/config/event.php#L7) so that they can be invoked before and after [calling](https://github.com/mvc5/framework/blob/master/src/Controller/Dispatch/Dispatcher.php) the controller. In the above, the first parameter of the [trigger](https://github.com/mvc5/framework/blob/master/src/Event/Manager/ManageEvent.php#L53) method is a service configuration array containing the event class name and its named constructor arguments. This parameter can be a string, i.e the name of the event, an array (or a [resolvable](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolvable.php)) service configuration, or an event object.   
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) function [can](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L180) also [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L30) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php). However, sometimes it may be preferable to pass the event arguments directly to its constructor, in which case the [trigger](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L457) method can be used.
 
-When the first parameter of the [trigger](https://github.com/mvc5/framework/blob/master/src/Event/Manager/ManageEvent.php#L53) method is a string that does not have a service configuration, then the result of the last function called will be returned as the result for that event. This causes the event to be a list of functions whose iteration cannot be stopped and its result cannot be controlled from outside of the functions being called. In order to allow the event to be [stopped](https://github.com/mvc5/framework/blob/master/src/Event/Event.php#L23) and for better inversion of control, an event class should be used.
 
 ```php
-class Dispatch
-    implements Event
+function match($definition, $route)
 {
-    use EventSignal;
-    
-    function args()
-    {
-        return [
-            Args::EVENT      => $this,
-            Args::CONTROLLER => $this->controller
-        ];        
-    }
-    
-    function __invoke(callable $listener, array $args = [], callable $callback = null)
-    {
-        $response = $this->signal($listener, $this->args() + $args, $callback);
-        
-        if ($response instanceof Response) {
-            $this->stop();
-        }
-        
-        return $response;
-    }
+    return $this->trigger([Arg::ROUTE_MATCH, Arg::DEFINITION => $definition, Arg::ROUTE => $route]);
 }
 ```
 
-The above shows an event class that uses the [signal](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Signal.php) method to provide support for [named arguments](#named-arguments-and-plugins) to the functions for that event. The method signature of these functions can specify any of the parameters available from the args function, or the $args array, or the [$callback](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L423) function which can be a [service manager](https://github.com/mvc5/framework/blob/master/src/Service/Manager/ServiceManager.php) that provides support for [named arguments and plugins](#named-arguments-and-plugins).  
+When the [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) method is used to [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L73) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) that does not have a plugin configuration, an instance the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L183). This allows a common model parameter to be used by the functions of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event.php) to contain a value that is not null.
+
+```php
+function __invoke(callable $callable, array $args = [], callable $callback = null)
+{
+    $model = $this->signal($callable, $this->args() + $args, $callback);
+
+    null !== $model
+        && $this->model = $model;
+
+    return $model;
+}
+```
 
 ## Event Configuration
-Events are <a href="https://github.com/mvc5/application/blob/master/config/event.php">configurable</a> and can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object. Each item returned must [resolve](https://github.com/mvc5/framework/blob/master/src/Service/Resolver/Resolver.php#L186) to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type.
+Events are <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">configurable</a> and can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object. Each item returned must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) to a [callable](http://php.net/manual/en/language.types.callable.php) type.
 
 ```php
-'Mvc' => new \ArrayIterator([
-    'Mvc\Route',
-    'Mvc\Controller',
-    'Mvc\Layout',
-    'Mvc\View',
-    function($event, $vm) { //named args
-        var_dump(__FILE__, $event, $vm);
+'mvc' => [
+    'mvc\route',
+    'mvc\controller',
+    'mvc\layout',
+    'mvc\view',
+    function($event, $request) { //named args
+        var_dump(__FILE__, $event, $request);
     },
-    'Mvc\Response'
-]),
+    'mvc\response'
+],
 ```
-
-The event class itself can be [traversable](http://php.net/manual/en/class.traversable.php) and contain its own configuration. See the [action controller](https://github.com/mvc5/framework/blob/master/src/Controller/Action/Action.php) event as an [example](#controlleractionhttpsgithubcommvc5frameworkblobmastersrcserviceconfigcontrolleractioncontrolleractionphp). 

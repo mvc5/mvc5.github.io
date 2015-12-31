@@ -49,37 +49,37 @@ layout: layout
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                        Constructor Autowiring
+                        Autowiring
                     </h1>
-                    <small>Minimize service configurations by letting the system automatically resolve and inject constructor dependencies</small>
+                    <small>Minimize your configuration and allow the system to automatically resolve and inject dependencies</small>
                 </div>
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Service Providers
                     </h1>
-                    <small>Create and integrate your own service configurations and providers</small>
+                    <small>Create and integrate your own service providers</small>
                 </div>
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Plugins
                     </h1>
-                    <small>Create your own plugins for named arguments, view helpers or any purpose</small>
+                    <small>Create your own plugins for any purpose</small>
                 </div>
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Event Behaviors
                     </h1>
-                    <small>Improve inversion of control by creating custom events</small>
+                    <small>Enhance your inversion of control by creating custom events</small>
                 </div>
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Console Applications
                     </h1>
-                    <small>Create command line scripts just like any other class and have their dependencies automatically injected</small>
+                    <small>Create command line scripts just like any other class or function and have their dependencies automatically injected</small>
                 </div>                
           </div>
         </div>
@@ -94,20 +94,17 @@ layout: layout
     </div>
     <div class="row text-center">
         <p>
-            <a href="https://travis-ci.org/mvc5/framework"><img src="https://api.travis-ci.org/mvc5/application.svg" alt="Build Status"></a>
-            <a href="https://codeclimate.com/github/mvc5/framework"><img src="https://codeclimate.com/github/mvc5/framework/badges/coverage.svg" alt="Test Coverage"></a>
-            <a href="https://codeclimate.com/github/mvc5/framework"><img src="https://codeclimate.com/github/mvc5/framework/badges/gpa.svg" alt="Code Climate"></a>
+            <a href="https://travis-ci.org/mvc5/mvc5"><img src="https://api.travis-ci.org/mvc5/mvc5.svg" alt="Build Status"></a>
+            <a href="https://codeclimate.com/github/mvc5/mvc5"><img src="https://codeclimate.com/github/mvc5/mvc5/badges/coverage.svg" alt="Test Coverage"></a>
+            <a href="https://codeclimate.com/github/mvc5/mvc5"><img src="https://codeclimate.com/github/mvc5/mvc5/badges/gpa.svg" alt="Code Climate"></a>
         </p>
         <p>
-            <a href="https://scrutinizer-ci.com/g/mvc5/framework/build-status/master"><img src="https://scrutinizer-ci.com/g/mvc5/framework/badges/build.png?b=master" alt="Build Status"></a>
-            <a href="https://scrutinizer-ci.com/g/mvc5/framework/?branch=master"><img src="https://scrutinizer-ci.com/g/mvc5/framework/badges/coverage.png?b=master" alt="Code Coverage"></a>
-            <a href="https://scrutinizer-ci.com/g/mvc5/framework/?branch=master"><img src="https://scrutinizer-ci.com/g/mvc5/framework/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+            <a href="https://scrutinizer-ci.com/g/mvc5/mvc5/build-status/master"><img src="https://scrutinizer-ci.com/g/mvc5/mvc5/badges/build.png?b=master" alt="Build Status"></a>
+            <a href="https://scrutinizer-ci.com/g/mvc5/mvc5/?branch=master"><img src="https://scrutinizer-ci.com/g/mvc5/mvc5/badges/coverage.png?b=master" alt="Code Coverage"></a>
+            <a href="https://scrutinizer-ci.com/g/mvc5/mvc5/?branch=master"><img src="https://scrutinizer-ci.com/g/mvc5/mvc5/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
         </p>
-        <p>
-            <a href="https://packagist.org/packages/mvc5/framework"><img src="https://poser.pugx.org/mvc5/framework/downloads" alt="Total Downloads"></a>
-            <a href="https://packagist.org/packages/mvc5/framework"><img src="https://poser.pugx.org/mvc5/framework/license" alt="License"></a>
-        </p>
-        <p><a href="https://insight.sensiolabs.com/projects/6a19e4e3-e771-46e3-9f10-fe1c06837f43"><img src="https://insight.sensiolabs.com/projects/6a19e4e3-e771-46e3-9f10-fe1c06837f43/big.png" alt="SensioLabsInsight"></a></p>
+        <p><a href="https://packagist.org/packages/mvc5/mvc5"><img src="https://img.shields.io/:license-mit-blue.svg" alt="License"></a></p>
+        <p><a href="https://insight.sensiolabs.com/projects/6a19e4e3-e771-46e3-9f10-fe1c06837f43"><img src="https://insight.sensiolabs.com/projects/0468aa74-4897-49f0-b42f-3211401d0c09/big.png" alt="SensioLabsInsight"></a></p>
         <p><a href="https://gitter.im/mvc5/framework?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://camo.githubusercontent.com/da2edb525cde1455a622c58c0effc3a90b9a181c/68747470733a2f2f6261646765732e6769747465722e696d2f4a6f696e253230436861742e737667" alt="Gitter" data-canonical-src="https://badges.gitter.im/Join%20Chat.svg" style="max-width:100%;"></a></p>
     </div>
 </div>
