@@ -28,7 +28,7 @@ The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin 
 'mvc\layout' => new Calls(new Plugin(Mvc5\Mvc\Layout::class), ['service' => new Link])
 ```
 
-The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydratorhttpsgithubcommvc5frameworkblobmastersrcserviceconfighydratorhydratorphp) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L348) to resolve a plugin with a set of function calls and supports [named arguments](#name-arguments-and-plugins).   
+The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydratorhttpsgithubcommvc5mvc5blobmastersrcpluginhydratorphp) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L348) to resolve a plugin with a set of function calls and supports [named arguments](#name-arguments-and-plugins).   
 
 ### [Child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php)
 ```php
@@ -36,7 +36,7 @@ The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugi
 'service\manager' => new Child(Service\Manager::class, 'manager'),
 ```
 
-A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L352) to extend a parent plugin. The first parameter is the name of the class to create and the second is the name of the parent plugin. Custom child configurations can also be created to allow another [plugin](#confighttpsgithubcommvc5frameworkblobmastersrcserviceconfigconfigphp) to be used without having to specify the name of its parent. Examples are the [controller](#controllerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigcontrollercontrollerphp), [factory](#factoryhttpsgithubcommvc5frameworkblobmastersrcserviceconfigfactoryfactoryphp), [form](#formhttpsgithubcommvc5frameworkblobmastersrcserviceconfigformformphp) and [manager](#managerhttpsgithubcommvc5frameworkblobmastersrcserviceconfigmanagermanagerphp) plugins. 
+A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L352) to extend a parent plugin. The first parameter is the name of the class to create and the second is the name of the parent plugin. Custom child configurations can also be created to allow another [plugin](#pluginhttpsgithubcommvc5mvc5blobmastersrcpluginpluginphp) to be used without having to specify the name of its parent. Examples are the [controller](#controllerhttpsgithubcommvc5mvc5blobmastersrcplugincontrollerphp), [factory](#factoryhttpsgithubcommvc5mvc5blobmastersrcpluginfactoryphp), [form](#formhttpsgithubcommvc5mvc5blobmastersrcpluginformphp) and [manager](#managerhttpsgithubcommvc5mvc5blobmastersrcpluginmanagerphp) plugins. 
 
 ### [Config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php)
 ```php
@@ -186,7 +186,7 @@ A [plug](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plug.php) is [used]
 ```php
 'router' => new Plugin(Mvc5\Route\Router:class, [new Param('routes')], ['service' => new Link])
 ```
-A [plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L356) to instantiate a class object.  It requires the name of a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin and optionally, its constructor arguments and a set of calls to invoke. See the [hydrator](#hydratorhttpsgithubcommvc5frameworkblobmastersrcserviceconfighydratorhydratorphp) plugin for details on how to specify the calls to invoke.  
+A [plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L356) to instantiate a class object.  It requires the name of a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin and optionally, its constructor arguments and a set of calls to invoke. See the [hydrator](#hydratorhttpsgithubcommvc5mvc5blobmastersrcpluginhydratorphp) plugin for details on how to specify the calls to invoke.  
 
 ### [Response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php)
 ```php
@@ -200,4 +200,4 @@ A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) p
 'router' => new Service(Mvc5\Route\Router:class, [new Param('routes')])
 ```
 
-A [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php) plugin is similar to a [plugin](#servicehttpsgithubcommvc5frameworkblobmastersrcserviceconfigserviceservicephp) and is used to add a call to a [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php#L20L77) method to set the current service object.  
+A [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php) plugin is similar to a [plugin](#pluginhttpsgithubcommvc5mvc5blobmastersrcpluginpluginphp) and is used to add a call to a [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php#L20L77) method to set the current service object.  
