@@ -163,10 +163,10 @@ A [manager](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Manager.php) plu
 
 ### [Model](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Model.php)
 ```php
-new Model('home')
+new Model('error/404', ['message' => 'A 404 error occurred'])
 ```
 
-A [model](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Model.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L356) to create a [view model](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php).
+A [model](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Model.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L356) to create a [view model](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php). Its first parameter is the template name and the second parameter contains its values.
 
 ### [Param](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Param.php)
 ```php
