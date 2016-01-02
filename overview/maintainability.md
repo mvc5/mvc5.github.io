@@ -7,8 +7,6 @@ _[View the interactive PhpMetrics report](/phpmetrics)_
 [![](/phpmetrics/images/custom.png)](/phpmetrics/)[![](/phpmetrics/images/abstractness.png)](/phpmetrics/)
 
 ## Benchmark
-*Current*
-
 ```
 HTML transferred:       2406000 bytes
 Requests per second:    3312.96 [#/sec] (mean)
