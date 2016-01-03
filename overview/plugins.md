@@ -193,7 +193,35 @@ A [plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php) is [u
 'web' => new Response('web')
 ```
 
-A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) plugin is used to [dispatch](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php) a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php). It uses the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) to [control](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php) the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object being [dispatched](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php). However, because the [default configuration](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) is to use a shared instance of the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object, the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) does not have to completely dispatch the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php). This is because the [web plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L70) that [invokes](https://github.com/mvc5/mvc5/blob/master/config/event.php#L67) the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php) is also a [response plugin](#responsehttpsgithubcommvc5mvc5blobmastersrcpluginresponsephp) and uses a shared instance of the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object.    
+A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) plugin is used to [dispatch](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php) a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php). It configures the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) with the name of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) to use and optionally, a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object. Each [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) function can return a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object for the the next [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) function to use.  
+
+```php
+'web' => [
+    'mvc',
+    'response\send'
+]
+```
+
+By default, the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) uses a shared [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object.
+
+```php
+'response\dispatch' => [Mvc5\Response\Dispatch::class, 'response' => new Dependency('response')]
+```
+
+This allows other [response plugins](responsehttpsgithubcommvc5mvc5blobmastersrcpluginresponsephp), such as the [route error plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L53), to not have to completely dispatch a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php).
+ 
+```php
+'route\error' => [
+    'error\status',
+    'error\route',
+    // halt mvc event or new response object
+    //'error\controller',
+    //'error\view',
+    //'error\response'
+]
+```
+
+For example, the [route error plugin](https://github.com/mvc5/mvc5/blob/master/config/event.php#L32) is part of the [mvc event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L13). When the [route error plugin](https://github.com/mvc5/mvc5/blob/master/config/event.php#L32) is called, it can update the shared [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object without [interrupting](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php). If it did return a response, it would [stop](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php) and the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) is passed to the [response send plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L48), which [sends](https://github.com/mvc5/mvc5/blob/master/src/Response/Send.php) the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) to the browser as part of the [web event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L66).
 
 ### [Service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php)
 ```php
