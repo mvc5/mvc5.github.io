@@ -20,10 +20,10 @@
   </div>
   <div class="media-body">
   <h4 id="application-directory">Application</h4>
-    <p>The <a href="https://github.com/mvc5/mvc5-application/tree/master/config">config</a> directory contains the php array configuration files that includes and overrides the default framework configuration. These configuration files can also be <a href="/overview/#environment-aware">environment aware</a>.</p>
+    <p>The <a href="https://github.com/mvc5/mvc5-application/tree/master/config">config</a> directory contains the php array configuration files that includes and overrides the <a href="https://github.com/mvc5/mvc5/tree/master/config">Mvc5 configuration</a>. These configuration files can also be <a href="/overview/#environment-aware">environment aware</a>.</p>
     <p>The <a href="https://github.com/mvc5/mvc5-application/tree/master/public">public</a> directory is the web site document root and contains the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">index.php</a> script.</p>
     <p>The <a href="https://github.com/mvc5/mvc5-application/tree/master/src">src</a> directory contains the application class files and uses the <a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a> autoloading standard.</p>
-    <p>The vendor directory is used for external libraries including the <a href="#mvc5-directory">mvc5</a> directory.</p>
+    <p>The <a href="https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies">vendor</a> directory is used for external libraries including the <a href="#mvc5-directory">mvc5</a> directory.</p>
     <p>The <a href="https://github.com/mvc5/mvc5-application/tree/master/view">view</a> directory contains the view model templates.</p>
   </div>
 </div>

@@ -1,5 +1,7 @@
 ## Source Code
-<p>The Mvc5 Framework has no external dependencies and can be downloaded separately or <a href="#composer-install">installed via composer</a>. However, the best way to explore the Mvc5 Framework is to install the <a href="#demo-application">demo application</a>.</p>
+<p>The <a href="https://github.com/mvc5/mvc5">Mvc5 Framework</a> has no external dependencies and can be <a href="https://github.com/mvc5/mvc5/releases/latest">downloaded</a> separately.</p>
 <p style="margin-top:20px;">
-    <a class="btn btn-default btn-lg" href="https://github.com/mvc5/mvc5/releases/latest"><span class="glyphicon glyphicon-hand-right"></span> Latest Release</a>
+    <a class="btn btn-default btn-lg" href="https://github.com/mvc5/mvc5/releases/latest"><span class="glyphicon glyphicon-download"></span> Latest Release</a>
 </p>
+<p style="margin-top:20px;">Or installed using <a href="https://getcomposer.org">Composer</a>.</p>
+<pre><code>$ composer.phar require mvc5/mvc5</code></pre>

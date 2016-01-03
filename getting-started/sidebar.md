@@ -1,7 +1,6 @@
 <nav data-spy="affix" data-offset-top="286" id="sidebar" role="navigation">
     <ul class="nav nav-pills nav-stacked">
         <li role="presentation"><a href="#source-code">Source Code</a></li>
-        <li role="presentation"><a href="#composer-install">Composer Install</a></li>
         <li role="presentation"><a href="#demo-application">Demo Application</a></li>
         <li role="presentation"><a href="#directory-structure">Directory Structure</a></li>
         <li role="presentation"><a href="#create-a-web-page">Create A Web Page</a></li>

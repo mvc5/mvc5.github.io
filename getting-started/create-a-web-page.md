@@ -1,5 +1,5 @@
 ## Create A Web Page
-<p class="text-info">Copy and paste the example code into each new file.</p>
+<h6 class="text-info">Copy and paste the example code into each new file.</h6>
 <p style="margin-top:25px;"><a id="view-model"></a><b>1.</b> Create a new view model file in the <a href="https://github.com/mvc5/mvc5-application/tree/master/src/Home">src/Home</a> directory named <a href="https://github.com/mvc5/mvc5-application/tree/master/src/Home/Model.php">Model.php</a>.</p>
 <pre style="line-height:1"><code><?php
 
@@ -71,5 +71,5 @@ return [
 ];</code></pre>
 <p>Open the demo application in a web browser. It will display the hello world message on the home page. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
-    <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="131" title="Demo Home Page">
+    <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="128" title="Demo Home Page">
 </div>
