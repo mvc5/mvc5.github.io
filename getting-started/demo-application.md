@@ -1,5 +1,5 @@
 ## Demo Application
-<p>The easiest way to get started is to install the <a href="https://github.com/mvc5/mvc5-application">demo application</a>.</p>
+<p>Install the <a href="https://github.com/mvc5/mvc5-application">demo application</a>.</p>
 <pre><code class="language-php">$ composer.phar create mvc5/mvc5-application mvc5playground</code></pre>
 <p style="margin-top:20px;">The document root should point to the <a href="https://github.com/mvc5/mvc5-application/tree/master/public"><code>public</code></a> directory.</p>
 <div class="thumbnail" style="border:none;">
