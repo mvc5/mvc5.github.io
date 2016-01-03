@@ -35,4 +35,10 @@ class Example
 }
 ```
 
+An [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) can also work without any configuration.
+
+```php
+(new App)->call($argv[1], array_slice($argv, 2));;
+```
+
 Read more about <a href="#dependency-injection">dependency injection</a>, <a href="#autowiring">autowiring</a> and <a href="#named-arguments">named arguments</a> for how the required arguments of a function can be resolved. Note that it is possible to create console applications similar to a [web application](#web-application) with [routes](#routes) and controllers.
