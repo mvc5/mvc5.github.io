@@ -70,10 +70,12 @@ A [factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php) plu
 
 ### [Filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php)
 ```php
-'response' => new Filter(new Plugin(Response::class), ['var_dump']),
+'response' => new Filter(
+    new Plugin(Response::class), [function($response) { return $response;  }], [], 'response'
+)
 ```
 
-A [filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L384) to pass a value from one function to the next and returns the result of the last function called.
+A [filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L384) to pass a value from one function to the next and returns the result of the last function called. If a function returns null, the iteration is stopped and null is returned. If a function returns false, the iteration is stopped and the previous value, or current object, is returned. The third parameter contains any additional arguments and the fourth parameter specifies the name of the argument for the value that is being filtered.     
 
 ### [Form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php)
 ```php
