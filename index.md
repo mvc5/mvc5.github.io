@@ -90,7 +90,7 @@ layout: layout
         <a style="margin:5px" class="btn btn-default btn-lg" href="/getting-started" role="button"><span class="glyphicon glyphicon-send"></span> Getting Started</a>            
         <a style="margin:5px" class="btn btn-default btn-lg" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>
         <a style="margin:5px" class="btn btn-default btn-lg" href="/phpmetrics"><span class="glyphicon glyphicon-dashboard"></span> PhpMetrics Report</a>
-        <a style="margin:5px" class="btn btn-default btn-lg" href="https://github.com/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>
+        <a style="margin:5px" class="btn btn-default btn-lg" href="https://github.com/mvc5/mvc5" role="button"><span class="glyphicon glyphicon-hand-right"></span> Github</a>
     </div>
     <div class="row text-center">
         <p>
