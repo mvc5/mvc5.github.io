@@ -58,7 +58,11 @@ A [controller](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Controller.ph
 new Dependency('response')
 ```
 
-A [dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L360) to create a [shared](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Initializer.php#L44) class object.
+A [dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L360) to create a [shared](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Initializer.php#L44) value. When used as a configuration value, it should specify another configuration in order to prevent a recursion error. Alternatively, a configuration can be passed as a second argument to its constructor.
+
+```php
+'response' => new Dependency('response', new Plugin(Http\Response::class))
+```
 
 ### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
@@ -67,6 +71,13 @@ A [dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.ph
 ```
 
 A [factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L344) to create a class object without having to specify the name of its parent _factory_ plugin.
+
+### [FileInclude](https://github.com/mvc5/mvc5/blob/master/src/Plugin/FileInclude.php)
+```php
+new FileInclude('config/templates.php'),
+```
+
+A [file include](https://github.com/mvc5/mvc5/blob/master/src/Plugin/FileInclude.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L457) to [include](http://php.net/manual/en/function.include.php) and evaluate a specified file. The name of the file can also be resolved via another plugin.   
 
 ### [Filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php)
 ```php
