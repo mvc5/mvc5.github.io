@@ -193,7 +193,7 @@ A [param](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Param.php) is [use
 new Plug('controller\exception')
 ```
 
-A [plug](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plug.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L388) to return the value of another plugin configuration without resolving it.
+A [plug](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plug.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L388) to return the value of another plugin configuration.
 
 ### [Plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php)
 ```php
