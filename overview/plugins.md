@@ -53,6 +53,13 @@ The [config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php) plu
 
 A [controller](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Controller.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L352) to provide the constructor arguments and call methods for a controller without having to specify the name of its parent _controller_ plugin. This is a convenience plugin for when controllers have a similar method of instantiation.    
 
+### [Copy](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Copy.php)
+```php
+new Copy(new Plug('response'))
+```
+
+The [copy](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Copy.php) plugin can be [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L252) to [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L500) and [clone](http://php.net/manual/en/internals2.opcodes.clone.php) an object.
+
 ### [Dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.php)
 ```php
 new Dependency('response')
