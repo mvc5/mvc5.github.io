@@ -5,3 +5,4 @@
 </p>
 <p style="margin-top:20px;">Or installed using <a href="https://getcomposer.org">Composer</a>.</p>
 <pre><code>$ composer.phar require mvc5/mvc5</code></pre>
+<p>For PHP 5.6 use <code>mvc5/framework</code>.</p>
