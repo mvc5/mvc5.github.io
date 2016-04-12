@@ -15,6 +15,8 @@ layout: layout
             <li data-target="#slides" data-slide-to="6"></li>
             <li data-target="#slides" data-slide-to="7"></li>
             <li data-target="#slides" data-slide-to="8"></li>
+            <li data-target="#slides" data-slide-to="9"></li>
+            <li data-target="#slides" data-slide-to="10"></li>
           </ol>        
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
@@ -70,7 +72,7 @@ layout: layout
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                        Event Behaviors
+                        Events
                     </h1>
                     <small>Enhance your inversion of control by creating custom events</small>
                 </div>
@@ -81,6 +83,20 @@ layout: layout
                     </h1>
                     <small>Create command line scripts just like any other class or function and have their dependencies automatically injected</small>
                 </div>                
+                <div class="item">
+                    <h1>
+                        <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                        PSR-7 Middleware
+                    </h1>
+                    <small>Create PSR-7 Middleware applications with anonymous functions, plugins and dependency injection</small>
+                </div>
+                <div class="item">
+                    <h1>
+                        <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                        REST API Methods
+                    </h1>
+                    <small>Configure routes with actions for specific HTTP Methods</small>
+                </div>
           </div>
         </div>
     </div>

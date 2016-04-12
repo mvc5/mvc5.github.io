@@ -208,6 +208,24 @@ A [plug](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plug.php) is [used]
 ```
 A [plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L187) to instantiate a class object.  It requires the name of a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin and optionally, its constructor arguments and a set of calls to invoke. See the [hydrator](#hydratorhttpsgithubcommvc5mvc5blobmastersrcpluginhydratorphp) plugin for details on how to specify the calls to invoke.  
 
+### [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugins.php)
+```php
+new Plugins(new FileInclude(__DIR__.'/plugins.php'), new Link, true)
+```
+A [plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugins.php) config is used to instantiate an instance of the [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugins.php) class.  It requires an array of service plugins and optionally a service provider for when a configuration can not be resolved, this allows nested containers to be created and a reference to the parent container can be provided using the [Link](#linkhttpsgithubcommvc5mvc5blobmastersrcpluginlinkphp) plugin. The third parameter indicates the [scope](http://php.net/manual/en/closure.bind.php) of the anonymous functions within the configuration, setting it to true will use the [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugins.php) object.
+
+### [Provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php)
+```php
+new Provide($config, array $args = [])
+```
+The [provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php) plugin is used to retrieve a value from its parent container.
+
+### [Provider](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php)
+```php
+new Provider(Server\Config::class, new Plugins(new FileInclude(__DIR__.'/server.php'), new Link))
+```
+The [provider](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php) plugin is used to set the scope of the [Plugins](#pluginshttpsgithubcommvc5mvc5blobmastersrcpluginpluginsphp) container to the object that is being created.
+
 ### [Response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php)
 ```php
 'web' => new Response('web')
@@ -249,3 +267,10 @@ For example, the [route error plugin](https://github.com/mvc5/mvc5/blob/master/c
 ```
 
 A [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php) plugin is similar to a [plugin](#pluginhttpsgithubcommvc5mvc5blobmastersrcpluginpluginphp) and is used to add a call to a [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php#L20L77) method to set the current service object.  
+
+### [Value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Value.php)
+```php
+new Value('A demo web page')
+```
+
+A [value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Value.php) plugin is used to return a string value from the services container instead of the main configuration. Otherwise the container will assume that the string is the name of a class to instantiate.

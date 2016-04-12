@@ -49,10 +49,10 @@ return [
 ];
 ```
 
-Route [definition](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition.php) names are used by the url [route generator](https://github.com/mvc5/mvc5/blob/master/src/Route/Generator.php), e.g
+Route [definition](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition.php) names are used by the url [route generator](https://github.com/mvc5/mvc5/blob/master/src/Route/Generator.php) and can create an absolute url, e.g
 
 ```php
-echo $this->url('blog/create', ['author' => 'owner', 'category' => 'oop']);
+echo $this->url('blog/create', ['author' => 'owner', 'category' => 'oop'], ['canonical' => true]);
 ```
 
 If the [router](https://github.com/mvc5/mvc5/blob/master/src/Route/Router/Router.php) does not return a [matched route](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L43), a [route error event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L32) is used to [update the response status](https://github.com/mvc5/mvc5/blob/master/src/Response/Status.php) and to return the [current route](https://github.com/mvc5/mvc5-application/blob/master/config/service.php#L84) with the [name of the error controller](https://github.com/mvc5/mvc5/blob/master/src/Route/Error/Create.php#L39) to [use](https://github.com/mvc5/mvc5/blob/master/config/service.php#L23).
