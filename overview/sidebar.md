@@ -21,7 +21,7 @@
         <li role="presentation"><a href="#routes">Routes</a></li>
         <li role="presentation"><a href="#rest-api-methods">REST API Methods</a></li>
         <li role="presentation"><a href="#action-controller">Action Controller</a></li>
-        <li role="presentation"><a href="#psr-7-middleware">PSR-7 Middleware</a></li>
+        <li role="presentation"><a href="#middleware">Middleware</a></li>
         <li role="presentation">
             <a href="#view-models">View Models</a>
             <ul class="nav nav-pills nav-stacked">

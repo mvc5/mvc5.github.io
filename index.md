@@ -67,14 +67,14 @@ layout: layout
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Plugins
                     </h1>
-                    <small>Create your own plugins for any purpose</small>
+                    <small>Create plugins for any purpose</small>
                 </div>
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Events
                     </h1>
-                    <small>Enhance your inversion of control by creating custom events</small>
+                    <small>Enhance inversion of control with custom events</small>
                 </div>
                 <div class="item">
                     <h1>
@@ -86,9 +86,9 @@ layout: layout
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                        PSR-7 Middleware
+                        Middleware
                     </h1>
-                    <small>Create PSR-7 Middleware applications with anonymous functions, plugins and dependency injection</small>
+                    <small>Create middleware applications with anonymous functions, plugins and dependency injection</small>
                 </div>
                 <div class="item">
                     <h1>

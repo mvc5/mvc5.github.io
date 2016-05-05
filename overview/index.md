@@ -13,7 +13,7 @@ scrollspy: sidebar
 {% include_relative routes.md %}
 {% include_relative rest-api-methods.md %}
 {% include_relative action-controller.md %}
-{% include_relative psr-7-middleware.md %}
+{% include_relative middleware.md %}
 {% include_relative view-models.md %}
 {% include_relative rendering-view-models.md %}
 {% include_relative events.md %}

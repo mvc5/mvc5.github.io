@@ -71,6 +71,13 @@ A [dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.ph
 'response' => new Dependency('response', new Plugin(Http\Response::class))
 ```
 
+### [End](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php)
+```php
+new End(new Call('@session_start'), new Plugin(Session\Config::class));
+```
+
+The [end](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php) plugin will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) a list of plugins and return the result of the last plugin.
+
 ### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
 'factory'         => new Service(null),
@@ -220,12 +227,6 @@ new Provide($config, array $args = [])
 ```
 The [provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php) plugin is used to retrieve a value from its parent container.
 
-### [Provider](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php)
-```php
-new Provider(Server\Config::class, new Plugins(new FileInclude(__DIR__.'/server.php'), new Link))
-```
-The [provider](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php) plugin is used to set the scope of the [Plugins](#pluginshttpsgithubcommvc5mvc5blobmastersrcpluginpluginsphp) container to the object that is being created.
-
 ### [Response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php)
 ```php
 'web' => new Response('web')
@@ -260,6 +261,12 @@ This allows other [response plugins](responsehttpsgithubcommvc5mvc5blobmastersrc
 ```
 
 For example, the [route error plugin](https://github.com/mvc5/mvc5/blob/master/config/event.php#L32) is part of the [mvc event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L13). When it is called, it [updates the status](https://github.com/mvc5/mvc5/blob/master/config/service.php#L24) of the shared [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object without [stopping](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php). If it returns a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php), the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php) will be [stopped](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) and the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) is passed to the [response send plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L48), which [sends](https://github.com/mvc5/mvc5/blob/master/src/Response/Send.php) the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) to the browser as part of the [web event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L66).
+
+### [Scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php)
+```php
+new Scope(Server\Config::class, new Plugins(new FileInclude(__DIR__.'/server.php'), new Link))
+```
+The [scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php) plugin is used to set the scope of the [Plugins](#pluginshttpsgithubcommvc5mvc5blobmastersrcpluginpluginsphp) container to the object that is being created.
 
 ### [Service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php)
 ```php
