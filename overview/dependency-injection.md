@@ -3,15 +3,14 @@ When a class is [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/
 
 ```php
 [
-    'home'          => Home\Controller::class,
-    'blog'          => [Blog\Controller::class, 'template' => 'blog'],
-    'mvc'           => function(Configuration $sm) { return new Mvc5\Mvc('mvc', $sm); },
-    'mvc\view'      => new Hydrator(Mvc5\Mvc\View::class, ['service' => new Link]),    
-    'request'       => new Request\HttpRequest($_GET, $_POST, [], $_COOKIE, $_FILES, $_SERVER),
-    'response'      => Response\HttpResponse::class,
-    'url'           => new Dependency('url\plugin'),
-    'url\generator' => [Mvc5\Url\Generator::class, new Param('routes')],
-    'url\plugin'    => [Mvc5\Url\Plugin::class, new Dependency('route'), new Plugin('url\generator')]
+    'home'        => Home\Controller::class,
+    'blog'        => [Blog\Controller::class, 'template' => 'blog'],
+    'request'     => Mvc5\Request\Config::class,
+    'response'    => Response\HttpResponse::class,
+    'url'         => new Dependency('url\plugin'),
+    'url\plugin'  => [Mvc5\Url\Plugin::class, new Dependency('request'), new Plugin('url\generator')],
+    'view\render' => new Service(Mvc5\View\Render::class, [new Param('templates')]),
+    'web'         => new Response('web')
 ];
 ```
 

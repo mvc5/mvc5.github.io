@@ -38,7 +38,7 @@ interface Route
 [Constants](https://github.com/mvc5/mvc5/blob/master/src/Arg.php) can be used by other components to update a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) object via its [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface.
 
 ```php
-$route[Arg::PATH] = '/home';
+$request[Arg::NAME] = 'home';
 //or
-$route->set(Arg::PATH, '/home');
+$request->set(Arg::NAME, 'home');
 ```

@@ -1,31 +1,34 @@
 ## Action Controller
-The [mvc action controller](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Controller.php) is used to control the [invocation](https://github.com/mvc5/mvc5/blob/master/src/Controller/Action.php#L20) of the controller specified by the [matched route](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Event/Model.php#L40). 
+The [action controller](https://github.com/mvc5/mvc5/blob/master/src/Controller/Action.php) is used to control the [invocation](https://github.com/mvc5/mvc5/blob/master/src/Controller/Action.php#L24) of the controller specified by the [request](https://github.com/mvc5/mvc5/blob/master/src/Controller/Response.php#L50).
 
 ```php
 function __invoke($controller, array $args = [])
 {
-    try {
-
-        return $this->action($controller, $args);
-
-    } catch (Throwable $exception) {
-
-        return $this->exception($exception, $controller);
-
-    }
+    return $this->action($controller, $args);
 }
 ```
 
-A controller is a function just like any other function. It can also be an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) or a plugin that [resolves](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L84) to a [callable](http://php.net/manual/en/language.types.callable.php) function. If the controller throws an exception, it will be [caught](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Controller.php#L33) and a [controller exception](https://github.com/mvc5/mvc5/blob/master/src/Controller/Action.php#L39) will be invoked. If the [controller exception](https://github.com/mvc5/mvc5/blob/master/src/Controller/Action.php#L39) returns a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php), the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php) will be [stopped](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) and its [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) will be returned and [sent](https://github.com/mvc5/mvc5/blob/master/src/Response/Send.php) to the browser.
+A controller is a function just like any other function. It can also be an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) or a plugin that [resolves](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L84) to a [callable](http://php.net/manual/en/language.types.callable.php) function. If the controller returns a new response, the [controller\response](https://github.com/mvc5/mvc5/blob/master/src/Controller/Response.php) event will be [stopped](https://github.com/mvc5/mvc5/blob/master/src/Controller/Response.php#L74). The returned response is then available for the remaining [web](https://github.com/mvc5/mvc5/blob/master/config/event.php#L33) components to use.
 
 ```php
-'controller\exception' => [
-    'exception\status',
-    'exception\controller',
-    //'exception\view',
-    //'exception\response'
-]
+'web' => [
+    'route\dispatch',
+    'request\error',
+    'request\service',
+    'controller\dispatch',
+    'response\status',
+    'response\version',
+    'response\send'
+],
 ```
 
-However, by default, the [controller exception](https://github.com/mvc5/mvc5/blob/master/src/Controller/Action.php#L39) is [configured](https://github.com/mvc5/mvc5/blob/master/config/event.php#L7) to only [set the response exception status](https://github.com/mvc5/mvc5/blob/master/config/service.php#L32) and to [return a view model](https://github.com/mvc5/mvc5/blob/master/src/Controller/Exception.php#L34) so the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php) can continue, without interruption, to [render the view model](https://github.com/mvc5/mvc5/blob/master/src/Mvc/View.php) and to [return a response](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Response.php).
+The [controller\dispatch](https://github.com/mvc5/mvc5/blob/master/src/Controller/Dispatch.php) component is used to [trigger](https://github.com/mvc5/mvc5/blob/master/src/Controller/Dispatch.php#L27) the [controller\response](https://github.com/mvc5/mvc5/blob/master/src/Controller/Response.php) event.
 
+```php
+'controller\response' => [
+    'controller\action',
+    'view\layout',
+    'view\render',
+    'response\model',
+]
+```

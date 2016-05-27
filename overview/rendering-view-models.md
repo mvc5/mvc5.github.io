@@ -1,10 +1,10 @@
 ## Rendering View Models
-If a [layout](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewLayout.php) is required, the [view model](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php) will be [attached](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Layout.php#L24) to it.
+If a [layout](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewLayout.php) is required, the [view model](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php) will be [attached](https://github.com/mvc5/mvc5/blob/master/src/View/Layout/Model.php#L24) to it.
 
 ```php
 function __invoke(LayoutModel $layout, $model = null)
 {
-    if (!$model || !$model instanceof ViewModel || $model instanceof LayoutModel) {
+    if (!$model instanceof ViewModel || $model instanceof LayoutModel) {
         return $model;
     }
 

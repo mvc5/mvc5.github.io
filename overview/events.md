@@ -36,14 +36,16 @@ function __invoke(callable $callable, array $args = [], callable $callback = nul
 Events are <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">configurable</a> and can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object. Each item returned must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) to a [callable](http://php.net/manual/en/language.types.callable.php) type.
 
 ```php
-'mvc' => [
-    'mvc\route',
-    'mvc\controller',
-    'mvc\layout',
-    'mvc\view',
-    function($event, $request) { //named args
-        var_dump(__FILE__, $event, $request);
+'web' => [
+    'route\dispatch',
+    'request\error',
+    'request\service',
+    'controller\dispatch',
+    function($response) { //named args
+        var_dump(__FILE__, $response);
     },
-    'mvc\response'
+    'response\status',
+    'response\version',
+    'response\send'
 ],
 ```

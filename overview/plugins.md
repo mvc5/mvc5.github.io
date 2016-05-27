@@ -3,8 +3,8 @@ Various types of plugins are available to use and custom plugins can be created.
 
 ### [Args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php)
 ```php
-'route' => [
-    Route\Config::class,
+'request' => [
+    Request\Config::class,
     'config' => new Args([
         'hostname' => new Call('request.getHost'),
         'method'   => new Call('request.getMethod'),
@@ -18,14 +18,14 @@ The [args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php) plugin 
 
 ### [Call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php)
 ```php
-new Call('Home\Controller', ['response' => new Service('Response')])
+new Call('Home\Controller', ['response' => new Plugin('Response')])
 ```
 
 The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L199) to invoke an object or method and supports [named arguments and plugins](#name-arguments-and-plugins). 
 
 ### [Calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php)
 ```php
-'mvc\layout' => new Calls(new Plugin(Mvc5\Mvc\Layout::class), ['service' => new Link])
+'route\dispatch' => new Calls(new Plugin(Mvc5\Route\Dispatch::class), ['service' => new Link])
 ```
 
 The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydratorhttpsgithubcommvc5mvc5blobmastersrcpluginhydratorphp) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L179) to resolve a plugin with a set of function calls and supports [named arguments](#name-arguments-and-plugins).   
@@ -40,7 +40,7 @@ A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin 
 
 ### [Config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php)
 ```php
-'my\service' => new Plugin(My\Service::class, ['config' => new Config])
+'Home\Controller' => [Home\Controller::class, 'config' => new Config]
 ```
  
 The [config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L209) to provide the main configuration array or object. 
@@ -112,7 +112,7 @@ A [form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php) plugin is
 
 ### [Hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php)
 ```php
-'mvc\response' => new Hydrator(Mvc5\Mvc\Layout::class, ['service' => new Link])
+'route\dispatch' => new Hydrator(Mvc5\Route\Dispatch::class, ['service' => new Link])
 ```
 
 A [hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L187) to create an object with a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin name and a set of calls to invoke. Using null for the parameter name is a convenient way for it to be used as a parent plugin. When the array key of its calls configuration is a string, it is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L149) as the name of the method to call on the newly created object and passes its array value as a single [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) argument. However, if the string is prefixed with the $ symbol, the string is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L144) as the name of the object property to set. If a method needs to be called more than once, then an array of methods can be [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L153).
@@ -170,7 +170,7 @@ $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('
 
 ### [Link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php)
 ```php
-'mvc' => [Mvc5\Mvc::class, new Link]
+'request\service' => [Mvc5\Request\Service::class, new Link]
 ```
 
 A [link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to return the current service object. It can also be used as a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php) object to delay the [creation](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) of a particular value until it is required.
@@ -232,35 +232,7 @@ The [provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php) p
 'web' => new Response('web')
 ```
 
-A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L187) to [dispatch](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php) a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php). It configures the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) with the name of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) to use and an optional [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object. Each [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) function can return a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object for the the next function to use.  
-
-```php
-'web' => [
-    'mvc',
-    'response\send'
-]
-```
-
-By default, the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L46) uses a shared [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object.
-
-```php
-'response\dispatch' => [Mvc5\Response\Dispatch::class, 'response' => new Dependency('response')]
-```
-
-This allows other [response plugins](responsehttpsgithubcommvc5mvc5blobmastersrcpluginresponsephp) to not have to completely dispatch a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php).
- 
-```php
-'route\error' => [
-    'error\status',
-    'error\route',
-    // halt mvc event or new response object
-    //'error\controller',
-    //'error\view',
-    //'error\response'
-]
-```
-
-For example, the [route error plugin](https://github.com/mvc5/mvc5/blob/master/config/event.php#L32) is part of the [mvc event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L13). When it is called, it [updates the status](https://github.com/mvc5/mvc5/blob/master/config/service.php#L24) of the shared [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object without [stopping](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php). If it returns a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php), the [mvc event](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php) will be [stopped](https://github.com/mvc5/mvc5/blob/master/src/Mvc/Mvc.php#L49) and the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) is passed to the [response send plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L48), which [sends](https://github.com/mvc5/mvc5/blob/master/src/Response/Send.php) the [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) to the browser as part of the [web event](https://github.com/mvc5/mvc5/blob/master/config/event.php#L66).
+A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L240) to [dispatch](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php) a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php). It configures the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L33) with the name of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) to use and an optional [request](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php) and [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object. Each [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) function can return a [request](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php) or [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object for the the next function to use.
 
 ### [Scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php)
 ```php

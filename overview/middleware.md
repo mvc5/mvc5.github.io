@@ -3,9 +3,30 @@
 
 ```php
 return [
-    'middleware\router',
-    'middleware\controller',
-    'middleware\layout',
-    'middleware\renderer'
+    'web' => [
+        'web\route',
+        'web\error',
+        'web\service',
+        'web\dispatch',
+        'web\status',
+        'web\version',
+        'web\send',
+    ],
+    'web\response' => [
+        'web\controller',
+        'web\layout',
+        'web\render',
+    ],
 ];
 ```
+
+The [web\dispatch](https://github.com/mvc5/mvc5/blob/master/src/Web/Dispatch.php) component calls the inner middleware <code>web\response</code> component which can be short circuited and returns the response the remaining web middleware components to use.
+
+```php
+function __invoke(Request $request, Response $response, callable $next)
+{
+    return $next($request, $this->call('web\response'', [$request, $response]));
+}
+```
+
+If the value returned by a controller is not a [http\response](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php), it is then as the body of the response. This allows the remaining middleware components to inspect the response body and to transform it into a value that can be sent to the client, e.g a string.
