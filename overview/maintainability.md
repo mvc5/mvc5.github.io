@@ -8,10 +8,10 @@ _[View the interactive PhpMetrics report](/phpmetrics)_
 
 ## Benchmark
 ```
-HTML transferred:       3332193 bytes
-Requests per second:    1075.62 [#/sec] (mean)
-Time per request:       9.297 [ms] (mean)
-Time per request:       0.930 [ms] (mean, across all concurrent requests)
+HTML transferred:       2691022 bytes
+Requests per second:    2048.81 [#/sec] (mean)
+Time per request:       4.881 [ms] (mean)
+Time per request:       0.488 [ms] (mean, across all concurrent requests)
 ```
 
 ## Source Lines of Code
