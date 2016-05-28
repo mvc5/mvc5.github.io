@@ -28,7 +28,6 @@ The [controller\dispatch](https://github.com/mvc5/mvc5/blob/master/src/Controlle
 'controller\response' => [
     'controller\action',
     'view\layout',
-    'view\render',
-    'response\model',
+    'view\render'
 ]
 ```
