@@ -20,7 +20,7 @@ return [
 ];
 ```
 
-The [web\dispatch](https://github.com/mvc5/mvc5/blob/master/src/Web/Dispatch.php) component calls the inner middleware <code>web\response</code> component which can be short circuited and returns the response the remaining web middleware components to use.
+The [web\dispatch](https://github.com/mvc5/mvc5/blob/master/src/Web/Dispatch.php) component calls the inner middleware <code>web\response</code> component which can be short circuited and returns a response for the remaining <code>web</code> middleware components to use.
 
 ```php
 function __invoke(Request $request, Response $response, callable $next)
@@ -29,4 +29,4 @@ function __invoke(Request $request, Response $response, callable $next)
 }
 ```
 
-If the value returned by a controller is not a [http\response](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php), it is then as the body of the response. This allows the remaining middleware components to inspect the response body and to transform it into a value that can be sent to the client, e.g a string.
+If the value returned by a controller is not a [http\response](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php), it is set as the body of the response. This allows the remaining components to inspect the response body and transform it into a value that can be sent to the client.
