@@ -4,7 +4,9 @@ Being able to makes changes to a project, especially beyond its initial developm
 _[View the interactive PhpMetrics report](/phpmetrics)_
 
 [![](/phpmetrics/images/maintenability.png)](/phpmetrics/)[![](/phpmetrics/images/evaluation.png)](/phpmetrics/)
+<br>
 [![](/phpmetrics/images/eval-report.png)](/phpmetrics/)
+<br>
 [![](/phpmetrics/images/custom.png)](/phpmetrics/)[![](/phpmetrics/images/abstractness.png)](/phpmetrics/)
 
 ## Benchmark
