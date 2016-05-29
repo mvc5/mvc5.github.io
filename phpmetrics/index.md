@@ -211,7 +211,7 @@ title: PhpMetrics Report
                         This score is not absolute. This chart is a comparison of your project relative to a representative average of recent PHP projects.
                     </p>
                     <p>
-                        Each score is calculated from <acronym title="Cyclomatic complexity, Halstead metrics, Maintainability Index, Comment weight, Difficulty, Logical lines of code...">various criterias</acronym> from 206 files in your projects.
+                        Each score is calculated from <acronym title="Cyclomatic complexity, Halstead metrics, Maintainability Index, Comment weight, Difficulty, Logical lines of code...">various criterias</acronym> from 203 files in your projects.
                         Your score is a note between 0 (poor) and 100 (excellent).
                     </p>
                     <table class="table">
@@ -228,11 +228,11 @@ title: PhpMetrics Report
                             </tr>
                                                     <tr>
                                 <td>Accessibility for new developers</td>
-                                <td>90.92 / 100</td>
+                                <td>91.19 / 100</td>
                             </tr>
                                                     <tr>
                                 <td>Simplicity of algorithms</td>
-                                <td>55.29 / 100</td>
+                                <td>55 / 100</td>
                             </tr>
                                                     <tr>
                                 <td>Volume</td>
@@ -299,12 +299,12 @@ title: PhpMetrics Report
                     <tbody>
                         <tr>
                             <td>Files</td>
-                            <td>206</td>
+                            <td>203</td>
                         </tr>
                         <tr>
                             <td>Lines of code</td>
                             <td>
-                                9338
+                                9195
                                                                     <span class="more">(63 by class,
                                         35 by method)</span>
                                                             </td>
@@ -312,14 +312,14 @@ title: PhpMetrics Report
                         <tr>
                             <td>Logical lines of code</td>
                             <td>
-                                1669
+                                1634
                                                                     <span class="more">(11 by class,
                                         6 by method)</span>
                                                             </td>
                         </tr>
                         <tr>
                             <td>Classes</td>
-                            <td>148
+                            <td>145
                                                                     <div>
                                         <span class="more">
                                             47 interfaces (32 %)
@@ -327,7 +327,7 @@ title: PhpMetrics Report
                                     </div>
                                     <div>
                                         <span class="more">
-                                            100 concrete classes (68 %)
+                                            97 concrete classes (67 %)
                                         </span>
                                     </div>
                                     <div>
@@ -346,7 +346,7 @@ title: PhpMetrics Report
                         <tr>
                             <td>Methods</td>
                             <td>
-                                265
+                                261
                                                                     <span class="more">(1.8 by class )</span>
                                                             </td>
                         </tr>
@@ -358,7 +358,7 @@ title: PhpMetrics Report
                     <tbody>
                     <tr>
                         <td>Relative system complexity</td>
-                        <td>1.54</td>
+                        <td>1.42</td>
                     </tr>
                     <tr>
                         <td>Relative data complexity</td>
@@ -366,7 +366,7 @@ title: PhpMetrics Report
                     </tr>
                     <tr>
                         <td>Relative structure complexity</td>
-                        <td>1.05</td>
+                        <td>0.93</td>
                     </tr>
                     </tbody>
                 </table>
@@ -380,7 +380,7 @@ title: PhpMetrics Report
                     </tr>
                     <tr>
                         <td>Efferent Coupling</td>
-                        <td>0.6</td>
+                        <td>0.56</td>
                     </tr>
                     <tr>
                         <td>Afferent Coupling</td>
@@ -388,7 +388,7 @@ title: PhpMetrics Report
                     </tr>
                     <tr>
                         <td>Abstractness</td>
-                        <td>0.32</td>
+                        <td>0.33</td>
                     </tr>
                     </tbody>
                 </table>
