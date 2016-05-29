@@ -1,5 +1,5 @@
 ## Configuration and ArrayAccess
-A standard [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface is used consistently throughout each component and provides a concrete set of methods to use. Its [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface enables the [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) to [retrieve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L224) composite configuration values. E.g.
+A standard [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface is used consistently throughout each component and provides a concrete set of methods to use. Its [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface enables the [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) to [retrieve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L321) composite configuration values. E.g.
 
 ```php
 new Param('templates.error');

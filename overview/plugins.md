@@ -76,7 +76,7 @@ A [dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.ph
 new End(new Call('@session_start'), new Plugin(Session\Config::class));
 ```
 
-The [end](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php) plugin will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) a list of plugins and return the result of the last plugin.
+The [end](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php) plugin will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L566) a list of plugins and return the result of the last plugin.
 
 ### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
@@ -162,7 +162,7 @@ new Invoke(new Args([new Plugin('response'), 'setStatusCode']), [500]),
 new Invoke(function() { var_dump(func_get_args()); }),
 ```
 
-An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L225) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
+An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L225) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L566) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
 
 ```php
 $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('Request')])
@@ -173,7 +173,7 @@ $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('
 'request\service' => [Mvc5\Request\Service::class, new Link]
 ```
 
-A [link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to return the current service object. It can also be used as a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php) object to delay the [creation](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) of a particular value until it is required.
+A [link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to return the current service object. It can also be used as a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php) object to delay the [creation](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L566) of a particular value until it is required.
 
 ### [Manager](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Manager.php)
 ```php

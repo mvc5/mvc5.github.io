@@ -8,7 +8,7 @@ function action($controller, array $args = [])
 }
 ```
 
-The [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) function [can](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L180) also [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L30) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php). However, sometimes it may be preferable to pass the event arguments directly to its constructor, in which case the [trigger](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L457) method can be used.
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128) function [can](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L135) also [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L31) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php). However, sometimes it may be preferable to pass the event arguments directly to its constructor, in which case the [trigger](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L629) method can be used.
 
 
 ```php
@@ -18,7 +18,7 @@ function match($definition, $route)
 }
 ```
 
-When the [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67) method is used to [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L73) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) that does not have a plugin configuration, an instance of the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L183). This allows a common model parameter to be used by the functions of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event.php) to contain a value that is not null.
+When the [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128) method is used to [invoke](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L31) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) that does not have a plugin configuration, an instance of the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L176). This allows a common model parameter to be used by the functions of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event.php) to contain a value that is not null.
 
 ```php
 function __invoke(callable $callable, array $args = [], callable $callback = null)
@@ -33,7 +33,7 @@ function __invoke(callable $callable, array $args = [], callable $callback = nul
 ```
 
 ## Event Configuration
-Events are <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">configurable</a> and can be an array or a [traversable](http://php.net/manual/en/class.traversable.php) object. Each item returned must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413) to a [callable](http://php.net/manual/en/language.types.callable.php) type.
+Events are <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">configurable</a> and can be an array or an [iterator](http://php.net/manual/en/class.iterator.php). Each item returned must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L566) to a [callable](http://php.net/manual/en/language.types.callable.php) type.
 
 ```php
 'web' => [

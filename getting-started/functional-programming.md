@@ -13,7 +13,7 @@ include __DIR__ . '/../init.php';
 
 ```
 
-<p>After loading the <a href="https://github.com/mvc5/mvc5/blob/master/src/App.php">application</a> with a <a href="https://github.com/mvc5/mvc5-application/blob/master/config/config.php">configuration</a>, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67">call</a> method is invoked with the string parameter <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L70">web</a> as the name of the function to call. The parameter passed to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67">call</a> method must resolve to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, which means the parameter provided can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a>.</p>
+<p>After loading the <a href="https://github.com/mvc5/mvc5/blob/master/src/App.php">application</a> with a <a href="https://github.com/mvc5/mvc5-application/blob/master/config/config.php">configuration</a>, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128">call</a> method is invoked with the string parameter <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L70">web</a> as the name of the function to call. The parameter passed to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128">call</a> method must resolve to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, which means the parameter provided can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a>.</p>
 
 
 ```php
@@ -37,9 +37,9 @@ function web($request, $response) {
 (new App(include __DIR__ . '/../config/config.php'))->call('@web');
 ```
 
-<p>By default, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67">call</a> method assumes that a string is the name of an object, or an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> to invoke. However, since it is a function, its name must be prefixed with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L18">@</a> sign to indicate that it is a function or <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L32">static class method</a> and should be invoked directly instead of creating an object.</p>
+<p>By default, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128">call</a> method assumes that a string is the name of an object, or an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> to invoke. However, since it is a function, its name must be prefixed with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L18">@</a> sign to indicate that it is a function or <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L32">static class method</a> and should be invoked directly instead of creating an object.</p>
 
-<p>Since the argument to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L67">call</a> method must <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L413">resolve</a> to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, the <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L70">web</a> configuration can also be an <a href="http://php.net/manual/en/language.oop5.anonymous.php">anonymous class</a>.</p>
+<p>Since the argument to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L128">call</a> method must <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L566">resolve</a> to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, the <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L70">web</a> configuration can also be an <a href="http://php.net/manual/en/language.oop5.anonymous.php">anonymous class</a>.</p>
 
 ```php
 'web' => new class() {
