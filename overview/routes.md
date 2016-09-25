@@ -17,7 +17,7 @@ return [
     'route'      => '/',
     'class'      => Route::class, //optional
     'controller' => 'Home\Controller', //callable
-    'controller' => '@Home\Controller.test', //callable
+    //'controller' => '@Home\Controller.test', //callable
     'children' => [
         'blog' => [
             'route'      => 'blog',
