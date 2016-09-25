@@ -1,6 +1,12 @@
 ## Plugins
 Various types of plugins are available to use and custom plugins can be created.
 
+### [App](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php)
+```php
+'blog' => new App(new FileInclude(__DIR__ . '/blog.php')),
+```
+The [app](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php) plugin is used to provide a scoped instance of the [Mvc5\App](https://github.com/mvc5/mvc5/blob/master/src/App.php) and uses the current application as its fallback service provider.   
+
 ### [Args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php)
 ```php
 'request' => [
@@ -21,14 +27,14 @@ The [args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php) plugin 
 new Call('Home\Controller', ['response' => new Plugin('Response')])
 ```
 
-The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L199) to invoke an object or method and supports [named arguments and plugins](#name-arguments-and-plugins). 
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L199) to invoke an object or method and supports [named arguments and plugins](#named-arguments). 
 
 ### [Calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php)
 ```php
 'route\dispatch' => new Calls(new Plugin(Mvc5\Route\Dispatch::class), ['service' => new Link])
 ```
 
-The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydratorhttpsgithubcommvc5mvc5blobmastersrcpluginhydratorphp) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L179) to resolve a plugin with a set of function calls and supports [named arguments](#name-arguments-and-plugins).   
+The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydratorhttpsgithubcommvc5mvc5blobmastersrcpluginhydratorphp) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L179) to resolve a plugin with a set of function calls and supports [named arguments](#named-arguments).   
 
 ### [Child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php)
 ```php
