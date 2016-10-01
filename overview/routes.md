@@ -54,3 +54,27 @@ return [
 ```php
 echo $this->url('blog/create', ['author' => 'owner', 'category' => 'oop'], ['canonical' => true]);
 ```
+
+An [automatic route configuration](https://github.com/mvc5/mvc5/tree/master/config/route.php) can be used to match the first and second url parameters to a controller class. For example, the controller for <code>/status/view</code> is <code>Status\View\Controller</code>. A namespace prefix and other options can be configured.
+
+```php
+return [
+    'name'        => 'app',
+    'options'     => [
+        'prefix' => '', 
+        'suffix' => '\Controller', 
+        'split' => '\\', 
+        'separators' => ['-' => '\\', '_' => '_']
+    ],
+    'route'       => '/[:controller[/:action]]',
+    'defaults'    => ['controller' => 'home'],
+    'constraints' => ['controller' => '[a-zA-Z0-9_-]+', 'action' => '[a-zA-Z0-9_-]+'],
+    'paramMap'    => ['param1' => 'controller', 'param2' => 'action']
+]
+```
+
+Urls can then be created by specifying the name of the controller and action. Wild card parameters can also be enabled.
+
+```php
+echo $this->url('app', ['controller' => 'status']);
+```

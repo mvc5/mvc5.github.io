@@ -61,7 +61,15 @@ class Controller
 
 </code></pre>
 <p>The variables assigned to a <a href="https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php">view model</a> are available within the template as php variables, e.g <code>$msg</code> or via the current object, which is the <a href="https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php">view model</a>, e.g. <code>$this->msg</code>. Read more about <a href="/overview/#rendering-view-models">rendering view models</a>.</p>
-<p style="margin-top:25px;"><a id="route"></a><b>4.</b> Open the demo application in a web browser. It will display the hello world message on the home page. Read more about <a href="/overview/#routes">routes</a>.</p>
+<p style="margin-top:25px;"><a id="route"></a><b>4.</b> Create a new route configuration file in the application <a href="https://github.com/mvc5/mvc5-application/tree/master/config">config</a> directory named <a href="https://github.com/mvc5/mvc5-application/blob/master/config/route.php">route.php</a></p>
+<pre style="line-height:1"><code><?php
+
+return [
+    'name'       => 'home',
+    'route'      => '/',
+    'controller' => 'Home\Controller'
+];</code></pre>
+<p>Open the demo application in a web browser. It will display the hello world message on the home page. Read more about <a href="/overview/#routes">routes</a>.</p>
 <div class="thumbnail" style="border:none;">
     <img style="margin-left:0;" src="/images/demo-homepage.png" width="435" height="128" title="Demo Home Page">
 </div>
