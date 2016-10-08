@@ -28,19 +28,20 @@ return [
                     'controller' => 'blog:remove'
                 ],
                 'create' => [
-                    'route'      => '/:author[/:category]',
+                    'route'      => '/:author[/:category[/:wildcard]]',
                     'defaults'   => [
                         'author'   => 'owner',
                         'category' => 'web'
                     ],
-                    'wildcard'   => false,
+                    'wildcard'   => true,
                     'controller' => 'blog:add', //call event
                     //'controller'  => function($request) { //named args
                         //var_dump($request->getPathInfo());
                     //},
                     'constraints' => [
-                        'author'   => '[a-zA-Z0-9_-]*',
-                        'category' => '[a-zA-Z0-9_-]*'
+                        'author'   => '[a-zA-Z0-9_-]+',
+                        'category' => '[a-zA-Z0-9_-]+',
+                        'wildcard' => '[a-zA-Z0-9/]+[a-zA-Z0-9]$'
                     ]
                 ]
             ],
@@ -60,18 +61,18 @@ An [automatic route configuration](https://github.com/mvc5/mvc5/tree/master/conf
 ```php
 return [
     'defaults'    => ['controller' => 'home'],
-    'constraints' => ['controller' => '[a-zA-Z0-9_-]+', 'action' => '[a-zA-Z0-9_-]+'],
+    'constraints' => ['controller' => '[a-zA-Z][a-zA-Z0-9]+', 'action' => '[a-zA-Z][a-zA-Z0-9/]+'],
     'name'        => 'app',
     'options'     => [
         'action'     => 'action',
         'controller' => 'controller',
         'prefix'     => '',
-        'separators' => ['-' => '\\', '_' => '_'],
+        'separators' => ['/' => '\\'],
         'split'      => '\\',
         'strict'     => false,
         'suffix'     => '\Controller'
     ],
-    'route'       => '/[:controller[/:action]]'
+    'route' => '/[:controller[/:action]]'
 ]
 ```
 
