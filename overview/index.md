@@ -11,6 +11,8 @@ scrollspy: sidebar
 {% include_relative environment-aware.md %}
 {% include_relative configuration-and-arrayaccess.md %}
 {% include_relative routes.md %}
+{% include_relative route-configuration.md %}
+{% include_relative url-generator.md %}
 {% include_relative rest-api-methods.md %}
 {% include_relative action-controller.md %}
 {% include_relative middleware.md %}

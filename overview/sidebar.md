@@ -18,7 +18,13 @@
             <a href="#environment-aware">Environment Aware</a>
         </li>
         <li role="presentation"><a href="#configuration-and-arrayaccess">Configuration and ArrayAccess</a></li>
-        <li role="presentation"><a href="#routes">Routes</a></li>
+        <li role="presentation">
+            <a href="#routes">Routes</a>
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#route-configuration">Route Configuration</a></li>
+                <li role="presentation"><a href="#url-generator">Url Generator</a></li>
+            </ul>
+        </li>
         <li role="presentation"><a href="#rest-api-methods">REST API Methods</a></li>
         <li role="presentation"><a href="#action-controller">Action Controller</a></li>
         <li role="presentation"><a href="#middleware">Middleware</a></li>
