@@ -40,17 +40,16 @@ It may be preferable to use a single route configuration for the whole site. The
 
 ```php
 return [
-    'app' => [
-        'route' => '/[{controller::*$}]',
-        'defaults' => [
-            'controller' => 'home'
-        ],
-        'options' => [
-            'prefix' => 'App\\',
-            'suffix' => '\Controller',
-            'strict' => false,
-        ]
-    ]
+    'name' => 'app',
+    'route' => '/[{controller::*$}]',
+    'defaults' => [
+        'controller' => 'home'
+    ],
+    'options' => [
+        'prefix' => 'App\\',
+        'suffix' => '\Controller',
+        'strict' => false,
+    ]    
 ];
 ```
 
