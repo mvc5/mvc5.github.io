@@ -20,7 +20,7 @@ return [
 return [
     'home' => [
         'route' => '/{$}',
-        'controller' => 'Home\\Controller',
+        'controller' => 'Home\Controller',
     ],
     'blog' => [
         'route' => '/blog{$}',
