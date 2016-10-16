@@ -7,10 +7,12 @@ $config = include __DIR__ . '/../config/config.php';
 $config['events']['web'] = [
     function($model, $msg) {
         return $model . ' ' . $msg;
-    },    
+    },
     function($response, $model) {
-        $response->setContent($model);
-        $response->send();
+        $response['body'] = $model;
+    },
+    function($response) {
+        echo $response->body();
     }
 ];
 

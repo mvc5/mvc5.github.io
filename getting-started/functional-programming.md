@@ -9,7 +9,7 @@ use Mvc5\Arg;
 
 include __DIR__ . '/../init.php';
 
-(new App(include __DIR__ . '/../config/config.php'))->call(Arg::WEB);
+(new App(include __DIR__ . '/../config/config.php', null, true))->call(Arg::WEB);
 
 ```
 
@@ -18,7 +18,7 @@ include __DIR__ . '/../init.php';
 
 ```php
 (new App(include __DIR__ . '/../config/config.php'))->call(function($request, $response) {
-    var_dump($request->getPathInfo());
+    var_dump($request->path());
 });
 ```
 <p>When the url in the web browser is changed from <code>/</code> to <code>/blog</code> the output of the application will be <code>/blog</code>. The parameters <a href="https://github.com/mvc5/mvc5-application/blob/master/config/service.php#L78">$request</a> and <a href="https://github.com/mvc5/mvc5-application/blob/master/config/service.php#L80">$response</a> are required and instead of an error occurring, they are resolved as <a href="http://mvc5.github.io/overview/#named-arguments">named arguments</a> using the <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php">service</a> plugin configuration. The anonymous function is the only function called by the application, unlike the original <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L70">web</a> function in the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script. The service plugin configuration for the default <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L70">web</a> function is below.</p>
@@ -31,7 +31,7 @@ include __DIR__ . '/../init.php';
 
 ```php
 function web($request, $response) {
-    var_dump($request->getPathInfo());
+    var_dump($request->path());
 }
 
 (new App(include __DIR__ . '/../config/config.php'))->call('@web');
@@ -44,7 +44,7 @@ function web($request, $response) {
 ```php
 'web' => new class() {
     function __invoke($request, $response) {
-        var_dump($request->getPathInfo());
+        var_dump($request->path());
     }
 }
 ```
@@ -54,7 +54,7 @@ function web($request, $response) {
 ```php
 'web' => function() {
     return function($request, $response) {
-        var_dump($request->getPathInfo());
+        var_dump($request->path());
     };
 },
 ```
