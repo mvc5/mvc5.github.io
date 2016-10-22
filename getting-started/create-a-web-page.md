@@ -19,7 +19,7 @@ class Model
     /**
      *
      */
-    const TEMPLATE_NAME = __DIR__ . '/../../view/home/index.phtml';
+    const TEMPLATE_NAME = 'home/index';
 }</code></pre>
 <p>The constant <code>TEMPLATE_NAME</code> can be used as the <a href="https://github.com/mvc5/mvc5-application/blob/master/config/template.php#L11">name</a> or file path of the view model's associated template and is assigned to the template variable within the <a href="https://github.com/mvc5/mvc5/blob/master/src/Model/Template/Model.php#L26">constructor</a> when no <a href="https://github.com/mvc5/mvc5/blob/master/src/Model/Template/Model.php#L22">constructor</a> arguments are given. The template name or path can also be set with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Model/Template/Model.php#L35">template</a> method. Read more about <a href="/overview/#view-models">view models</a>.</p>
 <p style="margin-top:25px;"><a id="controller"></a><b>2.</b> Create a new controller file in the <a href="https://github.com/mvc5/mvc5-application/tree/master/src/Home">src/Home</a> directory named <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Controller.php">Controller.php</a>.</p>

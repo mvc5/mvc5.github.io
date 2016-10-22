@@ -10,3 +10,4 @@ scrollspy: sidebar
 {% include_relative create-a-web-page.md %}
 {% include_relative functional-programming.md %}
 {% include_relative events.md %}
+{% include_relative middleware.md %}

@@ -36,7 +36,7 @@ return [
 
 The standard configuration uses a [single](https://github.com/mvc5/mvc5-application/blob/master/config/route.php) route for the homepage and specifies the leading forward slash as its route configuration. In which case, the url of the route configuration is the base url and the child routes immediately below the homepage configuration will not begin with a leading forward slash. Alternatively, a collection of routes can be used which do not require a parent route and their route configuration can begin with a leading forward slash.
 
-It may be preferable to use a [single](https://github.com/mvc5/mvc5-application/blob/master/config/route.php) route configuration for the whole site. The default configuration of the [controller match function](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php#L196) will replace a forward slash with a back slash and try to load a matching controller. The configuration should prepend a namespace and append a suffix to ensure that it is a valid controller.
+It may be preferable to use a [single](https://github.com/mvc5/mvc5-application/blob/master/config/route.php) route configuration for the whole site. The default configuration of the [controller match function](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php#L196) will change the first letter of each word separated by a forward slash into an uppercase letter. It will also replace a forward slash with a back slash and then try to load a matching controller. To ensure it is a valid controller, the configuration should prepend a namespace and append a suffix.
 
 ```php
 return [

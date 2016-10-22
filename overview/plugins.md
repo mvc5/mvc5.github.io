@@ -233,6 +233,13 @@ new Provide($config, array $args = [])
 ```
 The [provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php) plugin is used to retrieve a value from its parent container.
 
+### [Register](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Register.php)
+```php
+'user' => new Register('user', 'session', new Plugin(Mvc5\Config::class))
+```
+
+The [register](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Register.php) plugin will create an object if it is not already registered with a specified ([configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php)) object. The first parameter is the registered name, the second parameter is the name of the [service configuration](https://github.com/mvc5/mvc5/blob/master/config/service.php#L51) that should contain the registered object. The third parameter is the [plugin](#plugins) configuration for the object to create and register if it does not already exist. 
+
 ### [Response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php)
 ```php
 'web' => new Response('web')
@@ -252,6 +259,15 @@ The [scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php) pl
 ```
 
 A [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php) plugin is similar to a [plugin](#pluginhttpsgithubcommvc5mvc5blobmastersrcpluginpluginphp) and is used to add a call to a [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php#L20L77) method to set the current service object.  
+
+### [Session](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Session.php)
+```php
+'user' => new Session('user', new Plugin(Mvc5\Config::class))
+
+'user' => new Session('user')
+```
+
+The [session](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Session.php) plugin is a [register](#registerhttpsgithubcommvc5mvc5blobmastersrcpluginregisterphp) plugin that retrieves a session variable. The first parameter is the name of the session variable, the optional second parameter is the plugin configuration for the object to create if it does not already exist in the session. If a value already exists in the session, it will be returned and a new object will not be created. 
 
 ### [Value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Value.php)
 ```php

@@ -6,6 +6,7 @@
         <li role="presentation"><a href="#create-a-web-page">Create A Web Page</a></li>
         <li role="presentation"><a href="#functional-programming">Functional Programming</a></li>
         <li role="presentation"><a href="#events">Events</a></li>
+        <li role="presentation"><a href="#events">Middleware</a></li>
         <li role="presentation">
             <ul class="nav nav-pills nav-stacked" style="margin-top:20px;">
                 <li role="presentation"><a href="#"><small style="color:#aaa;">Back to top</small></a></li>
