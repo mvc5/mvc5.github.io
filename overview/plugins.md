@@ -263,8 +263,6 @@ A [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php) plu
 ### [Session](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Session.php)
 ```php
 'user' => new Session('user', new Plugin(Mvc5\Config::class))
-
-'user' => new Session('user')
 ```
 
 The [session](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Session.php) plugin is a [register](#registerhttpsgithubcommvc5mvc5blobmastersrcpluginregisterphp) plugin that retrieves a session variable. The first parameter is the name of the session variable, the optional second parameter is the plugin configuration for the object to create if it does not already exist in the session. If a value already exists in the session, it will be returned and a new object will not be created. 
