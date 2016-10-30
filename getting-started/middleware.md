@@ -17,5 +17,5 @@ $config['middleware']['web'] = [
     }
 ];
 
-(new App($config))->call('web\middleware');
+(new Mvc5\App($config))->call('web\middleware');
 ```

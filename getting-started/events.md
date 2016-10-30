@@ -16,5 +16,5 @@ $config['events']['web'] = [
     }
 ];
 
-(new App($config))->call('web', ['model' => 'Hello', 'msg' => 'World!']);
+(new Mvc5\App($config))->call('web', ['model' => 'Hello', 'msg' => 'World!']);
 ```
