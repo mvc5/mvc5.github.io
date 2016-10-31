@@ -25,10 +25,10 @@ function __invoke(callable $callable, array $args = [], callable $callback = nul
 }
 ```
 
-For example, the <code>blog:remove</code> event uses three functions to create a model and to return a [layout](https://github.com/mvc5/mvc5/blob/master/config/service.php#L35) object. It does not have its own [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) class, so an instance of the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) is used. 
+For example, the <code>dashboard:remove</code> event uses three functions to create a model and to return a [layout](https://github.com/mvc5/mvc5/blob/master/config/service.php#L35) object. It does not have its own [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) class, so an instance of the [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php) is used. 
 
 ```php
-'blog:remove' => [
+'dashboard:remove' => [
     function() {
         return $model = '<h1>Validate</h1>';
     },

@@ -3,7 +3,7 @@ Various types of plugins are available to use and custom plugins can be created.
 
 ### [App](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php)
 ```php
-'blog' => new App(new FileInclude(__DIR__ . '/blog.php')),
+'dashboard' => new App(new FileInclude(__DIR__ . '/dashboard.php')),
 ```
 The [app](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php) plugin is used to provide a scoped instance of the [Mvc5\App](https://github.com/mvc5/mvc5/blob/master/src/App.php) and uses the current application as its fallback service provider.   
 

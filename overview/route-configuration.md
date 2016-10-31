@@ -8,9 +8,9 @@ return [
     'route'      => '/',
     'controller' => 'Home\Controller',
     'children' => [
-        'blog' => [
-            'route'      => 'blog',
-            'controller' => 'Blog\Controller'
+        'dashboard' => [
+            'route'      => 'dashboard',
+            'controller' => 'Dashboard\Controller'
         ]
     ]
 ]
@@ -22,13 +22,13 @@ return [
         'route' => '/{$}',
         'controller' => 'Home\Controller',
     ],
-    'blog' => [
-        'route' => '/blog{$}',
-        'controller' => 'Blog\Controller'
+    'dashboard' => [
+        'route' => '/dashboard{$}',
+        'controller' => 'Dashboard\Controller'
     ]
-    'blog:create' => [
-        'route' => '/blog/create',
-        'controller' => 'Blog\Create\Controller'
+    'dashboard:add' => [
+        'route' => '/dashboard/add',
+        'controller' => 'Dashboard\Add\Controller'
     ]
 ]
 ```

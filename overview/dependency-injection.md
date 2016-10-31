@@ -4,7 +4,6 @@ When a class object is [created](https://github.com/mvc5/mvc5/blob/master/src/Re
 ```php
 [
     'home'        => Home\Controller::class,
-    'blog'        => [Blog\Controller::class, 'template' => 'blog'],
     'request'     => Mvc5\Request\Config::class,
     'response'    => Response\HttpResponse::class,
     'url'         => new Dependency('url\plugin'),
