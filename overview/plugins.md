@@ -66,17 +66,6 @@ new Copy(new Plug('response'))
 
 The [copy](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Copy.php) plugin can be [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L252) to [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L500) and [clone](http://php.net/manual/en/internals2.opcodes.clone.php) an object.
 
-### [Dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.php)
-```php
-new Dependency('response')
-```
-
-A [dependency](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Dependency.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L191) to create a [shared](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Initializer.php#L44) value. When used as a configuration value, it should specify another configuration in order to prevent a recursion error. Alternatively, a configuration can be passed as a second argument to its constructor.
-
-```php
-'response' => new Dependency('response', new Plugin(Http\Response::class))
-```
-
 ### [End](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php)
 ```php
 new End(new Call('@session_start'), new Plugin(Session\Config::class));
@@ -266,6 +255,17 @@ A [service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php) plu
 ```
 
 The [session](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Session.php) plugin is a [register](#registerhttpsgithubcommvc5mvc5blobmastersrcpluginregisterphp) plugin that retrieves a session variable. The first parameter is the name of the session variable, the optional second parameter is the plugin configuration for the object to create if it does not already exist in the session. If a value already exists in the session, it will be returned and a new object will not be created. 
+
+### [Shared](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Shared.php)
+```php
+new Shared('response')
+```
+
+A [shared](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Shared.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L250) to create a [shared](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Initializer.php#L44) value. When used as a configuration value, it should specify another configuration in order to prevent a recursion error. Alternatively, a configuration can be passed as a second argument to its constructor.
+
+```php
+'response' => new Shared('response', new Plugin(Http\Response::class))
+```
 
 ### [Value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Value.php)
 ```php

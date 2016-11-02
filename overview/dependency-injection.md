@@ -6,8 +6,8 @@ When a class object is [created](https://github.com/mvc5/mvc5/blob/master/src/Re
     'home'        => Home\Controller::class,
     'request'     => Mvc5\Request\Config::class,
     'response'    => Response\HttpResponse::class,
-    'url'         => new Dependency('url\plugin'),
-    'url\plugin'  => [Mvc5\Url\Plugin::class, new Dependency('request'), new Plugin('url\generator')],
+    'url'         => new Shared('url\plugin'),
+    'url\plugin'  => [Mvc5\Url\Plugin::class, new Shared('request'), new Plugin('url\generator')],
     'view\render' => new Service(Mvc5\View\Render::class, [new Param('templates')]),
     'web'         => new Response('web')
 ];
