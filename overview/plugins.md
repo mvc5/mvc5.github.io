@@ -190,6 +190,13 @@ new Model('error/404', ['message' => 'A 404 error occurred'])
 
 A [model](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Model.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L187) to create a [view model](https://github.com/mvc5/mvc5/blob/master/src/Model/ViewModel.php). Its first parameter is the template name and the second parameter contains its values.
 
+### [NullValue](https://github.com/mvc5/mvc5/blob/master/src/Plugin/NullValue.php)
+```php
+new NullValue
+```
+
+A [null value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/NullValue.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L312) to return a null value. It can be used to [prevent](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L612) a callback provider from being [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L613).
+
 ### [Param](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Param.php)
 ```php
 new Param('templates.home')
@@ -212,9 +219,9 @@ A [plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php) is [u
 
 ### [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugins.php)
 ```php
-new Plugins(new FileInclude(__DIR__.'/plugins.php'), new Link, true)
+new Plugins(__DIR__.'/services.php')
 ```
-A [plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugins.php) config is used to instantiate an instance of the [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugins.php) class.  It requires an array of service plugins and optionally a service provider for when a configuration can not be resolved, this allows nested containers to be created and a reference to the parent container can be provided using the [Link](#linkhttpsgithubcommvc5mvc5blobmastersrcpluginlinkphp) plugin. The third parameter indicates the [scope](http://php.net/manual/en/closure.bind.php) of the anonymous functions within the configuration, setting it to true will use the [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugins.php) object.
+A [plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugins.php) config is used to instantiate an [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) class. The first parameter is an array of service plugins, the second parameter defaults to using the current application as the provider for any missing services. The third parameter sets the [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) as the [scope](http://php.net/manual/en/closure.bind.php) for any anonymous functions within service array plugin configuration.
 
 ### [Provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php)
 ```php
@@ -238,9 +245,24 @@ A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) p
 
 ### [Scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php)
 ```php
-new Scope(Server\Config::class, new Plugins(new FileInclude(__DIR__.'/server.php'), new Link))
+new Scope(
+  Request\Config::class, 
+  [new _Plugin(App::class, [[Arg::SERVICES => $plugins], null, true, true]), new Link]
+)
 ```
-The [scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provider.php) plugin is used to set the scope of the [Plugins](#pluginshttpsgithubcommvc5mvc5blobmastersrcpluginpluginsphp) container to the object that is being created.
+The [scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php) plugin is used to set the scope of an [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) to the class that is being created. A [Closure](http://php.net/manual/en/class.closure.php) within the application's configuration will then have the same scope as the class being created and can access its protected properties.
+
+### [Scoped](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scoped.php)
+```php
+new Scoped($this)
+```
+The [scoped](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scoped.php) plugin is used to provide a [Closure](http://php.net/manual/en/class.closure.php) with the scope of the application. The first parameter of the plugin is a function that is called when the plugin is being resolved. The function returns a [Closure](http://php.net/manual/en/class.closure.php) and its scope is set to the scope of the application. 
+
+### [ScopedCall](https://github.com/mvc5/mvc5/blob/master/src/Plugin/ScopedCall.php)
+```php
+new ScopedCall($this)
+```
+The [scoped call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/ScopedCall.php) plugin extends the [call](#callhttpsgithubcommvc5mvc5blobmastersrcplugincallphp) plugin and uses the [scoped](#scopedhttpsgithubcommvc5mvc5blobmastersrcpluginscopedphp) plugin to set the scope of the closure for it to be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L260) with.  
 
 ### [Service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php)
 ```php
