@@ -105,6 +105,13 @@ A [filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php) plugi
 
 A [form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L183) create a class object without having to specify the name of its parent _form_ plugin.
 
+### [GlobalVar](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php)
+```php
+new GlobalVar('_COOKIE')
+```
+
+A [global var](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php) plugin is a [value](valuehttpsgithubcommvc5mvc5blobmastersrcpluginvaluephp) plugin that returns the value assigned to the PHP [<code>$GLOBALS</code>](http://php.net/manual/en/reserved.variables.globals.php) array for the specified parameter name.
+
 ### [Hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php)
 ```php
 'route\dispatch' => new Hydrator(Mvc5\Route\Dispatch::class, ['service' => new Link])
