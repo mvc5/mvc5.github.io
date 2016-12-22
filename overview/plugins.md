@@ -110,7 +110,7 @@ A [form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php) plugin is
 new GlobalVar('_COOKIE')
 ```
 
-A [global var](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php) plugin is a [value](valuehttpsgithubcommvc5mvc5blobmastersrcpluginvaluephp) plugin that returns the value assigned to the PHP [<code>$GLOBALS</code>](http://php.net/manual/en/reserved.variables.globals.php) array for the specified parameter name.
+A [global var](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php) plugin is a [value](#valuehttpsgithubcommvc5mvc5blobmastersrcpluginvaluephp) plugin that returns the value assigned to the PHP [<code>$GLOBALS</code>](http://php.net/manual/en/reserved.variables.globals.php) array for the specified parameter name.
 
 ### [Hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php)
 ```php
