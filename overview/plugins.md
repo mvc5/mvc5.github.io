@@ -29,6 +29,15 @@ new Call('Home\Controller', ['response' => new Plugin('Response')])
 
 The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L199) to invoke an object or method and supports [named arguments and plugins](#named-arguments). 
 
+### [Callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php)
+```php
+new Callback(function() {
+    $messages = $this->plugin('messages');
+})
+```
+
+A [callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php) plugin binds the scope of the application to a [closure](http://php.net/manual/en/class.closure.php). The [closure](http://php.net/manual/en/class.closure.php) can then access the application's public service methods. 
+
 ### [Calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php)
 ```php
 'route\dispatch' => new Calls(new Plugin(Mvc5\Route\Dispatch::class), ['service' => new Link])
