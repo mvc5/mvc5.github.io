@@ -6,18 +6,21 @@ include __DIR__ . '/../vendor/autoload.php';
 ```
 
 ```php
-$config = [
+return [
+    'cache'      => __DIR__ . '/../tmp',
     'cookie'     => include __DIR__ . '/cookie.php',
     'events'     => include __DIR__ . '/event.php',
     'middleware' => include __DIR__ . '/middleware.php',
     'routes'     => include __DIR__ . '/route.php',
     'services'   => include __DIR__ . '/service.php',
     'session'    => include __DIR__ . '/session.php',
-    'templates'  => include __DIR__ . '/template.php'
+    'templates'  => include __DIR__ . '/template.php',
+    'view'       => __DIR__ . '/../view',
+    'web'        => include __DIR__ . '/web.php',
 ];
 ```
 
 ```php
-call_user_func(new Web(include __DIR__ . '/../config/config.php', null, true));
+(new Web(include __DIR__ . '/../config/config.php', null, true))();
 ```
-A default [configuration](https://github.com/mvc5/mvc5/tree/master/config) is provided with the minimum [configuration](https://github.com/mvc5/mvc5/tree/master/config) required to run a [web application](https://github.com/mvc5/mvc5/blob/master/src/Web.php). All that is required are the [request](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php) and [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) objects, [template](https://github.com/mvc5/mvc5-application/blob/master/config/template.php) configuration and the [routes](#routes) to use. [Routes](#routes) must have a name so that they can be used to [generate urls](https://github.com/mvc5/mvc5/blob/master/src/Url/Generator.php) in [view model](#view-models) templates using the [url plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L47). The third parameter passed to the web class enables anonymous functions within the service configuration to be [scoped](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L607) with the current application context. 
+A default [configuration](https://github.com/mvc5/mvc5-application/blob/master/config/config.php) is provided with the minimum [configuration](https://github.com/mvc5/mvc5/tree/master/config) required to run a [web](https://github.com/mvc5/mvc5-application/blob/master/config/web.php) [application](https://github.com/mvc5/mvc5/blob/master/src/App.php). It contains configurations for PSR 7 compatible [request](https://github.com/mvc5/http-message/blob/master/config/service.php#L11) and [response](https://github.com/mvc5/http-message/blob/master/config/service.php#L13) objects, [templates](https://github.com/mvc5/mvc5-application/blob/master/config/template.php) and [routes](#routes). The third parameter passed to the [web](https://github.com/mvc5/mvc5/blob/master/src/Web.php) class binds the scope of the [anonymous functions](http://php.net/manual/en/functions.anonymous.php#functions.anonymous), within the [service configuration](https://github.com/mvc5/mvc5-application/blob/master/config/service.php), to the [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) class. 

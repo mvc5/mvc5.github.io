@@ -44,6 +44,13 @@ layout: layout
                 <div class="item">
                     <h1>
                         <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                        Immutability
+                    </h1>
+                    <small>Built using immutable components</small>
+                </div>                
+                <div class="item">
+                    <h1>
+                        <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                         Named Arguments
                     </h1>
                     <small>Control and enhance function calls by providing named arguments and let the system handle the rest</small>

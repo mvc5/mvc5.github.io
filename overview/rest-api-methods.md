@@ -1,5 +1,5 @@
 ## REST API Methods
-Routes can be configured with actions for specific HTTP Methods. The default action is specified with the controller configuration.
+Routes can be configured with actions for specific HTTP methods. The default action is specified with the controller configuration.
 
 ```php
 'resource' => [

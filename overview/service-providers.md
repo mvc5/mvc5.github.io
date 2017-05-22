@@ -1,5 +1,5 @@
-## Service Providers
-Custom plugins can implement the [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) interface and extend an existing [plugin](#plugins) or have their own [service provider](https://github.com/mvc5/mvc5-application/blob/master/src/Service/ServiceProvider.php). A [service provider](https://github.com/mvc5/mvc5/blob/master/config/service.php#L63) is a [callable](http://php.net/manual/en/language.types.callable.php) function that is [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L404) when a [plugin](#plugins) can not be [resolved](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L404) by [default](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L338).
+### Service Providers
+Custom plugins can implement the [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) interface and extend an existing [plugin](#plugins) or have their own [service provider](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L480). A [service provider](https://github.com/mvc5/mvc5-application/blob/master/config/service.php#L39) is a [callable](http://php.net/manual/en/language.types.callable.php) function that is [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L480) when a [plugin](#plugins) can not be [resolved](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L511) by default.
 
 ```php
 use Plugin\Controller;
@@ -15,7 +15,7 @@ return [
 ];
 ```
 
-For example, the [home controller](https://github.com/mvc5/mvc5-application/blob/master/src/Home/Controller.php) uses a custom [controller plugin](https://github.com/mvc5/mvc5-application/blob/master/src/Plugin/Controller.php) with a custom [service provider](https://github.com/mvc5/mvc5-application/blob/master/src/Service/ServiceProvider.php) that has been added to the [service resolver event](https://github.com/mvc5/mvc5-application/blob/master/config/event.php#L28). In this example, the [service provider](https://github.com/mvc5/mvc5-application/blob/master/src/Service/ServiceProvider.php) uses its own [service manager](https://github.com/mvc5/mvc5-application/blob/master/src/Service/ServiceManager.php) to [resolve](https://github.com/mvc5/mvc5-application/blob/master/src/Service/ServiceManager.php#L31) the [controller plugin](https://github.com/mvc5/mvc5-application/blob/master/src/Plugin/Controller.php).
+For example, the [home controller](https://github.com/mvc5/mvc5-application/blob/master/src/Home/Controller.php) uses a custom [controller plugin](https://github.com/mvc5/mvc5-application/blob/master/src/Plugin/Controller.php) and a [service provider](https://github.com/mvc5/mvc5-application/blob/master/src/Service/Provider.php) has been added to the [service resolver event](https://github.com/mvc5/mvc5-application/blob/master/config/event.php#L45).
 
 ```php
 function resolve($config, array $args = [])
@@ -30,7 +30,7 @@ function resolve($config, array $args = [])
 }
 ```
 
-A [service resolver](https://github.com/mvc5/mvc5/blob/master/config/service.php#L67) is used to call the [service provider](https://github.com/mvc5/mvc5/blob/master/config/service.php#L63) and [an exception](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Exception.php#L18) is thrown if the [plugin](#plugins) can not be resolved.
+A [service resolver](https://github.com/mvc5/mvc5/blob/master/config/service.php#L67) is used to call the [service provider](https://github.com/mvc5/mvc5/blob/master/config/service.php#L63) and [an exception](https://github.com/mvc5/mvc5/blob/master/config/service.php#L41) is thrown if the [plugin](#plugins) can not be resolved.
 
 ```php
 'service\resolver' => [

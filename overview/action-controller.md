@@ -8,7 +8,7 @@ function __invoke($controller, array $args = [])
 }
 ```
 
-A controller is a function just like any other function. It can also be an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) or a plugin that [resolves](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L84) to a [callable](http://php.net/manual/en/language.types.callable.php) function. If the value returned from the controller is not a [Http\Response](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php) and it is not null, it will be [set](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php#L79) as the value of the response body for the remaining components to transform into a value that can be sent to the client.
+A controller is a function. It can also be an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) or a plugin that [resolves](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L84) to a [callable](http://php.net/manual/en/language.types.callable.php) function. If the value returned from the controller is not a [Http\Response](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php) and it is not null, it will be [set](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php#L79) as the value of the response body for the remaining components to transform into a value that can be sent to the client.
 
 ```php
 'web' => [

@@ -1,15 +1,15 @@
 ## Dependency Injection
-When a class object is [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L458) and it can not be [autowired](#autowiring), then a service configuration is required. Different types of configurations can be used depending on the requirements of the class. These configurations can be either a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value.
+When a class object is [created](https://github.com/mvc5/mvc5/blob/master/src/Service/Builder.php#L34) and it can not be [autowired](#autowiring), then a service configuration is required. Different types of configurations can be used depending on the requirements of the class. These configurations can be either a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value.
 
 ```php
 [
-    'home'        => Home\Controller::class,
-    'request'     => Mvc5\Request\Config::class,
-    'response'    => Response\HttpResponse::class,
-    'url'         => new Shared('url\plugin'),
-    'url\plugin'  => [Mvc5\Url\Plugin::class, new Shared('request'), new Plugin('url\generator')],
-    'view\render' => new Service(Mvc5\View\Render::class, [new Param('templates')]),
-    'web'         => new Response('web')
+    'home'          => Home\Controller::class,
+    'request'       => Mvc5\Request\HttpRequest::class,
+    'response'      => Mvc5\Response\HttpResponse::class,
+    'url'           => new Shared('url\plugin'),
+    'url\generator' => [Mvc5\Url\Generator::class, new Param('routes')],
+    'url\plugin'    => [Mvc5\Url\Plugin::class, new Shared('request'), new Plugin('url\generator')],
+    'web'           => new Response('web')
 ];
 ```
 

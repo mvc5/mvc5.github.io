@@ -211,7 +211,7 @@ title: PhpMetrics Report
                         This score is not absolute. This chart is a comparison of your project relative to a representative average of recent PHP projects.
                     </p>
                     <p>
-                        Each score is calculated from <acronym title="Cyclomatic complexity, Halstead metrics, Maintainability Index, Comment weight, Difficulty, Logical lines of code...">various criterias</acronym> from 214 files in your projects.
+                        Each score is calculated from <acronym title="Cyclomatic complexity, Halstead metrics, Maintainability Index, Comment weight, Difficulty, Logical lines of code...">various criterias</acronym> from 252 files in your projects.
                         Your score is a note between 0 (poor) and 100 (excellent).
                     </p>
                     <table class="table">
@@ -228,11 +228,11 @@ title: PhpMetrics Report
                             </tr>
                                                     <tr>
                                 <td>Accessibility for new developers</td>
-                                <td>89.93 / 100</td>
+                                <td>89.35 / 100</td>
                             </tr>
                                                     <tr>
                                 <td>Simplicity of algorithms</td>
-                                <td>55.71 / 100</td>
+                                <td>48.71 / 100</td>
                             </tr>
                                                     <tr>
                                 <td>Volume</td>
@@ -299,45 +299,45 @@ title: PhpMetrics Report
                     <tbody>
                         <tr>
                             <td>Files</td>
-                            <td>214</td>
+                            <td>252</td>
                         </tr>
                         <tr>
                             <td>Lines of code</td>
                             <td>
-                                9503
-                                                                    <span class="more">(63 by class,
-                                        39 by method)</span>
+                                11764
+                                                                    <span class="more">(65 by class,
+                                        33 by method)</span>
                                                             </td>
                         </tr>
                         <tr>
                             <td>Logical lines of code</td>
                             <td>
-                                1737
+                                2018
                                                                     <span class="more">(11 by class,
-                                        7 by method)</span>
+                                        6 by method)</span>
                                                             </td>
                         </tr>
                         <tr>
                             <td>Classes</td>
-                            <td>152
+                            <td>181
                                                                     <div>
                                         <span class="more">
-                                            51 interfaces (34 %)
+                                            53 interfaces (29 %)
                                         </span>
                                     </div>
                                     <div>
                                         <span class="more">
-                                            101 concrete classes (66 %)
+                                            127 concrete classes (70 %)
                                         </span>
                                     </div>
                                     <div>
                                         <span class="more">
-                                            51 abstract classes (34 %)
+                                            53 abstract classes (29 %)
                                         </span>
                                     </div>
                                     <div>
                                         <span class="more">
-                                            0 anonymous classes (0 %)
+                                            1 anonymous classes (1 %)
                                         </span>
                                     </div>
                                                             </td>
@@ -346,8 +346,8 @@ title: PhpMetrics Report
                         <tr>
                             <td>Methods</td>
                             <td>
-                                246
-                                                                    <span class="more">(1.6 by class )</span>
+                                358
+                                                                    <span class="more">(2 by class )</span>
                                                             </td>
                         </tr>
                     </tbody>
@@ -358,15 +358,15 @@ title: PhpMetrics Report
                     <tbody>
                     <tr>
                         <td>Relative system complexity</td>
-                        <td>1.34</td>
+                        <td>1.59</td>
                     </tr>
                     <tr>
                         <td>Relative data complexity</td>
-                        <td>0.46</td>
+                        <td>0.52</td>
                     </tr>
                     <tr>
                         <td>Relative structure complexity</td>
-                        <td>0.88</td>
+                        <td>1.06</td>
                     </tr>
                     </tbody>
                 </table>
@@ -376,19 +376,19 @@ title: PhpMetrics Report
                     <tbody>
                     <tr>
                         <td>Lack of cohesion of methods</td>
-                        <td>0.29</td>
+                        <td>0.42</td>
                     </tr>
                     <tr>
                         <td>Efferent Coupling</td>
-                        <td>0.51</td>
+                        <td>0.64</td>
                     </tr>
                     <tr>
                         <td>Afferent Coupling</td>
-                        <td>0.15</td>
+                        <td>0.18</td>
                     </tr>
                     <tr>
                         <td>Abstractness</td>
-                        <td>0.34</td>
+                        <td>0.29</td>
                     </tr>
                     </tbody>
                 </table>
@@ -422,6 +422,5 @@ title: PhpMetrics Report
             Powered by <a href="http://www.phpmetrics.org">PhpMetrics</a> v1.10.0 - Copyright Jean-François Lépine
         </div>
     </div>
-
 </div>
 {% include_relative phpmetrics.js.html %}
