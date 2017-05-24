@@ -35,12 +35,10 @@ For example, the <code>dashboard:remove</code> event uses three functions to cre
     function($model) {
         return $model . '<h1>Remove</h1>';
     },
-    function($layout, $model = null) {
+    function(TemplateLayout $layout, $model = null) {
         $model .= '<h1>Respond</h1>';
 
-        $layout->model($model);
-
-        return $layout;
+        return $layout->withModel($model);
     }
 ]
 ```

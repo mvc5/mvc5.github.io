@@ -11,7 +11,7 @@ include './init.php';
 (new App('./config/config.php'))->call($argv[1], array_slice($argv, 2));
 ```
 
-The first argument is the name of the function or object to [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) and the remaining arguments are its parameters, e.g [<code>Console\Example</code>](https://github.com/mvc5/mvc5-application/blob/master/src/Console/Example.php).
+The first argument is the name of the function to [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) and the remaining arguments are its parameters, e.g [<code>Console\Example</code>](https://github.com/mvc5/mvc5-application/blob/master/src/Console/Example.php).
 
 ```php
 namespace Console;

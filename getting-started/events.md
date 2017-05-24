@@ -9,7 +9,7 @@ $config['events']['web'] = [
         return $model . ' ' . $msg;
     },
     function($response, $model) {
-        $response['body'] = $model;
+        return $response->with('body', $model);
     },
     function($response) {
         echo $response->body();
