@@ -24,7 +24,7 @@ function __invoke(Request $request, Response $response, callable $next)
 }
 ```
 
-The Middleware demo can be enabled by uncommenting the [web configuration](https://github.com/mvc5/mvc5-application/blob/master/config/service.php#L67) in the [web application](#web-application) service configuration file.
+The PSR-7 Middleware demo can be enabled by uncommenting the [web configuration](https://github.com/mvc5/mvc5-application/blob/master/config/service.php#L67) in the [web application](#web-application) service config file.
 
 ```php
 //middleware demo

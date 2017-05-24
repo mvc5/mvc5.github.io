@@ -10,4 +10,4 @@ return array_merge(
 );
 ```
 
-For example, the development config file <code>config/dev/config.php</code> can include the main production config file <code>config/config.php</code> and override the name of the database to use in the development environment.
+For example, the development config file <code>config/dev/config.php</code> can include the production config file <code>config/config.php</code> and override the name of the database to use in the development environment.

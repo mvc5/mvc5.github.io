@@ -38,22 +38,22 @@ trait ReadOnly
 
     function offsetSet($name, $value)
     {
-        throw new \Exception('Invalid operation: object cannot be modified');
+        throw new \Exception;
     }
 
     function offsetUnset($name)
     {
-        throw new \Exception('Invalid operation: object cannot be modified');
+        throw new \Exception;
     }
 
     function __set($name, $value)
     {
-        throw new \Exception('Invalid operation: object cannot be modified');
+        throw new \Exception;
     }
 
     function __unset($name)
     {
-        throw new \Exception('Invalid operation: object cannot be modified');
+        throw new \Exception;
     }
 }
 ```
@@ -91,7 +91,7 @@ $request->set(Arg::NAME, 'home');  //Configuration
 $request->with(Arg::NAME, 'home'); //Immutable
 ```
 
-Models can also be made mutable by applying their traits to an instance of a configuration object. 
+[Models](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) can also be made mutable by applying their traits to an instance of a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config.php) object. 
 
 ```php
 class ViewModel

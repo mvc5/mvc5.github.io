@@ -18,7 +18,7 @@ Routes can be configured with a regular expression or a path. If the route is on
 
 The regular expression can use group names that are [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L54) as request parameters when the route is [matched](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L47). Consequently, the parameter names must be alphanumeric. The path configuration provides a simpler format for specifying regular expressions and group names. For example, if the matched url is <code>/about</code>, the <code>app</code> route configuration [assigns](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L54) the value <code>about</code> as the <code>controller</code> request parameter.
 
-Short names can also be assigned to regular expressions and be used in a path configuration by prefixing them with a single colon or two colons when assigned to parameter name. Below are the default short-named regular expressions [available](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Tokens.php#L23) to use.
+Short names can also be assigned to regular expressions and be used in a path configuration by prefixing them with a single colon or two colons when assigned to a parameter name. Below are the default short-named regular expressions [available](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Tokens.php#L23) to use.
   
 ```php
 [

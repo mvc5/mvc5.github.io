@@ -34,4 +34,4 @@ $app = new App([
 $app->call('dashboard->home', ['form' => []]);
 ```
 
-A container can contain any type of value, except for [null](http://php.net/manual/en/language.types.null.php). A parent container can also pass itself to a child container as the service [provider](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L71) to use when the child container can not retrieve or resolve a particular value. The parent container can also specify what object to use as the scope of an anonymous function within the child container.
+A container can contain any type of value, except for [null](http://php.net/manual/en/language.types.null.php). A parent container can also pass itself to a child container as the service [provider](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L71) to use when the child container can not retrieve or resolve a particular value. The parent container can also specify what object to use as the scope of an anonymous service function within the child container.
