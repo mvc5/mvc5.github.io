@@ -8,13 +8,13 @@ permalink:           pretty
 
 # Setup
 title:       Mvc5 Framework
-keywords:    Dependency Injection, Inversion of Control, Events, Named Arguments, Service Providers, Console Applications
+keywords:    Dependency Injection, Plugins, Routes, Models, Request, Response, Session, View Renderer, PSR-7 Middleware, PSR-11 Container
 description: An enhanced PHP programming environment that provides inversion of control of a web application or any function
 url:         http://mvc5.github.io
 baseurl:     ''
 
 # About/contact
 author:
-  name:              devosc
+  name:              Gregory Baboolal
   url:               https://twitter.com/devosc
   email:             devosc@gmail.com
