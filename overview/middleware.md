@@ -31,3 +31,26 @@ The PSR-7 Middleware demo can be enabled by uncommenting the [web configuration]
 //'web' => 'web\middleware',
 ```
 
+### Pipelines
+
+[Routes](#routes) can be configured with [Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) pipelines and (optionally) a controller. During the [route match](https://github.com/mvc5/mvc5/blob/master/config/middleware.php#L7) process the child stack is [appended](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Merge.php#L26) to the parent stack. When the [route](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) is [matched](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L38), the [controller](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php#L38) is [appended](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Middleware.php#L52) to the stack. A <code>controller</code> placeholder can also be [used](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Middleware.php#L52) to indicate where to [insert](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Middleware.php#L52) the [controller](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php#L38). The [Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) stack then [becomes](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Middleware.php#L66) the [controller](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php#L31) for the [request](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php).  
+```php
+'explore' => [
+    'path' => '/explore',
+    'middleware' => ['web\authenticate'],
+    'defaults' => [
+        'controller' => 'explore'
+    ],
+    'children' => [
+        'more' => [
+            'path' => '/more',
+            'middleware' => ['controller', 'web\log'],
+            'defaults' => [
+                'controller' => 'more'
+            ]
+        ]
+    ]
+]
+```
+
+

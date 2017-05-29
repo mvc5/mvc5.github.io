@@ -20,7 +20,12 @@
         </li>
         <li role="presentation"><a href="#rest-api-methods">REST API Methods</a></li>
         <li role="presentation"><a href="#action-controller">Action Controller</a></li>
-        <li role="presentation"><a href="#middleware">Middleware</a></li>
+        <li role="presentation">
+            <a href="#middleware">Middleware</a>
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#pipelines">Pipelines</a></li>
+            </ul>
+        </li>
         <li role="presentation">
             <a href="#view-models">View Models</a>
             <ul class="nav nav-pills nav-stacked">
