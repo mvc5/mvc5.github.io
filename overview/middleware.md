@@ -1,5 +1,5 @@
 ## Middleware
-[Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) applications can be created with a configuration that supports anonymous functions, [plugins](#plugins) and [dependency injection](#dependency-injection).
+[Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) applications can be created with a configuration that supports [anonymous functions](http://php.net/manual/en/functions.anonymous.php#functions.anonymous), [plugins](#plugins) and [dependency injection](#dependency-injection).
 
 ```php
 'web' => [
@@ -53,4 +53,4 @@ The PSR-7 Middleware demo can be enabled by uncommenting the [web configuration]
 ]
 ```
 
-
+[Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) configurations must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) to a [callable](http://php.net/manual/en/language.types.callable.php) type and can include [plugins](#plugins) and [anonymous functions](http://php.net/manual/en/functions.anonymous.php#functions.anonymous).
