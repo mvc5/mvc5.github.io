@@ -8,7 +8,7 @@ permalink:           pretty
 
 # Setup
 title:       Mvc5 Framework
-keywords:    Dependency Injection, Plugins, Routes, Models, Request, Response, Session, View Renderer, PSR-7 Middleware, PSR-11 Container
+keywords:    Dependency Injection, Plugins, Routes, Models, Request, Response, Session, View Renderer, Immutable, Events, Middleware
 description: An enhanced PHP programming environment that provides inversion of control of a web application or any function
 url:         http://mvc5.github.io
 baseurl:     ''
