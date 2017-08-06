@@ -4,7 +4,7 @@ A collection of [routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Rout
 ```php
 return [
     'home' => [
-        'route' => '/{$}'
+        'path' => '/{$}'
         'regex' => '/$'
         'controller' => 'Home\Controller'
     ],
@@ -36,7 +36,7 @@ The regular expression, or short-name, for a path configuration can also be spec
 ```php
 return [
     'app' => [
-        'route' => '/{controller}',
+        'path' => '/{controller}',
         'constraints' => [
             'controller' => '[a-zA-Z0-9/]+[a-zA-Z0-9]$'
         ]

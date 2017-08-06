@@ -3,7 +3,7 @@ Routes can be configured with [actions](https://github.com/mvc5/mvc5/blob/master
 
 ```php
 'resource' => [
-    'route' => '/resource',
+    'path' => '/resource',
     'method' => ['GET', 'POST'],
     'controller' => 'Resource\Controller'
     'action' => [
