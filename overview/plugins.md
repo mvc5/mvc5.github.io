@@ -186,6 +186,38 @@ $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('
 
 A [link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L217) to return the current service object. It can also be used as a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php) object to delay the [creation](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Container.php#L70) of a particular value until it is required.
 
+### [Maybe](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Maybe.php)
+```php
+new Maybe($value = null, $default = null)
+```
+
+The [maybe](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Maybe.php) plugin returns a resolved value. When the resolved value is null, the default value is returned if it is not null, otherwise [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php) is returned. The value can be [shared](#shared) and then retrieved with the [nullable](#nullable) plugin; which returns null when the value is [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php).
+```php
+(new Maybe)(); //Nothing
+(new Maybe)('foo'); //foo
+(new Maybe)(new Nothing); //Nothing
+(new Maybe(null, new Value('bar')))(); //new Value('bar')
+(new App)(new Maybe); //Nothing
+(new App)(new Maybe(new Value('foo'))); //foo
+(new App)(new Maybe(null, new Value('bar'))); //bar
+```  
+
+### [Nullable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nullable.php)
+```php
+new Nullable($value = null, $default = null)
+```
+
+The [nullable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nullable.php) plugin returns a resolved value. When the value is [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php), the default value is returned.   
+```php
+(new Nullable)(); //null
+(new Nullable)('foo'); //foo
+(new Nullable)(new Nothing); //null
+(new Nullable(new Nothing, new Value('bar')))(new Nothing); //new Value('bar')
+(new App)(new Nullable); //null
+(new App)(new Nullable(new Value('foo')); //foo
+(new App)(new Nullable(new Nothing, new Value('bar'))); //bar
+```  
+
 ### [NullValue](https://github.com/mvc5/mvc5/blob/master/src/Plugin/NullValue.php)
 ```php
 new NullValue
