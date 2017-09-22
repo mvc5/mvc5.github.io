@@ -82,6 +82,13 @@ new End(new Call('@session_start'), new Plugin(Session\Config::class));
 
 The [end](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php) plugin will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L468) a list of plugins and return the result of the last plugin.
 
+### [Expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php)
+```php
+new Expect(new Call('web'), new Call('exception\response'), true, false);
+```
+
+The [expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php) plugin is used to catch an exception when resolving a [plugin](#plugin). The second argument is the [plugin](#plugin) to use when an exception is thrown. The third argument indicates whether the exception should be passed to the second [plugin](#plugin) as a [named argument](#named-arguments) and the fourth argument indicates whether to merge the exception with the arguments passed to the first [plugin](#plugin). 
+
 ### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
 'factory'         => new Service(null),
