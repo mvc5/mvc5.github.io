@@ -13,7 +13,7 @@ include __DIR__ . '/../init.php';
 
 ```
 
-<p>After loading the <a href="https://github.com/mvc5/mvc5/blob/master/src/App.php">application</a> with a <a href="https://github.com/mvc5/mvc5-application/blob/master/config/config.php">configuration</a>, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method is invoked with the string parameter <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L78">web</a> as the name of the function to call. The parameter passed to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method must resolve to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, which means the parameter provided can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a>.</p>
+<p>After loading the <a href="https://github.com/mvc5/mvc5/blob/master/src/App.php">application</a> with a <a href="https://github.com/mvc5/mvc5-application/blob/master/config/config.php">configuration</a>, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method is invoked with the string parameter <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L79">web</a> as the name of the function to call. The parameter passed to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method must resolve to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, which means the parameter provided can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a>.</p>
 
 
 ```php
@@ -27,7 +27,7 @@ include __DIR__ . '/../init.php';
 'web' => new Response('web')
 ```
 
-<p>If no <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php">service</a> or <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">event</a> configuration exists for the name <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L132">web</a>, then an exception will <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L59">occur</a> because a plugin for that name does not exist. Instead, a function with that name can be added to the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script.</p>
+<p>If no <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php">service</a> or <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">event</a> configuration exists for the name <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L133">web</a>, then an exception will <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L59">occur</a> because a plugin for that name does not exist. Instead, a function with that name can be added to the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script.</p>
 
 ```php
 function web($request, $response) {
@@ -39,7 +39,7 @@ function web($request, $response) {
 
 <p>By default, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method assumes that a string is the name of an object, or an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> to invoke. However, since it is a function, its name must be prefixed with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L15">@</a> sign to indicate that it is a function or <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L28">static class method</a> and should be invoked directly instead of creating an object.</p>
 
-<p>Since the argument to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method must <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L468">resolve</a> to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, the <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L78">web</a> configuration can also be an <a href="http://php.net/manual/en/language.oop5.anonymous.php">anonymous class</a>.</p>
+<p>Since the argument to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21">call</a> method must <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L474">resolve</a> to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, the <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L79">web</a> configuration can also be an <a href="http://php.net/manual/en/language.oop5.anonymous.php">anonymous class</a>.</p>
 
 ```php
 'web' => new class() {
@@ -49,7 +49,7 @@ function web($request, $response) {
 }
 ```
 
-<p>Its <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L78">configuration</a> can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a> that returns another <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a> as the one to invoke.</p>
+<p>Its <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L79">configuration</a> can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a> that returns another <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a> as the one to invoke.</p>
 
 ```php
 'web' => function() {

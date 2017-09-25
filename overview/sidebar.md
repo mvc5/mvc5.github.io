@@ -23,6 +23,7 @@
         <li role="presentation">
             <a href="#middleware">Middleware</a>
             <ul class="nav nav-pills nav-stacked">
+                <li role="presentation"><a href="#http-middleware">HTTP Middleware</a></li>
                 <li role="presentation"><a href="#pipelines">Pipelines</a></li>
             </ul>
         </li>
@@ -30,8 +31,9 @@
             <a href="#view-models">View Models</a>
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="#rendering-view-models">Rendering View Models</a></li>
+                <li role="presentation"><a href="#view-engine">View Engine</a></li>
                 <li role="presentation"><a href="#template-layouts">Template Layouts</a></li>
-                <li role="presentation"><a href="#viewl-plugins">View Plugins</a></li>        
+                <li role="presentation"><a href="#view-plugins">View Plugins</a></li>        
             </ul>
         </li>
         <li role="presentation">

@@ -28,7 +28,6 @@ interface Model
     function without($name);
 }
 ```
-
 The [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface is then extended to provide a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface containing the methods [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L22) and [remove](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L15).
 ```php
 namespace Mvc5\Config;
@@ -48,15 +47,12 @@ interface Configuration
     function set($name, $value = null);
 }
 ```
-
 ### Set and Remove
 Values can also be [removed](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L52) or [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L64) at once by passing an array of key values.
-
 ```php
 $config->set(['foo' => 'bar', 'baz' => 'bat']);
 $config->remove(['foo', 'baz']);
 ```
-
 ### Immutable
 By [protecting](https://github.com/mvc5/mvc5/blob/master/src/Config/ReadOnly.php) access to the mutable [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) methods and object [magic methods](http://php.net/manual/en/language.oop5.magic.php) an [immutable](https://github.com/mvc5/mvc5/blob/master/src/Config/Immutable.php) interface can be implemented.
 ```php
@@ -90,7 +86,6 @@ trait ReadOnly
     }
 }
 ```
-
 Implementing the [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface allows a component to only have to specify its immutable methods.
 ```php
 interface Route
@@ -100,31 +95,24 @@ interface Route
     function path();
 }
 ```
-
 ### With and Without
 A copy of the model can be created [with](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L82) and [without](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L97) specific values. It can also accept an array of key values so that only one clone operation is performed.
 ```php
 $this->with(['foo' => 'bar', 'baz' => 'bat']);
 $this->without(['foo', 'baz']);
 ```
-
 ### ArrayAccess 
 The [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface also enables the [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) to [retrieve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L321) composite configuration values. E.g.
 ```php
 new Param('templates.error');
 ```
-
 Resolves to
-
 ```php
 $config['templates']['error'];
 ```
-
 This makes it possible to use an array or a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) class when a [reference](http://php.net/manual/en/language.references.php) is required.
-
 ### Polymorphism
 [Models](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) can also be made mutable by applying their traits to an instance of a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config.php) object. 
-
 ```php
 class ViewModel
     extends \Mvc5\Config
