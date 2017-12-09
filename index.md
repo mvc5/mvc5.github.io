@@ -108,7 +108,7 @@ layout: layout
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" style="margin-bottom:2rem">
     <div class="row text-center" style="margin:40px 0;">
         <a style="margin:5px" class="btn btn-default btn-lg" href="/getting-started" role="button"><span class="glyphicon glyphicon-send"></span> Getting Started</a>            
         <a style="margin:5px" class="btn btn-default btn-lg" href="/overview" role="button"><span class="glyphicon glyphicon-book"></span> Overview</a>
@@ -127,7 +127,5 @@ layout: layout
             <a href="https://scrutinizer-ci.com/g/mvc5/mvc5/?branch=master"><img src="https://scrutinizer-ci.com/g/mvc5/mvc5/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
         </p>
         <p><a href="https://packagist.org/packages/mvc5/mvc5"><img src="https://img.shields.io/:license-mit-blue.svg" alt="License"></a></p>
-        <p><a href="https://insight.sensiolabs.com/projects/6a19e4e3-e771-46e3-9f10-fe1c06837f43"><img src="https://insight.sensiolabs.com/projects/0468aa74-4897-49f0-b42f-3211401d0c09/big.png" alt="SensioLabsInsight"></a></p>
-        <p><a href="https://gitter.im/mvc5/framework?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://camo.githubusercontent.com/da2edb525cde1455a622c58c0effc3a90b9a181c/68747470733a2f2f6261646765732e6769747465722e696d2f4a6f696e253230436861742e737667" alt="Gitter" data-canonical-src="https://badges.gitter.im/Join%20Chat.svg" style="max-width:100%;"></a></p>
     </div>
 </div>
