@@ -2,7 +2,8 @@
 layout: sidebar
 title: Getting Started
 tagline: Download and explore the demo application
-scrollspy: sidebar
+role: page
+sidebar: true
 ---
 {% include_relative source-code.md %}
 {% include_relative demo-application.md %}

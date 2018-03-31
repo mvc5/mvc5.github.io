@@ -1,0 +1,16 @@
+---
+layout: layout
+---
+<header id="page-header" class="bg-purple text-white mb-4 p-3">
+    <div class="container">
+        <h1 class="display-4">
+            <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="{{ page.title }}">
+            {{ page.title }}
+        </h1>
+        {% if page.tagline %}
+        <small class="font-italic">{{ page.tagline }}</small>
+        {% endif %}
+    </div>
+</header>
+
+{{ content }}

@@ -1,11 +1,14 @@
 ---
-layout: default
+layout: main
+sidebar: true
 ---
-<div class="row">
-    <div class="col-sm-9 main">
-        {{ content }}
-    </div>
-    <div class="col-sm-3 sidebar">
-        {% include_relative sidebar.md %}
-    </div>
-</div>
+<section class="container">
+    <main class="row">
+        <article class="col-md-10">
+            {{ content }}
+        </article>
+        <aside class="col-md-2">
+            {% include_relative sidebar.md %}
+        </aside>
+    </main>
+</section>

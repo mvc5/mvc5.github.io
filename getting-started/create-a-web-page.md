@@ -1,5 +1,5 @@
 ## Create A Web Page
-<h6 class="text-info">Copy and paste the example code into each new file.</h6>
+<h6 class="text-muted">Copy and paste the example code into each new file.</h6>
 <p style="margin-top:25px;"><a id="view-model"></a><b>1.</b> Create a new view model file in the <a href="https://github.com/mvc5/mvc5-application/tree/master/src/Home">src/Home</a> directory named <a href="https://github.com/mvc5/mvc5-application/tree/master/src/Home/ViewModel.php">ViewModel.php</a>.</p>
 <pre style="line-height:1"><code><?php
 
@@ -36,9 +36,9 @@ class Controller
     
     /**
      * @param Request $request
-     * @return string
+     * @return ViewModel
      */
-    function __invoke(Request $request)
+    function __invoke(Request $request) : ViewModel
     {
         return $this->model(['msg' => 'Hello World!']);
     }

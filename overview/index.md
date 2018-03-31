@@ -2,7 +2,8 @@
 layout: sidebar
 title:  Overview
 tagline: An enhanced PHP programming environment that provides inversion of control of a web application or any function
-scrollspy: sidebar
+role: page
+sidebar: true
 ---
 {% include_relative summary.md %}
 {% include_relative web-application.md %}
