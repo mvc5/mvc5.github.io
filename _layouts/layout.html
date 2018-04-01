@@ -44,10 +44,10 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <div class="btn-group d-block">
-                        <a role="button" class="nav-link d-inline-block {% if page.url == '/getting-started/' %}active{% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group d-block dropdown">
+                        <button class="btn btn-link nav-link d-inline-block {% if page.url == '/getting-started/' %}active{% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="fa fa-paper-plane"></span>
-                        </a>
+                        </button>
                         <a href="{{ site.baseurl }}/getting-started" role="button"
                            class="pl-0 nav-link d-inline-block {% if page.url == '/getting-started/' %}active{% endif %}">Getting Started</a>
                         <div id="navbar-getting-started" class="dropdown-menu">
@@ -62,13 +62,13 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <div class="btn-group d-block">
-                        <a role="button" class="nav-link d-inline-block {% if page.url == '/overview/' %}active{% endif %}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group d-block dropdown">
+                        <button class="btn btn-link nav-link d-inline-block {% if page.url == '/overview/' %}active{% endif %}" id="overview-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="fa fa-book"></span>
-                        </a>
+                        </button>
                         <a href="{{ site.baseurl }}/overview" role="button"
                            class="pl-0 nav-link d-inline-block {% if page.url == '/overview/' %}active{% endif %}">Overview</a>
-                        <div id="navbar-overview" class="dropdown-menu">
+                        <div id="navbar-overview" class="dropdown-menu" aria-labelledby="overview-icon">
                             <a class="dropdown-item text-nowrap" href="/overview#summary">Summary</a>
                             <a class="dropdown-item text-nowrap" href="/overview#web-application">Web Application</a>
                             <a class="dropdown-item text-nowrap" href="/overview#console-application">Console Application</a>

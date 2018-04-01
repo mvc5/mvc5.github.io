@@ -10,8 +10,7 @@ It is configured with a list of middleware functions that are chained together b
 ```php
 protected function call($middleware, array $args = [])
 {
-    return $middleware ? $this->service->call($middleware, array_merge($args, [$this->delegate()])) 
-        : $this->end($args);
+    return $middleware ? $this->service->call($middleware, $this->params($args)) : $this->end($args);
 }
 ```
 Unless the middleware function returns early, the last argument passed to the last delegate function is returned as the result; otherwise null is returned. This allows middleware functions to be easily created and for them to vary the arguments passed to the next function.

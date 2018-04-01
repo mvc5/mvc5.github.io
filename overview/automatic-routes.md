@@ -1,5 +1,5 @@
 ### Automatic Routes
-Controllers can be automatically matched to a url with the [controller match](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php#L196) function and using a single route configuration.
+Controllers can be automatically matched to a url with the [controller match](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php#L196) function using a single route configuration.
 ```php
 return [
     'app' => [

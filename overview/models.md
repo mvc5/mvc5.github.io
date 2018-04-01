@@ -28,7 +28,7 @@ interface Model
     function without($name);
 }
 ```
-The [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface is then extended to provide a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface containing the methods [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L22) and [remove](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L15).
+The [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface is then extended to provide a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface containing the [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L22) and [remove](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L15) methods.
 ```php
 namespace Mvc5\Config;
 
@@ -48,9 +48,11 @@ interface Configuration
 }
 ```
 ### Set and Remove
-Multiple values can be [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L64) or [removed](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L52) by using an array of key values or keys.
+Multiple values can be [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L64) or [removed](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L52) by using an array.
 ```php
+$config->set('foo', 'bar');
 $config->set(['foo' => 'bar', 'baz' => 'bat']);
+$config->remove('foo');
 $config->remove(['foo', 'baz']);
 ```
 ### Immutable
