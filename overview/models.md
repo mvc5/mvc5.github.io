@@ -12,7 +12,7 @@ interface Model
     function get($name);
 
     /**
-     * @param string $name
+     * @param array|string $name
      */
     function has($name) : bool;
 
