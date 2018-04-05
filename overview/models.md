@@ -116,9 +116,9 @@ This makes it possible to use an array or a [configuration](https://github.com/m
 ### Polymorphism
 Occasionally, a single instance of a [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) is necessary within an [immutable](#immutable) system. For example, when rendering a view template that modifies its parent [layout](#template-layouts) model in order to set the title of the web page. In this case, a polymorphic model can be used to assign values directly to itself, instead of assigning them to a copy.  
 ```php
-class ViewModel
-    extends \Mvc5\Config
-    implements \Mvc5\View\ViewModel
+class SharedLayout
+    extends Overload
+    implements ViewLayout
 {
     /**
      * @param array|string $name
