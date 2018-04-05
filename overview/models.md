@@ -38,7 +38,7 @@ interface Configuration
     /**
      * @param array|string $name
      */
-    function remove($name);
+    function remove($name) : void;
     
     /**
      * @param array|string $name
@@ -114,15 +114,21 @@ $config['templates']['error'];
 ```
 This makes it possible to use an array or a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) class when a [reference](http://php.net/manual/en/language.references.php) is required.
 ### Polymorphism
-[Models](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) can become mutable by applying their traits to an instance of a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config.php) object. 
+Occasionally, a single instance of a [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) is necessary within an [immutable](#immutable) system. For example, when rendering a view template that modifies its parent [layout](#template-layouts) model in order to set the title of the web page. In this case, a polymorphic model can be used to assign values directly to itself, instead of assigning them to a copy.  
 ```php
 class ViewModel
     extends \Mvc5\Config
     implements \Mvc5\View\ViewModel
 {
     /**
-     *
+     * @param array|string $name
+     * @param mixed $value
+     * @return ViewLayout
      */
-    use \Mvc5\View\Config\ViewModel;
+    function with($name, $value = null) : ViewLayout
+    {
+        $this->set($name, $value);
+        return $this;
+    }
 }
 ```
