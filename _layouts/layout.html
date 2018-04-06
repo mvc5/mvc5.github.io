@@ -51,13 +51,13 @@
                         <a href="{{ site.baseurl }}/getting-started" role="button"
                            class="pl-0 nav-link d-inline-block {% if page.url == '/getting-started/' %}active{% endif %}">Getting Started</a>
                         <div id="navbar-getting-started" class="dropdown-menu">
-                            <a class="dropdown-item text-nowrap" href="/getting-started#source-code">Source Code</a>
-                            <a class="dropdown-item text-nowrap" href="/getting-started#demo-application">Demo Application</a>
-                            <a class="dropdown-item text-nowrap" href="/getting-started#directory-structure">Directory Structure</a>
-                            <a class="dropdown-item text-nowrap" href="/getting-started#create-a-web-page">Create A Web Page</a>
-                            <a class="dropdown-item text-nowrap" href="/getting-started#functional-programming">Functional Programming</a>
-                            <a class="dropdown-item text-nowrap" href="/getting-started#events">Events</a>
-                            <a class="dropdown-item text-nowrap" href="/getting-started#middleware">Middleware</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#source-code">Source Code</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#demo-application">Demo Application</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#directory-structure">Directory Structure</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#create-a-web-page">Create A Web Page</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#functional-programming">Functional Programming</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#events">Events</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/getting-started#middleware">Middleware</a>
                         </div>
                     </div>
                 </li>
@@ -69,30 +69,35 @@
                         <a href="{{ site.baseurl }}/overview" role="button"
                            class="pl-0 nav-link d-inline-block {% if page.url == '/overview/' %}active{% endif %}">Overview</a>
                         <div id="navbar-overview" class="dropdown-menu" aria-labelledby="overview-icon">
-                            <a class="dropdown-item text-nowrap" href="/overview#summary">Summary</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#web-application">Web Application</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#console-application">Console Application</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#environment-aware">Environment Aware</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#models-and-arrayaccess">Models and ArrayAccess</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#routes">Routes</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#automatic-routes">Automatic Routes</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#url-generator">Url Generator</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#middleware">Middleware</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#http-middleware">HTTP Middleware</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#pipelines">Pipelines</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#view-models">View Models</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#rendering-view-models">Rendering View Models</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#view-engine">View Engine</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#template-layouts">Template Layouts</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#view-plugins">View Plugins</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#events">Events</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#event-configuration">Event Configuration</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#dependency-injection">Dependency Injection</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#service-container">Service Container</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#autowiring">Autowiring</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#plugins">Plugins</a>
-                            <a class="dropdown-item text-nowrap pl-5" href="/overview#service-providers">Service Providers</a>
-                            <a class="dropdown-item text-nowrap" href="/overview#named-arguments">Named Arguments</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#summary">Summary</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#web-application">Web Application</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#console-application">Console Application</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#environment-aware">Environment Aware</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#models-and-arrayaccess">Models and ArrayAccess</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#set-and-remove">Set and Remove</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#immutable">Immutable</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#with-and-without">With and Without</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#arrayaccess">ArrayAccess</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#polymorphism">Polymorphism</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#routes">Routes</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#automatic-routes">Automatic Routes</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#url-generator">Url Generator</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#middleware">Middleware</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#http-middleware">HTTP Middleware</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#pipelines">Pipelines</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#view-models">View Models</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#rendering-view-models">Rendering View Models</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#view-engine">View Engine</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#template-layouts">Template Layouts</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#view-plugins">View Plugins</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#events">Events</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#event-configuration">Event Configuration</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#dependency-injection">Dependency Injection</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#service-container">Service Container</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#autowiring">Autowiring</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#plugins">Plugins</a>
+                            <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview#service-providers">Service Providers</a>
+                            <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview#named-arguments">Named Arguments</a>
                         </div>
                     </div>
                 </li>

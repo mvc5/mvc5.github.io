@@ -5,6 +5,13 @@
     <a class="nav-link text-nowrap" href="#console-application">Console Application</a>
     <a class="nav-link text-nowrap" href="#environment-aware">Environment Aware</a>
     <a class="nav-link text-nowrap" href="#models-and-arrayaccess">Models and ArrayAccess</a>
+    <nav class="nav nav-pills flex-column">
+        <a class="nav-link text-nowrap pl-5" href="#set-and-remove">Set and Remove</a>
+        <a class="nav-link text-nowrap pl-5" href="#immutable">Immutable</a>
+        <a class="nav-link text-nowrap pl-5" href="#with-and-without">With and Without</a>
+        <a class="nav-link text-nowrap pl-5" href="#arrayaccess">ArrayAccess</a>
+        <a class="nav-link text-nowrap pl-5" href="#polymorphism">Polymorphism</a>
+    </nav>
     <a class="nav-link text-nowrap" href="#routes">Routes</a>
     <nav class="nav nav-pills flex-column">
         <a class="nav-link text-nowrap pl-5" href="#automatic-routes">Automatic Routes</a>

@@ -1,2 +1,2 @@
 ## Summary
-The [Mvc5 Framework](https://github.com/mvc5/mvc5) provides a fresh approach to [PHP](http://www.php.net) programming . It is written from the ground up as a functional object-oriented system using immutable components. At its core is a next generation [dependency injection](#dependency-injection) management [plugin](#plugins) system.
+The [Mvc5 Framework](https://github.com/mvc5/mvc5) provides a fresh approach to [PHP](http://www.php.net) programming. It is written from the ground up as a functional object-oriented system using immutable components. At its core is a next generation [dependency injection](#dependency-injection) management [plugin](#plugins) system.
