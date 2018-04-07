@@ -1,11 +1,4 @@
 ### Autowiring
-The required arguments of a class constructor are automatically resolved by a [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) when it [instantiates](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L124) a class that
+Autowiring occurs when a class is constructed and only some or none of its required parameters have been provided. A callback function is used to create the missing required parameters (and any of their required parameters). The callback function will use the type hint (class or interface) name as the dependency to create. If the result is null, the parameter name will be used instead and an exception will be thrown when the required parameter cannot be created. A service manager can be used as the callback function for [dependency injection](#dependency-injection).
 
-* does not have a service [plugin](#plugins) configuration,
-* or no arguments are passed to the [plugin](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L251) method,
-* or the arguments are <a href="#named-arguments">named</a>.
-
-The [service locator](https://github.com/mvc5/mvc5/blob/master/src/Service/Service.php) will resolve the required constructor arguments either by their type hint, or parameter name. 
-
-For a function or class method being invoked by the [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) method, the missing required arguments are also automatically [resolved](https://github.com/mvc5/mvc5/blob/master/src/Signal.php). However, they are [resolved](https://github.com/mvc5/mvc5/blob/master/src/Signal.php) in the opposite order, first  by their parameter name, then by their type hint. Otherwise, an exception will be [thrown](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L77) since the required parameter has not been provided.
 

@@ -3,7 +3,7 @@ The [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21
 ```php
 $this->call(Arg::VIEW_RENDER, [Arg::MODEL => $model] + $args);
 ```
-This allows a function to be called without having to provide all of its required parameters. Typically an exception would be [thrown](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L69), but before it [occurs](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L72), a callback function can be [used](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L59) to provide the missing arguments. Consequently, a service manager can provide [itself](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L80) as the callback function to use.
+This allows a function to be called without having to provide all of its required parameters. Typically an exception would be [thrown](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L69), but before it [occurs](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L72), a callback function can be [used](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L59) to provide the missing arguments by using the parameter name or its type hint (class or interface) name. Consequently, a service manager can provide [itself](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L80) as the callback function to use.
 ```php
 $this->signal($config, $args, $callback ?? $this);
 ```

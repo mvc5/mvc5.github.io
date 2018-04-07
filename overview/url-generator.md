@@ -20,11 +20,11 @@ Route configurations must be [named](https://github.com/mvc5/mvc5/blob/master/sr
 ```php
 echo $this->url('dashboard/add');
 ```
-[Wild card](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php) parameters can be added by using the <code>{wildcard::*$}</code> route expression and enabling it with <code>'wildcard' => true</code>. The parameters are [appended](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php#L225) to the url and will be [added](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php#L87) to the parameters for that request, e.g <code>/dashboard/phpdev/add/type/tasks</code>.
+[Wild card](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php) parameters can be added by using the <code>{wildcard::*$}</code> route expression and enabling it with <code>'wildcard' => true</code>. The parameters are then [appended](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php#L225) to the path, e.g <code>/dashboard/phpdev/add/type/tasks</code> and are [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php#L87) as parameters to the request when the route is matched. 
 ```php
 echo $this->url(['dashboard/add', 'type' => 'tasks']);
 ```
-Urls can also be [generated](https://github.com/mvc5/mvc5/blob/master/src/Url/Plugin.php#L117) without having or using a route configuration by prefixing the path with a forward slash.
+Urls can also be [generated](https://github.com/mvc5/mvc5/blob/master/src/Url/Plugin.php#L117) without a route configuration by prefixing the path with a forward slash.
 ```php
 echo $this->url('/dashboard/phpdev/list', ['order' => 'desc'], '', ['absolute' => true]);
 ```

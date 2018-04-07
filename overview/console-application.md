@@ -1,5 +1,5 @@
 ## Console Application
-A simple [console application](https://github.com/mvc5/mvc5-application/blob/master/app.php) can be created by passing [command line arguments](http://php.net/manual/en/reserved.variables.argv.php) to the [service](https://github.com/mvc5/mvc5/blob/master/src/Service/Service.php) [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) method.
+A [console application](https://github.com/mvc5/mvc5-application/blob/master/app.php) can be created by passing [command line arguments](http://php.net/manual/en/reserved.variables.argv.php) to the [service](https://github.com/mvc5/mvc5/blob/master/src/Service/Service.php) [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) method.
 ```php
 ./app.php 'Console\Example' Monday January
 ```
