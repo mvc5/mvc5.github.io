@@ -1,5 +1,5 @@
 ## Dependency Injection
-When a class object is [created](https://github.com/mvc5/mvc5/blob/master/src/Service/Builder.php#L34) and it can not be [autowired](#autowiring), then a service configuration is required. Different types of configurations can be used depending on the requirements of the class. These configurations can be either a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value.
+A service configuration can be either a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value.
 ```php
 [
     'home'          => Home\Controller::class,
