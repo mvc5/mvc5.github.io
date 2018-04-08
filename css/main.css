@@ -16,7 +16,13 @@ aside .nav-link, a:hover, #navbar .nav-item a:hover, #navbar-collapse .nav-link.
 }
 
 aside .nav-link {
-    padding: .2rem 1rem;
+    font-size:0.85rem;
+    white-space: nowrap;
+    padding: .1rem;
+}
+
+aside nav nav {
+    padding-left: 1rem;
 }
 
 .btn-outline-secondary {
@@ -28,16 +34,15 @@ pre {
     display: block;
     word-break: break-all;
     word-wrap: break-word;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #f9eded;
     overflow: auto;
     padding:0.6rem;
-    background-color: #fafafa;
+    background-color: #fefcfc;
     border-radius: 4px;
 }
 
 pre code {
-    font-size: 90%;
-    line-height: 1.42857143;
+    font-size: 87.5%;
     color: #646464;
 }
 
@@ -60,6 +65,26 @@ h3 {
 
 #navbar {
     border-bottom:0.125rem solid #33669b;
+}
+
+
+aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0;
+}
+
+aside > nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 145px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #slides .carousel-inner {
@@ -88,6 +113,11 @@ h3 {
         max-height:480px;
         overflow-y:auto;
         overflow-x:hidden;
+        font-size: 0.8rem;
+    }
+
+    #navbar-overview {
+        min-width:440px;
     }
 
     #navbar-overview a:focus, #navbar-getting-started a:focus {
@@ -123,12 +153,6 @@ h3 {
     #page-header h1 img {
         width:80px;
         height:80px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    section.container main.row aside {
-        display: none;
     }
 }
 
