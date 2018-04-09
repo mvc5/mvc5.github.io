@@ -8,7 +8,7 @@ class Controller
 {
     use Model;
     
-    public function __invoke() : ViewModel
+    function __invoke() : ViewModel
     {
         return $this->model(['message' => 'Hello World']);
         // or

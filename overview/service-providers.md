@@ -6,7 +6,7 @@ use Plugin\Controller;
 use Service\Provider;
 
 return [
-    'Home\Controller'  => new Controller(Home\Controller::class),
+    'Home\Controller' => new Controller(Home\Controller::class),
     'service\provider' => [Service\Provider::class, new Config],
 ];
 ```

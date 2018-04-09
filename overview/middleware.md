@@ -8,7 +8,7 @@ function __invoke(...$args)
 ```
 It is configured with a list of middleware functions that are chained together by each function calling a delegate function that is appended to the list of arguments passed to each middleware function.
 ```php
-protected function call($middleware, array $args = [])
+function call($middleware, array $args = [])
 {
     return $middleware ? $this->service->call($middleware, $this->params($args)) : $this->end($args);
 }

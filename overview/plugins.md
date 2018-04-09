@@ -10,10 +10,10 @@ The [app](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php) plugin is
 'request' => [
     Request\Config::class,
     'config' => new Args([
-        'hostname' => new Call('request.getHost'),
-        'method'   => new Call('request.getMethod'),
-        'path'     => new Call('request.getPathInfo'),
-        'scheme'   => new Call('request.getScheme')
+        'host' => new Call('request.getHost'),
+        'method' => new Call('request.getMethod'),
+        'path' => new Call('request.getPathInfo'),
+        'scheme' => new Call('request.getScheme')
     ])
 ],
 ```
@@ -37,7 +37,7 @@ A [callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php) p
 The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydrator) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L185) to resolve a plugin with a set of function calls and supports [named arguments](#named-arguments).   
 ##### [Child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php)
 ```php
-'manager'         => new Plugin(null),
+'manager' => new Plugin(null),
 'service\manager' => new Child(Service\Manager::class, 'manager'),
 ```
 A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) to extend a parent plugin. The first parameter is the name of the class to create and the second is the name of the parent plugin. Custom child configurations can also be created to allow another [plugin](#plugin) to be used without having to specify the name of its parent. Examples are the [controller](#controller), [factory](#factory), [form](#form) and [manager](#manager) plugins. 
@@ -48,7 +48,7 @@ A [child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php) plugin 
 The [config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) to provide the main configuration array or object. 
 ##### [Controller](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Controller.php)
 ```php
-'controller'      => new Hydrator(null, ['request' => new Plugin('request')]),
+'controller' => new Hydrator(null, ['request' => new Plugin('request')]),
 'Home\Controller' => new Controller(Home\Controller::class),
 ```
 A [controller](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Controller.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) to provide the constructor arguments and call methods for a controller without having to specify the name of its parent _controller_ plugin. This is a convenience plugin for when controllers have a similar method of instantiation.    
@@ -69,7 +69,7 @@ new Expect(new Call('web'), new Call('exception\response'), true, false);
 The [expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php) plugin is used to catch an exception when resolving a [plugin](#plugin). The second argument is the [plugin](#plugin) to use when an exception is thrown. The third argument indicates whether the exception should be passed to the second [plugin](#plugin) as a [named argument](#named-arguments) and the fourth argument indicates whether to merge the exception with the arguments passed to the first [plugin](#plugin). 
 ##### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
-'factory'         => new Service(null),
+'factory' => new Service(null),
 'Home\Controller' => new Factory(Home\Controller::class),
 ```
 A [factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L181) to create a class object without having to specify the name of its parent _factory_ plugin.
@@ -87,7 +87,7 @@ A [file include](https://github.com/mvc5/mvc5/blob/master/src/Plugin/FileInclude
 A [filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L221) to pass a value from one function to the next and returns the result of the last function called. If a function returns null, the iteration is stopped and null is returned. If a function returns false, the iteration is stopped and the previous value, or current object, is returned. The third parameter contains any additional arguments and the fourth parameter specifies the name of the argument for the value that is being filtered.     
 ##### [Form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php)
 ```php
-'form'    => new Service(null),
+'form' => new Service(null),
 'my\form' => new Form(My\Form::class),
 ```
 A [form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) create a class object without having to specify the name of its parent _form_ plugin.
@@ -102,17 +102,17 @@ A [global var](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php
 ```
 A [hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L194) to create an object with a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin name and a set of calls to invoke. Using null for the parameter name is a convenient way for it to be used as a parent plugin. When the array key of its calls configuration is a string, it is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L149) as the name of the method to call on the newly created object and passes its array value as a single [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) argument. However, if the string is prefixed with the $ symbol, the string is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L292) as the name of the object property to set. If a method needs to be called more than once, then an array of methods can be [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L296).
 ```php
-'route'  => new Hydrator(
+'route' => new Hydrator(
     Mvc5\Route\Config::class, [['set', 'controller', 'Home\Controller'], ['set', 'name', 'home']]
 )
 ```
 Additionally, any [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin can be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L31).
 ```php
-'route'  => new Hydrator(Mvc5\Route\Config::class, [new Call('response.setStatus', [500])]),
+'route' => new Hydrator(Mvc5\Route\Config::class, [new Call('response.setStatus', [500])]),
 ```
 When an array configuration is used, the current object is passed to the called methods as a named argument called _item_. This can be changed by adding a value to the beginning of the array with the name of the parameter to use.
 ```php
-'service'  => new Hydrator(
+'service' => new Hydrator(
     ArrayObject::class, ['$current', new Object, 'index' => 'foo', 'bar' => 'baz']
 )
 ```
