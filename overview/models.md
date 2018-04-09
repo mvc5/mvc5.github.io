@@ -28,7 +28,7 @@ interface Model
     function without($name);
 }
 ```
-The [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface is then extended to provide a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface containing the [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L22) and [remove](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L15) methods.
+The [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface is then extended to provide a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) interface containing the [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L21) and [remove](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php#L14) methods.
 ```php
 namespace Mvc5\Config;
 
@@ -48,7 +48,7 @@ interface Configuration
 }
 ```
 ### Set and Remove
-Multiple values can be [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L64) or [removed](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L52) by using an array.
+Multiple values can be [set](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L71) or [removed](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L59) by using an array.
 ```php
 $config->set('foo', 'bar');
 $config->set(['foo' => 'bar', 'baz' => 'bat']);
@@ -56,7 +56,7 @@ $config->remove('foo');
 $config->remove(['foo', 'baz']);
 ```
 ### Immutable
-By [protecting](https://github.com/mvc5/mvc5/blob/master/src/Config/ReadOnly.php) access to the mutable [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) methods and object [magic methods](http://php.net/manual/en/language.oop5.magic.php) an [immutable](https://github.com/mvc5/mvc5/blob/master/src/Config/Immutable.php) interface can be implemented.
+By [protecting](https://github.com/mvc5/mvc5/blob/master/src/Config/ReadOnly.php#L14) access to the mutable [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) methods and object [magic methods](http://php.net/manual/en/language.oop5.magic.php) an [immutable](https://github.com/mvc5/mvc5/blob/master/src/Config/Immutable.php) interface can be implemented.
 ```php
 namespace Mvc5\Config;
 
@@ -98,13 +98,13 @@ interface Route
 }
 ```
 ### With and Without
-A copy of the model can be created [with](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L82) and [without](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L97) specific values. It also accepts an array of key values so that only one clone operation is performed.
+A copy of the model can be created [with](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L89) and [without](https://github.com/mvc5/mvc5/blob/master/src/Config/Config.php#L104) specific values. It also accepts an array of key values so that only one clone operation is performed.
 ```php
 $this->with(['foo' => 'bar', 'baz' => 'bat']);
 $this->without(['foo', 'baz']);
 ```
 ### ArrayAccess 
-[Models](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) support the [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface. This, for example, enables the [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) to [retrieve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L321) composite values. E.g.
+[Models](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) support the [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface. This, for example, enables the [service manager](https://github.com/mvc5/mvc5/blob/master/src/Service/Manager.php) to [retrieve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L361) composite values. E.g.
 ```php
 new Param('templates.error');
 ```

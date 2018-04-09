@@ -16,11 +16,11 @@ The [url plugin](https://github.com/mvc5/mvc5/blob/master/src/Url/Plugin.php) ca
 ```php
 echo $this->url(['dashboard', 'user' => 'phpdev']);
 ```
-Route configurations must be [named](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php#L74) and [child routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L41) of the current parent route can [automatically](https://github.com/mvc5/mvc5/blob/master/src/Url/Plugin.php#L127) use their parent route parameters, e.g <code>/dashboard/phpdev/add</code>.
+Route configurations must be [named](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php#L75) and [child routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php#L23) of the current parent route can [automatically](https://github.com/mvc5/mvc5/blob/master/src/Url/Plugin.php#L127) use their parent route parameters, e.g <code>/dashboard/phpdev/add</code>.
 ```php
 echo $this->url('dashboard/add');
 ```
-[Wild card](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php) parameters can be added by using the <code>{wildcard::*$}</code> route expression and enabling it with <code>'wildcard' => true</code>. The parameters are then [appended](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php#L225) to the path, e.g <code>/dashboard/phpdev/add/type/tasks</code> and are [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php#L87) as parameters to the request when the route is matched. 
+[Wild card](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php) parameters can be added by using the <code>{wildcard::*$}</code> route expression and enabling it with <code>'wildcard' => true</code>. The parameters are then [appended](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php#L232) to the path, e.g <code>/dashboard/phpdev/add/type/tasks</code> and are [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php#L87) as parameters to the request when the route is matched. 
 ```php
 echo $this->url(['dashboard/add', 'type' => 'tasks']);
 ```

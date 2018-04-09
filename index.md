@@ -104,6 +104,7 @@ role: home
             <li data-target="#slides" data-slide-to="8"></li>
             <li data-target="#slides" data-slide-to="9"></li>
             <li data-target="#slides" data-slide-to="10"></li>
+            <li data-target="#slides" data-slide-to="11"></li>
         </ol>            
     </div>
 </section>

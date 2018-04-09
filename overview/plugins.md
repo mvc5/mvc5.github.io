@@ -136,7 +136,7 @@ new Invoke('response.setStatusCode', [500]),
 new Invoke(new Args([new Plugin('response'), 'setStatusCode']), [500]),
 new Invoke(function() { var_dump(func_get_args()); }),
 ```
-An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L237) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L468) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
+An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L237) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L468) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
 ```php
 $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('Request')])
 ```
@@ -230,7 +230,7 @@ The [scoped](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scoped.php) plu
 ```php
 new ScopedCall($this)
 ```
-The [scoped call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/ScopedCall.php) plugin extends the [call](#call) plugin and uses the [scoped](#scoped) plugin to set the scope of the closure for it to be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) with.  
+The [scoped call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/ScopedCall.php) plugin extends the [call](#call) plugin and uses the [scoped](#scoped) plugin to set the scope of the closure for it to be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) with.  
 ##### [Service](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Service.php)
 ```php
 'router' => new Service(Mvc5\Route\Router:class, [new Param('routes')])

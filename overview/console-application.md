@@ -1,5 +1,5 @@
 ## Console Application
-A [console application](https://github.com/mvc5/mvc5-application/blob/master/app.php) can be created by passing [command line arguments](http://php.net/manual/en/reserved.variables.argv.php) to the [service](https://github.com/mvc5/mvc5/blob/master/src/Service/Service.php) [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) method.
+A [console application](https://github.com/mvc5/mvc5-application/blob/master/app.php) can be created by passing [command line arguments](http://php.net/manual/en/reserved.variables.argv.php) to the [service](https://github.com/mvc5/mvc5/blob/master/src/Service/Service.php) [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) method.
 ```php
 ./app.php 'Console\Example' Monday January
 ```
@@ -8,7 +8,7 @@ include './init.php';
 
 (new App('./config/config.php'))->call($argv[1], array_slice($argv, 2));
 ```
-The first argument is the name of the function to [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L21) and the remaining arguments are its parameters, e.g [<code>Console\Example</code>](https://github.com/mvc5/mvc5-application/blob/master/src/Console/Example.php).
+The first argument is the name of the function to [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) and the remaining arguments are its parameters, e.g [<code>Console\Example</code>](https://github.com/mvc5/mvc5-application/blob/master/src/Console/Example.php).
 ```php
 namespace Console;
 

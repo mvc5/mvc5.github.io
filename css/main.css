@@ -19,10 +19,12 @@ aside .nav-link {
     font-size:0.85rem;
     white-space: nowrap;
     padding: .1rem;
+    width:100%;
 }
 
 aside nav nav {
     padding-left: 1rem;
+    width:100%;
 }
 
 .btn-outline-secondary {
@@ -74,7 +76,6 @@ aside {
     bottom: 0;
     left: 0;
     z-index: 100;
-    padding: 0;
 }
 
 aside > nav {
