@@ -2,13 +2,13 @@
 The [url plugin](https://github.com/mvc5/mvc5/blob/master/src/Url/Plugin.php) can [generate](https://github.com/mvc5/mvc5/blob/master/src/Url/Route/Generator.php) urls with or without a route configuration and are [RFC 3986](https://tools.ietf.org/html/rfc3986) [encoded](https://github.com/mvc5/mvc5/blob/master/src/Url/Assemble.php).
 ```php
 'dashboard' => [
-    'path'      => '/dashboard/{user}',
+    'path' => '/dashboard/{user}',
     'controller' => 'dashboard',
     'children' => [
         'add' => [
             'path' => '/add[/{wildcard::*$}]',
             'controller' => 'dashboard\add',
-            'wildcard'   => true,
+            'wildcard' => true,
         ]
     ]
 ]
