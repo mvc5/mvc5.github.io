@@ -1,5 +1,5 @@
 ### Service Container
-[Plugins](#plugins) can be grouped together and accessed via the [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface or using the [arrow](https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L106) notation, e.g. <code>dashboard->home</code>.
+Service configurations and [plugins](#plugins) can be grouped together and accessed via the [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface or the [arrow](https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L106) notation, e.g. <code>dashboard->home</code>.
 ```php
 use Mvc5\App;
 use Mvc5\Plugin\Plugins;
