@@ -18,13 +18,11 @@ aside .nav-link, a:hover, #navbar .nav-item a:hover, #navbar-collapse .nav-link.
 aside .nav-link {
     font-size:0.85rem;
     white-space: nowrap;
-    padding: .1rem;
-    width:100%;
+    padding:.1rem;
 }
 
 aside nav nav {
     padding-left: 1rem;
-    width:100%;
 }
 
 .btn-outline-secondary {
@@ -81,8 +79,8 @@ aside {
 aside > nav {
     position: -webkit-sticky;
     position: sticky;
-    top: 80px;
-    height: calc(100vh - 145px);
+    top: 64px;
+    height: calc(100vh - 100px);
     padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;

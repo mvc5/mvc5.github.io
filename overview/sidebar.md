@@ -1,4 +1,4 @@
-<nav class="nav">
+<nav>
     <a class="nav-link" href="#summary">Summary</a>
     <a class="nav-link" href="#web-application">Web Application</a>
     <a class="nav-link" href="#console-application">Console Application</a>
