@@ -6,7 +6,7 @@ return [
         'defaults' => ['controller' => 'home'],
         'options' => [
             'prefix' => 'App',
-            'suffix' => '\Controller'
+            'suffix' => '\Controller',
             'strict' => false,
         ],
         'path' => '/[{controller::*$}]'
@@ -19,4 +19,4 @@ Strict mode does not change the case sensitivity of the controller name. However
 
 When a [controller](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php#L38) is specified, it must have a service configuration value (or a real value) that [resolves](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) to a [callable](http://php.net/manual/en/language.types.callable.php) type. If it does not have a [plugin configuration](https://github.com/mvc5/mvc5/blob/master/config/service.php) and its class exists, a new instance will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L122) and [autowired](#autowiring).
 
-Controller names prefixed with the [<code>@</code>](https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L16) symbol will be directly [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L71) because they are either a [function](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L33) or a [static class method](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L31).
+For example, if the matched url is <code>/about</code>, the value <code>about</code> is [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L54) as the <code>controller</code> request parameter and the [controller match](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php) function then [loads](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php#L88) the <code>App\About\Controller</code> and [assigns](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Controller.php#L211) it to the request.

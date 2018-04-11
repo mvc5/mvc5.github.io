@@ -13,7 +13,7 @@ class ViewModel
      */
     const TEMPLATE = 'home/index';
 }</code></pre>
-<p>The constant <code>TEMPLATE_NAME</code> can be used as the <a href="https://github.com/mvc5/mvc5/blob/master/src/Template/TemplateModel.php#L14">name</a> or file path of the view model's associated template and is assigned to the template variable within the <a href="https://github.com/mvc5/mvc5/blob/master/src/View/Config/ViewModel.php#L27">constructor</a> when no <a href="https://github.com/mvc5/mvc5/blob/master/src/View/Config/ViewModel.php#L27">constructor</a> arguments are given. Read more about <a href="/overview/#view-models">view models</a>.</p>
+<p>The constant <code>TEMPLATE_NAME</code> can be used as the <a href="https://github.com/mvc5/mvc5/blob/master/src/Template/TemplateModel.php#L14">name</a> or file path of the view model's associated template and is assigned within the <a href="https://github.com/mvc5/mvc5/blob/master/src/View/Config/ViewModel.php#L27">constructor</a> when no <a href="https://github.com/mvc5/mvc5/blob/master/src/View/Config/ViewModel.php#L27">constructor</a> arguments are given. Read more about <a href="/overview/#view-models">view models</a>.</p>
 <p style="margin-top:25px;"><a id="controller"></a><b>2.</b> Create a new controller file in the <a href="https://github.com/mvc5/mvc5-application/tree/master/src/Home">src/Home</a> directory named <a href="https://github.com/mvc5/mvc5-application/blob/master/src/Home/Controller.php">Controller.php</a>.</p>
 <pre style="line-height:1"><code><?php
                                  

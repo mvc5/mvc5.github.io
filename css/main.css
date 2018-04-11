@@ -16,7 +16,7 @@ aside .nav-link, a:hover, #navbar .nav-item a:hover, #navbar-collapse .nav-link.
 }
 
 aside .nav-link {
-    font-size:0.85rem;
+    font-size:0.8rem;
     white-space: nowrap;
     padding:.1rem;
 }

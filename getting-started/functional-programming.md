@@ -1,5 +1,5 @@
 ## Functional Programming
-<p>When the application is opened in the web browser the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script is called. However, for this example a simpler version is provided below without any exception handling.</p>
+<p>When the application is opened in the web browser, the main <a href="https://github.com/mvc5/mvc5-application/blob/master/public/index.php">public/index.php</a> script is called. However, for this example a simpler version is provided below without any exception handling.</p>
 
 ```php
 <?php
@@ -37,7 +37,7 @@ function web($request, $response) {
 (new App(include __DIR__ . '/../config/config.php'))->call('@web');
 ```
 
-<p>By default, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22">call</a> method assumes that a string is the name of an object, or an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> to invoke. However, since it is a function, its name must be prefixed with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L16">@</a> sign to indicate that it is a <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L33">function</a> or <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L29">static class method</a> and should be invoked directly instead of creating an object.</p>
+<p>By default, the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22">call</a> method assumes that a string is the name of an object, or an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> to invoke. However, since it is a function, its name must be prefixed with the <a href="https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L16">@</a> sign to indicate that it is a <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L33">function</a> (or a <a href="https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L29">static class method</a>) and should be invoked directly instead of creating an object.</p>
 
 <p>Since the argument to the <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22">call</a> method must <a href="https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477">resolve</a> to a <a href="http://php.net/manual/en/language.types.callable.php">callable</a> type, the <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L79">web</a> configuration can also be an <a href="http://php.net/manual/en/language.oop5.anonymous.php">anonymous class</a>.</p>
 

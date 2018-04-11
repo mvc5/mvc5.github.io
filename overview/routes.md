@@ -1,5 +1,5 @@
 ## Routes
-A collection of [routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) are used to [match](https://github.com/mvc5/mvc5/blob/master/src/Route/Match.php) a [request](https://github.com/mvc5/mvc5/blob/master/src/Http/Request.php) using [middleware](https://github.com/mvc5/mvc5/blob/master/config/middleware.php#L7) route components. Each aspect of [matching](https://github.com/mvc5/mvc5/blob/master/src/Route/Match.php) a route to a [request](https://github.com/mvc5/mvc5/blob/master/src/Http/Request.php) is a separate function. For example, [scheme](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Scheme.php), [host](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Host.php), [path](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php), [method](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Method.php), [wildcard](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php) or any other function can be [configured](https://github.com/mvc5/mvc5/blob/master/config/middleware.php#L7). 
+A collection of [routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) are used to [match](https://github.com/mvc5/mvc5/blob/master/src/Route/Match.php) a [request](https://github.com/mvc5/mvc5/blob/master/src/Http/Request.php) using [middleware](https://github.com/mvc5/mvc5/blob/master/config/middleware.php#L7) route components. Each aspect of [matching](https://github.com/mvc5/mvc5/blob/master/src/Route/Match.php) a route is a separate function. For example, [scheme](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Scheme.php), [host](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Host.php), [path](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php), [method](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Method.php), [wildcard](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Wildcard.php) or any other function can be [configured](https://github.com/mvc5/mvc5/blob/master/config/middleware.php#L7). 
 ```php
 return [
     'home' => [
@@ -7,16 +7,20 @@ return [
         'regex' => '/$'
         'controller' => 'Home\Controller'
     ],
-    'app' => [
-        'path' => '/{controller::*$}' //{controller:[a-zA-Z0-9/]+[a-zA-Z0-9]$}
-    ],
+    'dashboard' => [
+        'path' => '/dashboard/{user}',
+        'controller' => 'dashboard->controller.test',
+    ]
 ]
 ```
 Routes can be configured with a regular expression or a path. If the route is only used to [match](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L47) the request path, then only a regular expression is required. If the route is also used to create a url, then a path configuration is required. If a [route](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) does not contain a [regular expression](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php#L78), it will be [created](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Build.php#L72) from the [path](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Build.php#L68) configuration before being [matched](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L29).
 
-The regular expression for a route can use group names that are [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L40) as parameters to the request when the route is [matched](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L29). For example, if the matched url is <code>/about</code>, the value <code>about</code> is [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L54) to the <code>app</code> route as the <code>controller</code> request parameter.
+When a route is [matched](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L29), the route's <code>controller</code> configuration is assigned to the request. However, a route does not always require a controller configuration, it can also have a [middleware](#middleware) configuration and an [automatic route](#automatic-routes) configuration. Controller names prefixed with the [<code>@</code>](https://github.com/mvc5/mvc5/blob/master/src/Arg.php#L16) symbol will be directly [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L71) because they are either a [function](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L33) or a [static class method](https://github.com/mvc5/mvc5/blob/master/src/Signal.php#L31).
 
-Consequently, parameter names must be alphanumeric and the path configuration provides a simpler format for specifying a regular expression and group names. Aliases can be assigned to a regular expression and be used in a path configuration by prefixing them with a single colon or two colons when assigned to a parameter name. Below are the default aliases [available](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Tokens.php#L23) to use.
+Custom [routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) can also be configured by adding a [class name](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Build.php#L39) to the array, or the configuration can be a [route](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) object containing a regular expression (and optionally a path configuration).
+
+### Regular Expressions
+The regular expression for a route can use group names that are [assigned](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L40) as parameters to the request when the route is [matched](https://github.com/mvc5/mvc5/blob/master/src/Route/Match/Path.php#L29). Consequently, parameter names must be alphanumeric and the path configuration provides a simpler format for specifying a regular expression and group names. Aliases can be assigned to a regular expression and be used in a path configuration by prefixing them with a single colon or two colons when assigned to a parameter name. Below are the default aliases [available](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Tokens.php#L23) to use.
 ```php
 [
     'a' => '[a-zA-Z0-9]++',
@@ -39,5 +43,3 @@ return [
 ]
 ```
 Optional parameters are enclosed with square brackets <code>[]</code>. The syntax of the path configuration is based on the [FastRoute](https://github.com/nikic/FastRoute) library and the aliases are based on [Klien.php](https://github.com/klein/klein.php). However, the route component is mainly based on the [Dash](https://github.com/DASPRiD/Dash) library.
-
-Custom [routes](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) can also be configured by adding a [class name](https://github.com/mvc5/mvc5/blob/master/src/Route/Definition/Build.php#L39) to the array, or the configuration can be a [route](https://github.com/mvc5/mvc5/blob/master/src/Route/Route.php) object containing a regular expression (and optionally a path configuration).

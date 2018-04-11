@@ -13,7 +13,7 @@ function call($middleware, array $args = [])
     return $middleware ? $this->service->call($middleware, $this->params($args)) : $this->end($args);
 }
 ```
-Unless the middleware function returns early, the last argument passed to the last [delegate](https://github.com/mvc5/mvc5/blob/master/src/Service/Middleware.php#L43) function is [returned](https://github.com/mvc5/mvc5/blob/master/src/Service/Middleware.php#L56) as the result; otherwise null is returned. This allows middleware functions to be easily created and for them to vary the arguments passed to the next function.
+Unless the middleware function returns early, the last argument passed to the last [delegate](https://github.com/mvc5/mvc5/blob/master/src/Service/Middleware.php#L43) function is [returned](https://github.com/mvc5/mvc5/blob/master/src/Service/Middleware.php#L56) as the result; otherwise null is [returned](https://github.com/mvc5/mvc5/blob/master/src/Service/Middleware.php#L56). This allows middleware functions to be easily created and for them to vary the arguments passed to the [next](https://github.com/mvc5/mvc5/blob/master/src/Service/Middleware.php#L62) function.
 ```php
 function __invoke(Route $route, Request $request, callable $next)
 {

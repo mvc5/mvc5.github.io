@@ -31,7 +31,7 @@ The [default event model](https://github.com/mvc5/mvc5/blob/master/src/Event.php
 ```php
 $app->call('dashboard:remove');
 ```
-The [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) function [can](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L28) also [generate](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L32) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php). However, sometimes it may be preferable to pass the event arguments directly to its constructor, in which case the [trigger](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L91) method can be used.
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) function [can](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L28) also [generate](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L32) an [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php). However, sometimes it maybe preferable to pass event parameters directly to its constructor, in which case the [trigger](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Generator.php#L91) method can be used.
 ```php
 $app->trigger(['response\dispatch', 'event' => 'web', 'request' => $request, 'response' => $response]);
 ```

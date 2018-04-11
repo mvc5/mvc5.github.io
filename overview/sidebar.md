@@ -13,6 +13,7 @@
         </nav>
     <a class="nav-link" href="#routes">Routes</a>
         <nav>
+            <a class="nav-link" href="#regular-expressions">Regular Expressions</a>
             <a class="nav-link" href="#automatic-routes">Automatic Routes</a>
             <a class="nav-link" href="#url-generator">Url Generator</a>
         </nav>
