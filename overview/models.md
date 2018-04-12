@@ -114,7 +114,7 @@ $config['templates']['error'];
 ```
 This makes it possible to use an array or a [configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php) class when a [reference](http://php.net/manual/en/language.references.php) is required.
 ### Polymorphism
-Occasionally, a single instance of a [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) is necessary within an [immutable](#immutable) system. For example, when rendering a view template that modifies its parent [layout](#template-layouts) model in order to set the title of the web page. In this case, a polymorphic model can be used to assign values directly to itself, instead of assigning them to a copy.  
+Occasionally, a single instance of a [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) is necessary within an [immutable](#immutable) system. For example, when rendering a view template that modifies a shared [layout](#template-layouts) model in order to set the title of the web page. In this case, a polymorphic model can be used to assign values directly to itself, instead of assigning them to a copy.  
 ```php
 class SharedLayout
     extends Overload
