@@ -1,5 +1,5 @@
 ## Dependency Injection
-A service configuration can either be a string, an array, an anonymous function, a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) [plugin](#plugins) or a real value.
+A service configuration can either be a string, an array, an anonymous function, a [plugin](#plugins) or a real value.
 The service name can either be a short name or a class or interface name. If a service name does not have a service configuration and it is a fully qualified class name, the class will be [created](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L42) and [autowired](#autowiring) by [default](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L57).
 ```php
 [
