@@ -24,7 +24,7 @@ function __invoke(Route $route, Request $request, callable $next)
 ### HTTP Middleware
 The signature of the [HttpMiddleware](https://github.com/mvc5/mvc5/blob/master/src/Http/HttpMiddleware.php) function is for handling [requests](https://github.com/mvc5/mvc5/blob/master/src/Http/Request.php) and [responses](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php).
 ```php
-function __invoke($request, $response)
+function __invoke(Request $request, Response $response)
 {
     return $this->call($this->rewind(), [$request, $response]);
 }
