@@ -4,8 +4,6 @@ A [console application](https://github.com/mvc5/mvc5-application/blob/master/app
 ./app.php 'Console\Example' Monday January
 ```
 ```php
-include './init.php';
-
 (new App('./config/config.php'))->call($argv[1], array_slice($argv, 2));
 ```
 The first argument is the name of the function to [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) and the remaining arguments are its parameters, e.g [<code>Console\Example</code>](https://github.com/mvc5/mvc5-application/blob/master/src/Console/Example.php).
@@ -16,32 +14,21 @@ use Home\ViewModel;
 
 class Example
 {
-    /**
-     * @var ViewModel
-     */
     protected $model;
 
-    /**
-     * @param ViewModel $model
-     */
     function __construct(ViewModel $model)
     {
         $this->model = $model;
     }
 
-    /**
-     * @param $day
-     * @param $month
-     */
     function __invoke($day, $month)
     {
-        var_dump($this->model);
-        echo $day . ' ' . $month . "\n";
+        echo $this->model->message . ': ' . $day . ' ' . $month . "\n";
     }
 }
 ```
 An [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) can also work without a configuration. 
 ```php
-(new App)->call($argv[1], array_slice($argv, 2));;
+(new App)->call($argv[1], array_slice($argv, 2));
 ```
-Read more about <a href="#dependency-injection">dependency injection</a>, <a href="#autowiring">autowiring</a> and <a href="#named-arguments">named arguments</a> for how required arguments can automatically be resolved.
+Read more about <a href="#dependency-injection">dependency injection</a> and <a href="#autowiring">autowiring</a>.

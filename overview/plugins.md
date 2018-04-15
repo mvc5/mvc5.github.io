@@ -1,10 +1,10 @@
 ### Plugins
-Plugins can perform a variety of tasks and be nested together to form a composite plugin. Various types of plugins are available and custom plugins can also be created.
+Plugins are [resolved](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L412) can perform a variety of tasks and be nested together to form a composite plugin. Various types of plugins are available and custom plugins can also be created.
 ##### [App](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php)
 ```php
 'dashboard' => new App(new FileInclude(__DIR__ . '/dashboard.php')),
 ```
-The [app](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php) plugin is used to provide a scoped instance of the [Mvc5\App](https://github.com/mvc5/mvc5/blob/master/src/App.php) and uses the current application as its fallback service provider.   
+The [app](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L201) to provide a scoped instance of an [Mvc5\App](https://github.com/mvc5/mvc5/blob/master/src/App.php) class and uses the current service provider as its [parent](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L60).
 ##### [Args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php)
 ```php
 'request' => [
@@ -22,14 +22,14 @@ The [args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php) plugin 
 ```php
 new Call('Home\Controller', ['response' => new Plugin('Response')])
 ```
-The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to invoke an object or method and supports [named arguments and plugins](#named-arguments). 
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to invoke an object or method, and supports [plugins](#plugins) and [named arguments](#named-arguments).
 ##### [Callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php)
 ```php
 new Callback(function() {
     $messages = $this->plugin('messages');
 })
 ```
-A [callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php) plugin binds the scope of the application to a [closure](http://php.net/manual/en/class.closure.php). The [closure](http://php.net/manual/en/class.closure.php) can then access the application's public service methods. 
+A [callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php) plugin [binds](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L122) the scope of the application to a [closure](http://php.net/manual/en/class.closure.php) which can then access the application's public service methods.
 ##### [Calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php)
 ```php
 'route\dispatch' => new Calls(new Plugin(Mvc5\Route\Dispatch::class), ['service' => new Link])
@@ -51,7 +51,7 @@ The [config](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Config.php) plu
 'controller' => new Hydrator(null, ['request' => new Plugin('request')]),
 'Home\Controller' => new Controller(Home\Controller::class),
 ```
-A [controller](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Controller.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L197) to provide the constructor arguments and call methods for a controller without having to specify the name of its parent _controller_ plugin. This is a convenience plugin for when controllers have a similar method of instantiation.    
+A [controller](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Controller.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L197) to provide the constructor arguments and call methods for a controller without having to specify the name of its parent <code>controller</code> plugin. This is a convenience plugin for when controllers have a similar method of instantiation.
 ##### [Copy](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Copy.php)
 ```php
 new Copy(new Plug('response'))
@@ -66,13 +66,13 @@ The [end](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php) plugin wi
 ```php
 new Expect(new Call('web'), new Call('exception\response'), true, false);
 ```
-The [expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php) plugin is used to catch an exception when resolving a [plugin](#plugin). The second argument is the [plugin](#plugin) to use when an exception is thrown. The third argument indicates whether the exception should be passed to the second [plugin](#plugin) as a [named argument](#named-arguments). The fourth argument indicates whether to merge the exception with the arguments passed to the first [plugin](#plugin). 
+The [expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php) plugin is used to catch an exception when resolving a [plugin](#plugin). The second argument is the [plugin](#plugin) to use when an exception is thrown. The third argument indicates whether the exception should be passed to the second [plugin](#plugin) as a [named argument](#named-arguments). The fourth argument indicates whether to [merge](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php#L82) the exception with the arguments passed to the first [plugin](#plugin).
 ##### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
 'factory' => new Service(null),
 'Home\Controller' => new Factory(Home\Controller::class),
 ```
-A [factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) to create a class object without having to specify the name of its parent _factory_ plugin.
+A [factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) to create a class object without having to specify the name of its parent <code>factory</code> plugin.
 ##### [FileInclude](https://github.com/mvc5/mvc5/blob/master/src/Plugin/FileInclude.php)
 ```php
 new FileInclude('config/templates.php'),
@@ -90,7 +90,7 @@ A [filter](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Filter.php) plugi
 'form' => new Service(null),
 'my\form' => new Form(My\Form::class),
 ```
-A [form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) create a class object without having to specify the name of its parent _form_ plugin.
+A [form](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Form.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L189) create a class object without having to specify the name of its parent <code>form</code> plugin.
 ##### [GlobalVar](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php)
 ```php
 new GlobalVar('_COOKIE')
@@ -106,11 +106,11 @@ A [hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php) p
     Mvc5\Route\Config::class, [['set', 'controller', 'Home\Controller'], ['set', 'name', 'home']]
 )
 ```
-Additionally, any [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin can be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L326).
+Additionally, any [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin can also be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L326).
 ```php
 'route' => new Hydrator(Mvc5\Route\Config::class, [new Call('response.setStatus', [500])]),
 ```
-When an array configuration is used, the current object is passed to the called methods as a named argument called _item_. This can be changed by adding a value to the beginning of the array with the name of the parameter to use.
+When an array configuration is used, the current object is passed to the called methods as a named argument called <code>item</code>. This can be changed by adding a value to the beginning of the array with the name of the parameter to use.
 ```php
 'service' => new Hydrator(
     ArrayObject::class, ['$current', new Object, 'index' => 'foo', 'bar' => 'baz']
@@ -129,7 +129,7 @@ class Object
 ```php
 $response = $app->call(new Invokable(new Plugin('response')));
 ```
-An [invokable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invokable.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L244) to return an anonymous function. When invoked, it will resolve and return its configured value.
+An [invokable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invokable.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L244) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) and return its configured value.
 ##### [Invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php)
 ```php
 new Invoke('response.setStatusCode', [500]),
@@ -144,12 +144,12 @@ $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('
 ```php
 'request\service' => [Mvc5\Request\Service::class, new Link]
 ```
-A [link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L225) to return the current service object.
+A [link](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Link.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L225) to return the current [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) or service provider.
 ##### [Maybe](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Maybe.php)
 ```php
 new Maybe($value = null, $default = null)
 ```
-The [maybe](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Maybe.php) plugin returns a resolved value. When the resolved value is null, the default value is returned if it is not null, otherwise [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php) is returned. The value can be [shared](#shared) and then retrieved with the [nullable](#nullable) plugin; which returns null when the value is [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php).
+The [maybe](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Maybe.php) plugin returns a value that is not null. The [resolved](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) <code>value</code> will be returned if it is not null, in which case the <code>default</code> value will be returned if it is also not null, otherwise an instance of [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php) is returned. The value can be [shared](#shared) and then retrieved using the [nullable](#nullable) plugin; which returns null when the value is [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php).
 ```php
 (new Maybe)(); //Nothing
 (new Maybe)('foo'); //foo
@@ -163,7 +163,7 @@ The [maybe](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Maybe.php) plugi
 ```php
 new Nullable($value = null, $default = null)
 ```
-The [nullable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nullable.php) plugin returns a resolved value. When the value is [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php), the default value is returned.   
+The [nullable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nullable.php) plugin returns a [resolved](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) value. When the value is [Nothing](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nothing.php), the default value is returned.
 ```php
 (new Nullable)(); //null
 (new Nullable)('foo'); //foo
@@ -177,12 +177,12 @@ The [nullable](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Nullable.php)
 ```php
 new NullValue
 ```
-A [null value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/NullValue.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L263) to return a null value. It can be used to [prevent](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L510) a callback provider from being [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L511).
+A [null value](https://github.com/mvc5/mvc5/blob/master/src/Plugin/NullValue.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L263) to return a null value. It can be [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L535) to [prevent](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L136) a service provider from being [invoked](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L136) and from [creating](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Build.php#L42) an instance of its service same.
 ##### [Param](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Param.php)
 ```php
 new Param('templates.home')
 ```
-A [param](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Param.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L209) to retrieve a configuration value and [uses](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L349) a dot notation for arrays and objects with [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php).
+A [param](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Param.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L209) to retrieve a configuration value and [uses](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L644) a dot notation for arrays and objects with [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php).
 ##### [Plug](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plug.php)
 ```php
 new Plug('controller\exception')

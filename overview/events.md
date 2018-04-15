@@ -47,9 +47,9 @@ Events are <a href="https://github.com/mvc5/mvc5/blob/master/config/event.php">c
         var_dump(__FILE__, $response);
     },
     'view\layout',
-    'view\render',
-    'response\status',
-    'response\version',
-    'response\send'
+    new Plugin('view\render'),
+    [new Mvc5\Response\Status, '__invoke'],
+    new Mvc5\Response\Version,
+    Mvc5\Response\Send::class
 ],
 ```

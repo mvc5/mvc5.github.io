@@ -3,7 +3,6 @@ If a [layout](https://github.com/mvc5/mvc5/blob/master/src/View/ViewLayout.php) 
 ```php
 function layout(TemplateLayout $layout, $model)
 {
-    return !$model instanceof TemplateModel || $model instanceof TemplateLayout ? $model : 
-        $layout->withModel($model);
+    return !$model instanceof TemplateModel || $model instanceof TemplateLayout ? $model : $layout->withModel($model);
 }
 ```

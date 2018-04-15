@@ -72,7 +72,7 @@ trait ReadOnly
         throw new \Exception;
     }
 
-    function offsetUnset($name)
+    function offsetUnset($name) : void
     {
         throw new \Exception;
     }
@@ -82,7 +82,7 @@ trait ReadOnly
         throw new \Exception;
     }
 
-    function __unset($name)
+    function __unset($name) : void
     {
         throw new \Exception;
     }
