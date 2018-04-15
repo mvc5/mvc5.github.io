@@ -88,7 +88,7 @@ trait ReadOnly
     }
 }
 ```
-Implementing the [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface allows a component to only have to specify its immutable methods.
+Implementing the [model](https://github.com/mvc5/mvc5/blob/master/src/Config/Model.php) interface allows a component to specify only its immutable methods.
 ```php
 interface Route
     extends Model

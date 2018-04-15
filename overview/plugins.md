@@ -1,5 +1,5 @@
 ### Plugins
-Plugins are [resolved](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L412) can perform a variety of tasks and be nested together to form a composite plugin. Various types of plugins are available and custom plugins can also be created.
+Plugins can perform a variety of tasks and be nested together to form a composite plugin. Various types of plugins are available and custom plugins can also be created.
 ##### [App](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php)
 ```php
 'dashboard' => new App(new FileInclude(__DIR__ . '/dashboard.php')),
