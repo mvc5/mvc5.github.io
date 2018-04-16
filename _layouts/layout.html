@@ -102,10 +102,59 @@
                                     <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview/#dependency-injection">Dependency Injection</a>
                                     <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview/#service-container">Service Container</a>
                                     <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview/#autowiring">Autowiring</a>
-                                    <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview/#plugins">Plugins</a>
                                     <a class="dropdown-item text-nowrap pl-5" href="{{ site.baseurl }}/overview/#service-providers">Service Providers</a>
                                     <a class="dropdown-item text-nowrap" href="{{ site.baseurl }}/overview/#named-arguments">Named Arguments</a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="btn-group d-block dropdown">
+                        <button class="btn btn-link nav-link d-inline-block {% if page.url == '/plugins/' %}active{% endif %}" id="plugins-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-plug"></span>
+                        </button>
+                        <a href="{{ site.baseurl }}/plugins" role="button"
+                           class="pl-0 nav-link d-inline-block {% if page.url == '/plugins/' %}active{% endif %}">Plugins</a>
+                        <div id="navbar-plugins" class="dropdown-menu" aria-labelledby="plugins-icon">
+                            <div class="d-flex flex-wrap">
+                                <a class="dropdown-item text-nowrap" href="#app">App</a>
+                                <a class="dropdown-item text-nowrap" href="#args">Args</a>
+                                <a class="dropdown-item text-nowrap" href="#call">Call</a>
+                                <a class="dropdown-item text-nowrap" href="#callback">Callback</a>
+                                <a class="dropdown-item text-nowrap" href="#calls">Calls</a>
+                                <a class="dropdown-item text-nowrap" href="#child">Child</a>
+                                <a class="dropdown-item text-nowrap" href="#config">Config</a>
+                                <a class="dropdown-item text-nowrap" href="#controller">Controller</a>
+                                <a class="dropdown-item text-nowrap" href="#copy">Copy</a>
+                                <a class="dropdown-item text-nowrap" href="#end">End</a>
+                                <a class="dropdown-item text-nowrap" href="#expect">Expect</a>
+                                <a class="dropdown-item text-nowrap" href="#factory">Factory</a>
+                                <a class="dropdown-item text-nowrap" href="#fileinclude">FileInclude</a>
+                                <a class="dropdown-item text-nowrap" href="#filter">Filter</a>
+                                <a class="dropdown-item text-nowrap" href="#form">Form</a>
+                                <a class="dropdown-item text-nowrap" href="#globalvar">GlobalVar</a>
+                                <a class="dropdown-item text-nowrap" href="#hydrator">Hydrator</a>
+                                <a class="dropdown-item text-nowrap" href="#invokable">Invokable</a>
+                                <a class="dropdown-item text-nowrap" href="#invoke">Invoke</a>
+                                <a class="dropdown-item text-nowrap" href="#link">Link</a>
+                                <a class="dropdown-item text-nowrap" href="#maybe">Maybe</a>
+                                <a class="dropdown-item text-nowrap" href="#nullable">Nullable</a>
+                                <a class="dropdown-item text-nowrap" href="#nullvalue">NullValue</a>
+                                <a class="dropdown-item text-nowrap" href="#param">Param</a>
+                                <a class="dropdown-item text-nowrap" href="#plug">Plug</a>
+                                <a class="dropdown-item text-nowrap" href="#plugin">Plugin</a>
+                                <a class="dropdown-item text-nowrap" href="#plugins">Plugins</a>
+                                <a class="dropdown-item text-nowrap" href="#provide">Provide</a>
+                                <a class="dropdown-item text-nowrap" href="#register">Register</a>
+                                <a class="dropdown-item text-nowrap" href="#response">Response</a>
+                                <a class="dropdown-item text-nowrap" href="#scope">Scope</a>
+                                <a class="dropdown-item text-nowrap" href="#scoped">Scoped</a>
+                                <a class="dropdown-item text-nowrap" href="#service">Service</a>
+                                <a class="dropdown-item text-nowrap" href="#session">Session</a>
+                                <a class="dropdown-item text-nowrap" href="#shared">Shared</a>
+                                <a class="dropdown-item text-nowrap" href="#value">Value</a>
+                                <a class="dropdown-item text-nowrap" href="#viewmodel">ViewModel</a>
                             </div>
                         </div>
                     </div>

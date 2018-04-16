@@ -81,6 +81,10 @@ h3 {
     width:10px;
 }
 
+#navbar-plugins a {
+    width:25%;
+}
+
 @media (min-width: 576px) {
     #navbar {
         position:sticky;
@@ -89,18 +93,18 @@ h3 {
         min-height: 4rem;
     }
 
-    #navbar-overview, #navbar-getting-started {
+    .dropdown .dropdown-menu {
         max-height:480px;
         overflow-y:auto;
         overflow-x:hidden;
         font-size: 0.8rem;
     }
 
-    #navbar-overview {
+    #navbar-overview, #navbar-plugins {
         min-width:440px;
     }
 
-    #navbar-overview a:focus, #navbar-getting-started a:focus {
+    .dropdown .dropdown-menu a:focus {
         color:#fff !important;
         background-color:#33669b;
     }

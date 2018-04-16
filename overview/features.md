@@ -8,7 +8,7 @@
 * [Events](#events)
 * [Maintainability](#maintainability)
 * [Named Arguments](#named-arguments)
-* [Plugins](#plugins)
+* [Plugins](/plugins)
 * [Routes](#routes)
 * [REST API Methods](#rest-api-methods)
 * [Middleware](#middleware)

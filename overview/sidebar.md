@@ -39,7 +39,6 @@
         <nav>
             <a class="nav-link" href="#service-container">Service Container</a>
             <a class="nav-link" href="#autowiring">Autowiring</a>
-            <a class="nav-link" href="#plugins">Plugins</a>
             <a class="nav-link" href="#service-providers">Service Providers</a>
         </nav>
     <a class="nav-link" href="#named-arguments">Named Arguments</a>

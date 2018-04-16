@@ -1,4 +1,10 @@
-### Plugins
+---
+layout: sidebar
+title:  Plugins
+tagline: A next generation dependency injection system
+role: page
+sidebar: true
+---
 Plugins can perform a variety of tasks and be nested together to form a composite plugin. Various types of plugins are available and custom plugins can also be created.
 ##### [App](https://github.com/mvc5/mvc5/blob/master/src/Plugin/App.php)
 ```php
@@ -22,7 +28,7 @@ The [args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php) plugin 
 ```php
 new Call('Home\Controller', ['response' => new Plugin('Response')])
 ```
-The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to invoke an object or method, and supports [plugins](#plugins) and [named arguments](#named-arguments).
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to invoke an object or method, and supports [plugins](/plugins) and [named arguments](#named-arguments).
 ##### [Callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php)
 ```php
 new Callback(function() {
@@ -207,7 +213,7 @@ The [provide](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Provide.php) p
 ```php
 'user' => new Register('user', 'session', new Plugin(Mvc5\Config::class))
 ```
-The [register](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Register.php) plugin will create an object if it is not already registered with a specified ([configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php)) object. The first parameter is the registered name, the second parameter is the name of the [service configuration](https://github.com/mvc5/mvc5/blob/master/config/service.php#L51) that should contain the registered object. The third parameter is the [plugin](#plugins) configuration for the object to create and register if it does not already exist. 
+The [register](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Register.php) plugin will create an object if it is not already registered with a specified ([configuration](https://github.com/mvc5/mvc5/blob/master/src/Config/Configuration.php)) object. The first parameter is the registered name, the second parameter is the name of the [service configuration](https://github.com/mvc5/mvc5/blob/master/config/service.php#L51) that should contain the registered object. The third parameter is the [plugin](/plugins) configuration for the object to create and register if it does not already exist.
 ##### [Response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php)
 ```php
 'web' => new Response('web')

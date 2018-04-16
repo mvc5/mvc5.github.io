@@ -112,6 +112,7 @@ role: home
     <p class="py-5">
         <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/getting-started" role="button"><span class="fa fa-send"></span> Getting Started</a>
         <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/overview" role="button"><span class="fa fa-book"></span> Overview</a>
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/plugins" role="button"><span class="fa fa-plug"></span> Plugins</a>
         <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="https://github.com/mvc5/mvc5" role="button"><span class="fa fa-github"></span> Github</a>
     </p>
     <p>

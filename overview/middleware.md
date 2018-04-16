@@ -20,7 +20,7 @@ function __invoke(Route $route, Request $request, callable $next)
     return $next($route, $request);
 }
 ```
-[Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) configurations must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) to a [callable](http://php.net/manual/en/language.types.callable.php) type and can include [plugins](#plugins) and [anonymous functions](http://php.net/manual/en/functions.anonymous.php#functions.anonymous).
+[Middleware](https://github.com/mvc5/mvc5/blob/master/src/Middleware.php) configurations must [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) to a [callable](http://php.net/manual/en/language.types.callable.php) type and can include [plugins](/plugins) and [anonymous functions](http://php.net/manual/en/functions.anonymous.php#functions.anonymous).
 ### HTTP Middleware
 The signature of the [HttpMiddleware](https://github.com/mvc5/mvc5/blob/master/src/Http/HttpMiddleware.php) function is for handling [requests](https://github.com/mvc5/mvc5/blob/master/src/Http/Request.php) and [responses](https://github.com/mvc5/mvc5/blob/master/src/Http/Response.php).
 ```php
