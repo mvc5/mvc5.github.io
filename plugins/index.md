@@ -28,7 +28,7 @@ The [args](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Args.php) plugin 
 ```php
 new Call('Home\Controller', ['response' => new Plugin('Response')])
 ```
-The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to invoke an object or method, and supports [plugins](/plugins) and [named arguments](#named-arguments).
+The [call](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Call.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L213) to invoke an object or method, and supports [plugins](/plugins) and [named arguments](/overview/#named-arguments).
 ##### [Callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php)
 ```php
 new Callback(function() {
@@ -40,7 +40,7 @@ A [callback](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Callback.php) p
 ```php
 'route\dispatch' => new Calls(new Plugin(Mvc5\Route\Dispatch::class), ['service' => new Link])
 ```
-The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydrator) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L185) to resolve a plugin with a set of function calls and supports [named arguments](#named-arguments).   
+The [calls](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Calls.php) plugin is similar to a [hydrator](#hydrator) and is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L185) to resolve a plugin with a set of function calls and supports [named arguments](/overview/#named-arguments).   
 ##### [Child](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Child.php)
 ```php
 'manager' => new Plugin(null),
@@ -72,7 +72,7 @@ The [end](https://github.com/mvc5/mvc5/blob/master/src/Plugin/End.php) plugin wi
 ```php
 new Expect(new Call('web'), new Call('exception\response'), true, false);
 ```
-The [expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php) plugin is used to catch an exception when resolving a [plugin](#plugin). The second argument is the [plugin](#plugin) to use when an exception is thrown. The third argument indicates whether the exception should be passed to the second [plugin](#plugin) as a [named argument](#named-arguments). The fourth argument indicates whether to [merge](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php#L82) the exception with the arguments passed to the first [plugin](#plugin).
+The [expect](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php) plugin is used to catch an exception when resolving a plugin. The second argument is the plugin to use when an exception is thrown. The third argument indicates whether the exception should be passed to the second plugin as a [named argument](/overview/#named-arguments). The fourth argument indicates whether to [merge](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Expect.php#L82) the exception with the arguments passed to the first plugin.
 ##### [Factory](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Factory.php)
 ```php
 'factory' => new Service(null),
