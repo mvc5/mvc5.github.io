@@ -11,84 +11,84 @@ role: home
                     <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                     Mvc5 Framework
                 </h1>
-                <small class="font-italic">An enhanced PHP programming environment that provides inversion of control of a web application or any function</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    No Bootstrap
-                </h1>
-                <small class="font-italic">Bootstrapping an application is not required with dependency injection and inversion of control</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Improved Performance
-                </h1>
-                <small class="font-italic">Efficient and effective implementation means more time for your own code to run</small>
+                <small class="font-italic">An enhanced PHP programming environment that provides inversion of control of a web application or any function.</small>
             </div>
             <div class="carousel-item">
                 <h1 class="display-4">
                     <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                     Immutability
                 </h1>
-                <small class="font-italic">Built using immutable components</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Named Arguments
-                </h1>
-                <small class="font-italic">Control and enhance function calls by providing named arguments and let the system handle the rest</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Autowiring
-                </h1>
-                <small class="font-italic">Minimize your configuration and allow the system to automatically resolve and inject dependencies</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Service Providers
-                </h1>
-                <small class="font-italic">Create and integrate your own service providers</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Plugins
-                </h1>
-                <small class="font-italic">Create plugins for any purpose</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Events
-                </h1>
-                <small class="font-italic">Enhance inversion of control with custom events</small>
-            </div>
-            <div class="carousel-item">
-                <h1 class="display-4">
-                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    Console Applications
-                </h1>
-                <small class="font-italic">Create command line scripts just like any other class or function and have their dependencies automatically injected</small>
+                <small class="font-italic">Built using immutable components.</small>
             </div>
             <div class="carousel-item">
                 <h1 class="display-4">
                     <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                     Middleware
                 </h1>
-                <small class="font-italic">Create middleware applications with anonymous functions, plugins and dependency injection</small>
+                <small class="font-italic">Create middleware applications with anonymous functions, plugins and dependency injection.</small>
             </div>
             <div class="carousel-item">
                 <h1 class="display-4">
                     <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
-                    REST API Methods
+                    JSON API
                 </h1>
-                <small class="font-italic">Configure routes with actions for specific HTTP Methods</small>
+                <small class="font-italic">JSON requests are automatically decoded and HTTP errors and exceptions are automatically returned as a JSON response.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    No Bootstrap
+                </h1>
+                <small class="font-italic">Bootstrapping an application is not required with service plugins and dependency injection.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Service Plugins
+                </h1>
+                <small class="font-italic">Can be created for any purpose and provides a next generation dependency injection system.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Autowiring
+                </h1>
+                <small class="font-italic">Minimize your configuration and allow the system to automatically resolve and inject dependencies.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Named Arguments
+                </h1>
+                <small class="font-italic">Optionally control and enhance function calls using named arguments.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Service Providers
+                </h1>
+                <small class="font-italic">Create and integrate your own service providers.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Events
+                </h1>
+                <small class="font-italic">Enhanced events that provides further inversion of control.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Console Applications
+                </h1>
+                <small class="font-italic">Create command line applications and scripts just like a class or function with their dependencies automatically injected.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    Improved Performance
+                </h1>
+                <small class="font-italic">Efficient and effective implementation provides more time for your own code to run.</small>
             </div>
         </div>
         <!-- Indicators -->
