@@ -142,7 +142,7 @@ new Invoke('response.setStatusCode', [500]),
 new Invoke(new Args([new Plugin('response'), 'setStatusCode']), [500]),
 new Invoke(function() { var_dump(func_get_args()); }),
 ```
-An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L237) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) its configured value with the optional array of parameters passed to the anonymous function. The parameters are merged with the plugin's args parameters.
+An [invoke](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Invoke.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L237) to return an anonymous function. When invoked, it will [resolve](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L477) and [call](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Service.php#L22) its configured value with the optional array of parameters passed to the anonymous function, merged with the plugin's args. The return value is also resolved.
 ```php
 $app->call(new Invoke(new Plugin('Home\Controller')), ['request' => new Plugin('Request')])
 ```
