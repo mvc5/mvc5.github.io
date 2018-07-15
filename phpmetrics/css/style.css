@@ -1,0 +1,125 @@
+/* -------- charts ---------------- */
+.tooltip {
+    position: absolute;
+    background: #333;
+    border-radius: 5px;
+    padding: 5px 15px;
+    box-shadow: 1px 1px 3px;
+    text-align: left;
+    color: #FFF;
+    z-index: 4;
+}
+
+.bar {
+    fill: #4CAF50;
+}
+
+.bar:hover {
+    fill: #81C784;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line,
+.scattered-plot path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+.scattered-plot .x.axis path {
+    display: block;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+
+
+/* -------- Table ------------ */
+a {
+    cursor:pointer;
+}
+
+.table th {
+    border-top: none;
+}
+
+.js-sort-table thead th {
+    cursor: pointer;
+}
+
+/* ---- relations ---- */
+.node {
+    font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    fill: #bbb;
+}
+
+.node:hover {
+    fill: #000;
+}
+
+.link {
+    stroke: steelblue;
+    stroke-opacity: .4;
+    fill: none;
+    pointer-events: none;
+}
+
+.node:hover,
+.node--source,
+.node--target {
+    font-weight: 700;
+}
+
+.node--source {
+    fill: #AE113D;
+}
+
+.node--target {
+    fill: #4617B4;
+}
+
+.link--source,
+.link--target {
+    stroke-opacity: 1;
+    stroke-width: 2px;
+}
+
+.link--source {
+    stroke: #AE113D;
+}
+
+.link--target {
+    stroke: #4617B4;
+}
+
+.relation-source {
+    background-color: #AE113D;
+}
+
+.relation-target {
+    background-color: #4617B4;
+}
+
+/* ---------- violations ---------- */
+.violation-list {
+    display: none;
+}
+.violation {
+    padding-left:50px;
+    margin-top: .5em;
+}
+.violation .name {
+    font-weight: bold;
+    margin-top:1em;
+}

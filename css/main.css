@@ -6,6 +6,10 @@
     background-color: #33669b;
 }
 
+.text-primary {
+    color: #33669b !important;
+}
+
 a, .btn-link, #navbar-collapse .nav-link,#navbar-collapse .nav-link:focus,
     aside .nav-link:hover, #navbar .navbar-brand, #navbar .navbar-brand:hover {
     color: #33669b;
@@ -109,7 +113,7 @@ h3 {
         background-color:#33669b;
     }
 
-    h2::before, h3::before {
+    h2:not(:first-child)::before, h3::before {
         display: block;
         height: 6rem;
         margin-top: -6rem;

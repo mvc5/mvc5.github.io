@@ -1,0 +1,996 @@
+---
+layout: phpmetrics
+---
+<h2>Packages</h2>
+<div class="mt-4 px-3 row">
+    <div class="col text-center card p-0 mr-2 mb-2">
+        <div class="card-body">
+            <h6 class="text-primary font-weight-bold">Instability / Abstraction</h6>
+            <div id="distances" class="scattered-plot d-flex justify-content-center mt-4"></div>
+        </div>
+    </div>
+</div>
+
+<table class="js-sort-table table table-sm small mt-4">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th class="js-sort-number">Classes</th>
+        <th class="js-sort-number">Abstraction</th>
+        <th class="js-sort-number">Instability</th>
+        <th class="js-sort-number">Distance</th>
+        <th class="js-sort-number">Outgoing Class&nbsp;Dep.</th>
+        <th class="js-sort-number">Outgoing Package&nbsp;Dep.</th>
+        <th class="js-sort-number">Incoming Class&nbsp;Dep.</th>
+        <th class="js-sort-number">Incoming Package&nbsp;Dep.</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>Mvc5</td>
+        <td>14</td>
+        <td>0.143</td>
+        <td>0.37</td>
+        <td>0.488</td>
+        <td>17</td>
+        <td>8</td>
+        <td>29</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request\Exception</td>
+        <td>4</td>
+        <td>0.5</td>
+        <td>1</td>
+        <td>0.5</td>
+        <td>8</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request\Exception\Config</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request\Service</td>
+        <td>2</td>
+        <td>0.5</td>
+        <td>1</td>
+        <td>0.5</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request</td>
+        <td>4</td>
+        <td>0.25</td>
+        <td>1</td>
+        <td>0.25</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request\Error\Config</td>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request\Error</td>
+        <td>4</td>
+        <td>0.5</td>
+        <td>1</td>
+        <td>0.5</td>
+        <td>6</td>
+        <td>4</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Request\Config</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>4</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Exception</td>
+        <td>8</td>
+        <td>0.375</td>
+        <td>0.833</td>
+        <td>0.208</td>
+        <td>10</td>
+        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Log</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Cookie</td>
+        <td>3</td>
+        <td>0.333</td>
+        <td>0.3</td>
+        <td>0.367</td>
+        <td>3</td>
+        <td>2</td>
+        <td>7</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Cookie\Config</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Service</td>
+        <td>9</td>
+        <td>0.667</td>
+        <td>0.421</td>
+        <td>0.088</td>
+        <td>8</td>
+        <td>3</td>
+        <td>11</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Http</td>
+        <td>12</td>
+        <td>0.417</td>
+        <td>0.063</td>
+        <td>0.521</td>
+        <td>3</td>
+        <td>3</td>
+        <td>45</td>
+        <td>16</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Http\Error</td>
+        <td>4</td>
+        <td>0</td>
+        <td>0.25</td>
+        <td>0.75</td>
+        <td>2</td>
+        <td>2</td>
+        <td>6</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Http\Config</td>
+        <td>5</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>3</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Plugins</td>
+        <td>10</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>5</td>
+        <td>4</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Url</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>3</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Url\Route</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>4</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Template</td>
+        <td>4</td>
+        <td>0.5</td>
+        <td>0.167</td>
+        <td>0.333</td>
+        <td>2</td>
+        <td>2</td>
+        <td>10</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Template\Config</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Template\Layout</td>
+        <td>2</td>
+        <td>0.5</td>
+        <td>1</td>
+        <td>0.5</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Resolver</td>
+        <td>8</td>
+        <td>0.625</td>
+        <td>1</td>
+        <td>0.625</td>
+        <td>12</td>
+        <td>6</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Config</td>
+        <td>11</td>
+        <td>1</td>
+        <td>0.182</td>
+        <td>0.182</td>
+        <td>4</td>
+        <td>1</td>
+        <td>18</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Controller</td>
+        <td>1</td>
+        <td>0</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\View</td>
+        <td>8</td>
+        <td>0.625</td>
+        <td>0.429</td>
+        <td>0.054</td>
+        <td>6</td>
+        <td>4</td>
+        <td>8</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Mvc5\View\Template</td>
+        <td>5</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\View\Config</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\View\Engine</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Response</td>
+        <td>11</td>
+        <td>0.182</td>
+        <td>0.692</td>
+        <td>0.126</td>
+        <td>9</td>
+        <td>5</td>
+        <td>4</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Response\Service</td>
+        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>5</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Response\Emitter</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Response\Config</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>4</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Event</td>
+        <td>4</td>
+        <td>1</td>
+        <td>0.2</td>
+        <td>0.2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>4</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Plugin</td>
+        <td>40</td>
+        <td>0</td>
+        <td>0.962</td>
+        <td>0.038</td>
+        <td>25</td>
+        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Plugin\Config</td>
+        <td>6</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Plugin\Gem</td>
+        <td>22</td>
+        <td>1</td>
+        <td>0.143</td>
+        <td>0.143</td>
+        <td>4</td>
+        <td>3</td>
+        <td>24</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Web</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>4</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Route\Definition</td>
+        <td>5</td>
+        <td>0.8</td>
+        <td>0.75</td>
+        <td>0.55</td>
+        <td>3</td>
+        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Route\Dispatch</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Route</td>
+        <td>4</td>
+        <td>0.25</td>
+        <td>0.188</td>
+        <td>0.563</td>
+        <td>3</td>
+        <td>3</td>
+        <td>13</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Route\Config</td>
+        <td>1</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Route\Match</td>
+        <td>9</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>5</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Route\Match\Plugin</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Session</td>
+        <td>7</td>
+        <td>0.429</td>
+        <td>0.571</td>
+        <td>0</td>
+        <td>4</td>
+        <td>3</td>
+        <td>3</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>Mvc5\Session\Config</td>
+        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+</table>
+<script type="text/javascript">
+    /**
+     * Thx to http://bl.ocks.org/weiglemc/6185069
+     */
+    var margin = {top: 20, right: 20, bottom: 20, left: 20},
+        width = 500 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    var spots = [
+    {
+        "name": "Mvc5",
+        "abstraction": 0.14285714285714285,
+        "instability": 0.3695652173913043,
+        "distance": 0.3447694554232545,
+        "normalizedDistance": 0.48757763975155277,
+        "classCount": 14
+    },
+    {
+        "name": "Mvc5\\Request\\Exception",
+        "abstraction": 0.5,
+        "instability": 1,
+        "distance": 0.35355339059327373,
+        "normalizedDistance": 0.5,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Request\\Exception\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 1
+    },
+    {
+        "name": "Mvc5\\Request\\Service",
+        "abstraction": 0.5,
+        "instability": 1,
+        "distance": 0.35355339059327373,
+        "normalizedDistance": 0.5,
+        "classCount": 2
+    },
+    {
+        "name": "Mvc5\\Request",
+        "abstraction": 0.25,
+        "instability": 1,
+        "distance": 0.17677669529663687,
+        "normalizedDistance": 0.25,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Request\\Error",
+        "abstraction": 0.5,
+        "instability": 1,
+        "distance": 0.35355339059327373,
+        "normalizedDistance": 0.5,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Request\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 1
+    },
+    {
+        "name": "Mvc5\\Exception",
+        "abstraction": 0.375,
+        "instability": 0.8333333333333334,
+        "distance": 0.1473139127471975,
+        "normalizedDistance": 0.20833333333333348,
+        "classCount": 8
+    },
+    {
+        "name": "Mvc5\\Log",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 3
+    },
+    {
+        "name": "Mvc5\\Cookie",
+        "abstraction": 0.3333333333333333,
+        "instability": 0.3,
+        "distance": 0.25927248643506745,
+        "normalizedDistance": 0.3666666666666667,
+        "classCount": 3
+    },
+    {
+        "name": "Mvc5\\Cookie\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 2
+    },
+    {
+        "name": "Mvc5\\Service",
+        "abstraction": 0.6666666666666666,
+        "instability": 0.42105263157894735,
+        "distance": 0.06202691063039878,
+        "normalizedDistance": 0.08771929824561386,
+        "classCount": 9
+    },
+    {
+        "name": "Mvc5\\Http",
+        "abstraction": 0.4166666666666667,
+        "instability": 0.0625,
+        "distance": 0.3682847818679934,
+        "normalizedDistance": 0.5208333333333333,
+        "classCount": 12
+    },
+    {
+        "name": "Mvc5\\Http\\Error",
+        "abstraction": 0,
+        "instability": 0.25,
+        "distance": 0.5303300858899106,
+        "normalizedDistance": 0.75,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Http\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 5
+    },
+    {
+        "name": "Mvc5\\Plugins",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 10
+    },
+    {
+        "name": "Mvc5\\Url",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 3
+    },
+    {
+        "name": "Mvc5\\Url\\Route",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 1
+    },
+    {
+        "name": "Mvc5\\Template",
+        "abstraction": 0.5,
+        "instability": 0.16666666666666666,
+        "distance": 0.23570226039551584,
+        "normalizedDistance": 0.33333333333333337,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Template\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 2
+    },
+    {
+        "name": "Mvc5\\Template\\Layout",
+        "abstraction": 0.5,
+        "instability": 1,
+        "distance": 0.35355339059327373,
+        "normalizedDistance": 0.5,
+        "classCount": 2
+    },
+    {
+        "name": "Mvc5\\Resolver",
+        "abstraction": 0.625,
+        "instability": 1,
+        "distance": 0.44194173824159216,
+        "normalizedDistance": 0.625,
+        "classCount": 8
+    },
+    {
+        "name": "Mvc5\\Config",
+        "abstraction": 1,
+        "instability": 0.18181818181818182,
+        "distance": 0.12856486930664504,
+        "normalizedDistance": 0.18181818181818188,
+        "classCount": 11
+    },
+    {
+        "name": "Mvc5\\View",
+        "abstraction": 0.625,
+        "instability": 0.42857142857142855,
+        "distance": 0.03788072042070792,
+        "normalizedDistance": 0.0535714285714286,
+        "classCount": 8
+    },
+    {
+        "name": "Mvc5\\View\\Template",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 5
+    },
+    {
+        "name": "Mvc5\\View\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 2
+    },
+    {
+        "name": "Mvc5\\View\\Engine",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 1
+    },
+    {
+        "name": "Mvc5\\Response",
+        "abstraction": 0.18181818181818182,
+        "instability": 0.6923076923076923,
+        "distance": 0.08900644798152343,
+        "normalizedDistance": 0.12587412587412583,
+        "classCount": 11
+    },
+    {
+        "name": "Mvc5\\Response\\Service",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 3
+    },
+    {
+        "name": "Mvc5\\Response\\Emitter",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 3
+    },
+    {
+        "name": "Mvc5\\Response\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 1
+    },
+    {
+        "name": "Mvc5\\Event",
+        "abstraction": 1,
+        "instability": 0.2,
+        "distance": 0.14142135623730948,
+        "normalizedDistance": 0.19999999999999996,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Plugin",
+        "abstraction": 0,
+        "instability": 0.9615384615384616,
+        "distance": 0.02719641466102104,
+        "normalizedDistance": 0.038461538461538436,
+        "classCount": 40
+    },
+    {
+        "name": "Mvc5\\Plugin\\Gem",
+        "abstraction": 1,
+        "instability": 0.14285714285714285,
+        "distance": 0.10101525445522103,
+        "normalizedDistance": 0.1428571428571428,
+        "classCount": 22
+    },
+    {
+        "name": "Mvc5\\Web",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 10
+    },
+    {
+        "name": "Mvc5\\Route\\Definition",
+        "abstraction": 0.8,
+        "instability": 0.75,
+        "distance": 0.38890872965260115,
+        "normalizedDistance": 0.55,
+        "classCount": 5
+    },
+    {
+        "name": "Mvc5\\Route\\Dispatch",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 1
+    },
+    {
+        "name": "Mvc5\\Route",
+        "abstraction": 0.25,
+        "instability": 0.1875,
+        "distance": 0.397747564417433,
+        "normalizedDistance": 0.5625,
+        "classCount": 4
+    },
+    {
+        "name": "Mvc5\\Route\\Match",
+        "abstraction": 0,
+        "instability": 1,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 9
+    },
+    {
+        "name": "Mvc5\\Route\\Match\\Plugin",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 2
+    },
+    {
+        "name": "Mvc5\\Session",
+        "abstraction": 0.42857142857142855,
+        "instability": 0.5714285714285714,
+        "distance": 0,
+        "normalizedDistance": 0,
+        "classCount": 7
+    },
+    {
+        "name": "Mvc5\\Session\\Config",
+        "abstraction": 1,
+        "instability": 1,
+        "distance": 0.7071067811865475,
+        "normalizedDistance": 1,
+        "classCount": 3
+    }
+];
+
+    /*
+     * value accessor - returns the value to encode for a given data object.
+     * scale - maps value to a visual display encoding, such as a pixel position.
+     * map function - maps from data value to display value
+     * axis - sets up axis
+     */
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+
+
+            // setup x
+            var xValue = function (d) {
+                    return d.abstraction;
+                }, // data -> value
+                xScale = d3.scale.linear().range([0, width]), // value -> display
+                xMap = function (d) {
+                    return xScale(xValue(d));
+                }, // data -> display
+                xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+            // setup y
+            var yValue = function (d) {
+                    return d.instability;
+                }, // data -> value
+                yScale = d3.scale.linear().range([height, 0]), // value -> display
+                yMap = function (d) {
+                    return yScale(yValue(d));
+                }, // data -> display
+                yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+            // setup fill color
+            var cValue = function (d) {
+                    return d.normalizedDistance;
+                },
+                color = d3.scale.linear().domain([0, 1])
+                    .interpolate(d3.interpolateHcl)
+                    .range([d3.rgb("#00FF00"), d3.rgb('#FF0000')])
+
+            // add the graph canvas to #distances
+            var svg = d3.select("#distances").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            // add the tooltip area to the webpage
+            var tooltip = d3.select("#distances").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+            // x-axis
+            svg
+                .append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis)
+                .append("text")
+                .attr("class", "label")
+                .attr("x", width)
+                .attr("y", -6)
+                .style("text-anchor", "end")
+                .text("Abstraction");
+
+            // y-axis
+            svg
+                .append("g")
+                .attr("class", "y axis")
+                .call(yAxis)
+                .append("text")
+                .attr("class", "label")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 6)
+                .attr("dy", ".71em")
+                .style("text-anchor", "end")
+                .text("Instability");
+
+            // optimal distance line
+            svg.append("path")
+                .attr("class", "line")
+                .attr("d", (d3.svg.line().x(function (d) {
+                    return xScale(d);
+                }).y(function (d) {
+                    return yScale(1 - d);
+                }))([0, 1]));
+
+            // draw dots
+            svg.selectAll(".dot")
+                .data(spots)
+                .enter().append("circle")
+                .attr("class", "dot")
+                .attr("r", function (d) {
+                    return 3.0 + 0.5 * d.classCount;
+                })
+                .attr("cx", xMap)
+                .attr("cy", yMap)
+                .style("fill", function (d) {
+                    return color(cValue(d));
+                })
+                .on("mouseover", function (d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(d.name + "<br/> (" + (Math.round(1000 * xValue(d)) / 1000)
+                        + ", " + (Math.round(1000 * yValue(d)) / 1000) + ")")
+                        .style("left", (d3.event.pageX + 5) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px");
+                })
+                .on("mouseout", function (d) {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                });
+        }
+    };
+</script>

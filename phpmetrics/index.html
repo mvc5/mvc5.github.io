@@ -1,0 +1,1381 @@
+---
+layout: phpmetrics
+---
+<h2>Overview</h2>
+<div class="mt-4 px-3 row">
+        <div class="col-sm text-center card p-0 mr-2 mb-2">
+            <div class="card-body">
+                <h6 class="font-weight-bold"><a href="/phpmetrics/violations/">Violations</a></h6>
+                <p class="text-muted">0 criticals, 9 errors</p>
+                <h3 class="text-success">38</h3>
+            </div>
+        </div>
+        <div class="col-sm text-center card p-0 mr-2 mb-2">
+            <div class="card-body">
+            <h6 class="font-weight-bold"><a href="/phpmetrics/loc/">Lines of Code</a></h6>
+            <h3 class="text-success">7921</h3>
+            <span title="Last value: 7921" class="badge badge-light">0 <svg fill="#000000"
+                                                                                                height="24"
+                                                                                                viewBox="0 0 24 24"
+                                                                                                width="24"
+                                                                                                xmlns="http://www.w3.org/2000/svg">
+    <path d="M22 12l-4-4v3H3v2h15v3z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+            </svg></span></div></div>
+        <div class="col-sm text-center card p-0 mr-2 mb-2">
+            <div class="card-body">
+            <h6 class="font-weight-bold"><a href="/phpmetrics/oop/">Classes</a></h6>
+            <h3 class="text-success">212</h3>
+            <span title="Last value: 212" class="badge badge-light">0 <svg fill="#000000"
+                                                                                               height="24"
+                                                                                               viewBox="0 0 24 24"
+                                                                                               width="24"
+                                                                                               xmlns="http://www.w3.org/2000/svg">
+    <path d="M22 12l-4-4v3H3v2h15v3z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+            </svg></span></div></div>
+        <div class="col-sm text-center card p-0 mr-2 mb-2">
+            <div class="card-body">
+            <h6 class="font-weight-bold"><a href="/phpmetrics/complexity/">Average Cyclomatic Complexity by Class</a></h6>
+            <h3 class="text-success">4.1</h3>
+            <span title="Last value: 4.1" class="badge badge-light">0 <svg fill="#000000"
+                                                                                               height="24"
+                                                                                               viewBox="0 0 24 24"
+                                                                                               width="24"
+                                                                                               xmlns="http://www.w3.org/2000/svg">
+    <path d="M22 12l-4-4v3H3v2h15v3z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+            </svg></span></div></div>
+        <div class="col-sm text-center card p-0 mr-2 mb-2">
+            <div class="card-body">
+            <h6 class="font-weight-bold"><a href="/phpmetrics/complexity/">Average Bugs by Class</a></h6>
+            <h3 class="text-success">0.04</h3>
+            <span title="Last value: 0.04" class="badge badge-light">0 <svg fill="#000000"
+                                                                                                height="24"
+                                                                                                viewBox="0 0 24 24"
+                                                                                                width="24"
+                                                                                                xmlns="http://www.w3.org/2000/svg">
+    <path d="M22 12l-4-4v3H3v2h15v3z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+            </svg></span></div></div>
+</div>
+<div class="row">
+        <div class="col">
+            <h3>Maintainability / Complexity</h3>
+            <div id="svg-maintainability"></div>
+            <p><small class="text-secondary">Each file is symbolized by a circle. Size of the circle represents the Cyclomatic complexity.
+                Color of the circle represents the Maintainability Index. Large red circles will be probably hard to maintain.</small></p>
+        </div>
+
+        <div class="col">
+            <h3>Class Rank</h3>
+            <p><small class="text-muted font-italic">Google's page rank applied to relations between classes</small></p>
+            <div class="clusterize small">
+                <div id="clusterizeClassRank" class="clusterize-scroll">
+                    <table class="table table-sm">
+                        <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Rank</th>
+                        </tr>
+                        </thead>
+                        <tbody id="contentClassRank" class="clusterize-content">
+                        <tr>
+                            <td>Mvc5\Model <span class="badge badge-light"
+                                                 title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0.02</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception <span class="badge badge-light"
+                                                     title="Maintainability Index">218.32</span>
+                            </td>
+                            <td>0.01</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\App <span class="badge badge-light"
+                                                      title="Maintainability Index">113.19</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Filter <span class="badge badge-light"
+                                                         title="Maintainability Index">101.78</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Value <span class="badge badge-light"
+                                                        title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Callback <span class="badge badge-light"
+                                                           title="Maintainability Index">109.7</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Calls <span class="badge badge-light"
+                                                        title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Link <span class="badge badge-light"
+                                                       title="Maintainability Index">171</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\GlobalVar <span class="badge badge-light"
+                                                            title="Maintainability Index">109.89</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Factory <span class="badge badge-light"
+                                                          title="Maintainability Index">114.95</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Service <span class="badge badge-light"
+                                                          title="Maintainability Index">113.12</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Invoke <span class="badge badge-light"
+                                                         title="Maintainability Index">109.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Nothing <span class="badge badge-light"
+                                                          title="Maintainability Index">171</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\FileInclude <span class="badge badge-light"
+                                                              title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config <span class="badge badge-light"
+                                                         title="Maintainability Index">171</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Expect <span class="badge badge-light"
+                                                         title="Maintainability Index">96.04</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config\Child <span class="badge badge-light"
+                                                               title="Maintainability Index">118.46</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config\Name <span class="badge badge-light"
+                                                              title="Maintainability Index">109.83</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config\Config <span class="badge badge-light"
+                                                                title="Maintainability Index">109.83</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config\Hydrator <span class="badge badge-light"
+                                                                  title="Maintainability Index">113.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config\Args <span class="badge badge-light"
+                                                              title="Maintainability Index">109.83</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Config\Plugin <span class="badge badge-light"
+                                                                title="Maintainability Index">101.33</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\NullValue <span class="badge badge-light"
+                                                            title="Maintainability Index">207.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Provide <span class="badge badge-light"
+                                                          title="Maintainability Index">109.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Scope <span class="badge badge-light"
+                                                        title="Maintainability Index">106.86</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Copy <span class="badge badge-light"
+                                                       title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Plugins <span class="badge badge-light"
+                                                          title="Maintainability Index">107.02</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Controller <span class="badge badge-light"
+                                                             title="Maintainability Index">113.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\JsonResponse <span class="badge badge-light"
+                                                                 title="Maintainability Index">106.52</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\RedirectResponse <span class="badge badge-light"
+                                                                     title="Maintainability Index">112.19</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\HttpResponse <span class="badge badge-light"
+                                                                 title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Emitter\Callback <span class="badge badge-light"
+                                                                     title="Maintainability Index">111.1</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Emitter\ReadFile <span class="badge badge-light"
+                                                                     title="Maintainability Index">106.68</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Emitter\PassThru <span class="badge badge-light"
+                                                                     title="Maintainability Index">111.1</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Config\HttpResponse <span class="badge badge-light"
+                                                                        title="Maintainability Index">89.7</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Dispatch <span class="badge badge-light"
+                                                             title="Maintainability Index">94.78</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\JsonExceptionResponse <span class="badge badge-light"
+                                                                          title="Maintainability Index">110.94</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\JsonErrorResponse <span class="badge badge-light"
+                                                                      title="Maintainability Index">207.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Version <span class="badge badge-light"
+                                                            title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\ViewLayout <span class="badge badge-light"
+                                                      title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Form <span class="badge badge-light"
+                                                       title="Maintainability Index">207.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Event\Model <span class="badge badge-light"
+                                                       title="Maintainability Index">105.88</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Event\Generator <span class="badge badge-light"
+                                                           title="Maintainability Index">90.22</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Event\EventModel <span class="badge badge-light"
+                                                            title="Maintainability Index">105.74</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Middleware <span class="badge badge-light"
+                                                      title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Signal <span class="badge badge-light"
+                                                  title="Maintainability Index">64.93</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Overload <span class="badge badge-light"
+                                                    title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Response <span class="badge badge-light"
+                                                           title="Maintainability Index">107.79</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Plug <span class="badge badge-light"
+                                                       title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Nullable <span class="badge badge-light"
+                                                           title="Maintainability Index">106.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Child <span class="badge badge-light"
+                                                        title="Maintainability Index">113.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Register <span class="badge badge-light"
+                                                           title="Maintainability Index">104.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Iterator <span class="badge badge-light"
+                                                    title="Maintainability Index">209.99</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Service\Version <span class="badge badge-light"
+                                                                    title="Maintainability Index">109.51</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Action <span class="badge badge-light"
+                                                              title="Maintainability Index">108.86</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Dispatch\Router <span class="badge badge-light"
+                                                                 title="Maintainability Index">85.29</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Config <span class="badge badge-light"
+                                                        title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Config\Route <span class="badge badge-light"
+                                                              title="Maintainability Index">86.52</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Dispatch <span class="badge badge-light"
+                                                          title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Generator <span class="badge badge-light"
+                                                           title="Maintainability Index">103.3</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Wildcard <span class="badge badge-light"
+                                                                title="Maintainability Index">85.37</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Method <span class="badge badge-light"
+                                                              title="Maintainability Index">107.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Path <span class="badge badge-light"
+                                                            title="Maintainability Index">98.47</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Controller <span class="badge badge-light"
+                                                                  title="Maintainability Index">77.46</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Middleware <span class="badge badge-light"
+                                                                  title="Maintainability Index">97.6</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Merge <span class="badge badge-light"
+                                                             title="Maintainability Index">102.66</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Definition\Build <span class="badge badge-light"
+                                                                  title="Maintainability Index">90.37</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Plugin\Params <span class="badge badge-light"
+                                                                     title="Maintainability Index">104.03</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Plugin\Optional <span class="badge badge-light"
+                                                                       title="Maintainability Index">113.59</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Host <span class="badge badge-light"
+                                                            title="Maintainability Index">94.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Match\Scheme <span class="badge badge-light"
+                                                              title="Maintainability Index">107.82</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\ViewModel <span class="badge badge-light"
+                                                     title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\Container <span class="badge badge-light"
+                                                             title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\Config\Container <span class="badge badge-light"
+                                                                    title="Maintainability Index">86.78</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\Config\Messages <span class="badge badge-light"
+                                                                   title="Maintainability Index">81.16</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\Config\PHPSession <span class="badge badge-light"
+                                                                     title="Maintainability Index">75.13</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\Model <span class="badge badge-light"
+                                                         title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\Messages <span class="badge badge-light"
+                                                            title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Definition\Regex <span class="badge badge-light"
+                                                                  title="Maintainability Index">85.53</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Definition\Compiler <span class="badge badge-light"
+                                                                     title="Maintainability Index">75.96</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Param <span class="badge badge-light"
+                                                        title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Plugin <span class="badge badge-light"
+                                                         title="Maintainability Index">112.86</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Call <span class="badge badge-light"
+                                                       title="Maintainability Index">109.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Invokable <span class="badge badge-light"
+                                                            title="Maintainability Index">109.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Session <span class="badge badge-light"
+                                                          title="Maintainability Index">114.94</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Maybe <span class="badge badge-light"
+                                                        title="Maintainability Index">106.23</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Hydrator <span class="badge badge-light"
+                                                           title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Shared <span class="badge badge-light"
+                                                         title="Maintainability Index">109.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\SignalArgs <span class="badge badge-light"
+                                                             title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Scoped <span class="badge badge-light"
+                                                         title="Maintainability Index">105.16</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\Args <span class="badge badge-light"
+                                                       title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\ScopedCall <span class="badge badge-light"
+                                                             title="Maintainability Index">114.94</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\ViewModel <span class="badge badge-light"
+                                                            title="Maintainability Index">114.3</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Route\Definition\Tokens <span class="badge badge-light"
+                                                                   title="Maintainability Index">82.77</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugin\End <span class="badge badge-light"
+                                                      title="Maintainability Index">113.01</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Send <span class="badge badge-light"
+                                                    title="Maintainability Index">114.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Context <span class="badge badge-light"
+                                                       title="Maintainability Index">113.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Status <span class="badge badge-light"
+                                                      title="Maintainability Index">114.26</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Service <span class="badge badge-light"
+                                                       title="Maintainability Index">114.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Controller <span class="badge badge-light"
+                                                          title="Maintainability Index">100.29</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Version <span class="badge badge-light"
+                                                       title="Maintainability Index">114.26</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Render <span class="badge badge-light"
+                                                      title="Maintainability Index">104.86</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Route <span class="badge badge-light"
+                                                     title="Maintainability Index">102.77</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Layout <span class="badge badge-light"
+                                                      title="Maintainability Index">109.44</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Web\Error <span class="badge badge-light"
+                                                     title="Maintainability Index">114.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Status <span class="badge badge-light"
+                                                           title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Service\Send <span class="badge badge-light"
+                                                                 title="Maintainability Index">87.38</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Service\Status <span class="badge badge-light"
+                                                                   title="Maintainability Index">99.22</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\HttpResponse <span class="badge badge-light"
+                                                             title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Cookie\Config\HttpCookies <span class="badge badge-light"
+                                                                     title="Maintainability Index">91.61</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Service\Context <span class="badge badge-light"
+                                                           title="Maintainability Index">95.42</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Service\Alias <span class="badge badge-light"
+                                                         title="Maintainability Index">107.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Service\Facade <span class="badge badge-light"
+                                                          title="Maintainability Index">100.69</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Service\Middleware <span class="badge badge-light"
+                                                              title="Maintainability Index">88.99</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Service\Plugin <span class="badge badge-light"
+                                                          title="Maintainability Index">100.82</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Service\Builder <span class="badge badge-light"
+                                                           title="Maintainability Index">79.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Event <span class="badge badge-light"
+                                                 title="Maintainability Index">100.27</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\HttpUri <span class="badge badge-light"
+                                                        title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\HttpRequest <span class="badge badge-light"
+                                                            title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Error\NotFound <span class="badge badge-light"
+                                                               title="Maintainability Index">108.34</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Cookie\HttpCookies <span class="badge badge-light"
+                                                              title="Maintainability Index">207.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Error\MethodNotAllowed <span class="badge badge-light"
+                                                                       title="Maintainability Index">108.34</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Error\ServerError <span class="badge badge-light"
+                                                                  title="Maintainability Index">108.34</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Error\BadRequest <span class="badge badge-light"
+                                                                 title="Maintainability Index">108.34</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Config\Response <span class="badge badge-light"
+                                                                title="Maintainability Index">96.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Config\Uri <span class="badge badge-light"
+                                                           title="Maintainability Index">82.37</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Config\Request <span class="badge badge-light"
+                                                               title="Maintainability Index">94.98</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Config\Headers <span class="badge badge-light"
+                                                               title="Maintainability Index">80.04</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\Config\Error <span class="badge badge-light"
+                                                             title="Maintainability Index">96.37</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\StatusCode <span class="badge badge-light"
+                                                           title="Maintainability Index">100.93</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\HttpError <span class="badge badge-light"
+                                                          title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Cookie\Config\PHPCookies <span class="badge badge-light"
+                                                                    title="Maintainability Index">92.03</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Cookie\PHPCookies <span class="badge badge-light"
+                                                             title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\HttpHeaders <span class="badge badge-light"
+                                                            title="Maintainability Index">207.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Error\ViewModel <span class="badge badge-light"
+                                                                   title="Maintainability Index">117.61</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Exception\Config\ExceptionLayout <span class="badge badge-light"
+                                                                                    title="Maintainability Index">118.46</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Exception\Controller <span class="badge badge-light"
+                                                                        title="Maintainability Index">106.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Exception\ViewLayout <span class="badge badge-light"
+                                                                        title="Maintainability Index">117.61</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Service\Container <span class="badge badge-light"
+                                                                     title="Maintainability Index">105.81</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Service\Share <span class="badge badge-light"
+                                                                 title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\HttpRequest <span class="badge badge-light"
+                                                               title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Exception <span class="badge badge-light"
+                                                             title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Error\Config\ErrorModel <span class="badge badge-light"
+                                                                           title="Maintainability Index">107.55</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Error\Controller <span class="badge badge-light"
+                                                                    title="Maintainability Index">106.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Error\Error <span class="badge badge-light"
+                                                               title="Maintainability Index">104.11</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Config\Request <span class="badge badge-light"
+                                                                  title="Maintainability Index">72.4</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Log\ErrorLog <span class="badge badge-light"
+                                                        title="Maintainability Index">104.39</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Error <span class="badge badge-light"
+                                                         title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>anonymous@000000000dc6514600000000673e5bf4 <span class="badge badge-light"
+                                                                                 title="Maintainability Index">63.37</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception\Exception <span class="badge badge-light"
+                                                               title="Maintainability Index">87.58</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception\ErrorException <span class="badge badge-light"
+                                                                    title="Maintainability Index">96.68</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception\DomainException <span class="badge badge-light"
+                                                                     title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception\Generator <span class="badge badge-light"
+                                                               title="Maintainability Index">98.08</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception\InvalidArgumentException <span class="badge badge-light"
+                                                                              title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Exception\RuntimeException <span class="badge badge-light"
+                                                                      title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Container <span class="badge badge-light"
+                                                     title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Log\ThrowException <span class="badge badge-light"
+                                                              title="Maintainability Index">108.3</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Log\Logger <span class="badge badge-light"
+                                                      title="Maintainability Index">101.52</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Http\HttpMiddleware <span class="badge badge-light"
+                                                               title="Maintainability Index">114.71</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Response <span class="badge badge-light"
+                                                            title="Maintainability Index">105.34</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Request\Exception\Exception <span class="badge badge-light"
+                                                                       title="Maintainability Index">105.25</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Renderer <span class="badge badge-light"
+                                                         title="Maintainability Index">109.02</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config <span class="badge badge-light"
+                                                  title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\Iterator <span class="badge badge-light"
+                                                           title="Maintainability Index">98.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\PropertyAccess <span class="badge badge-light"
+                                                                 title="Maintainability Index">103.7</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\ReadOnly <span class="badge badge-light"
+                                                           title="Maintainability Index">104.93</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\Config <span class="badge badge-light"
+                                                         title="Maintainability Index">75.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\ArrayAccess <span class="badge badge-light"
+                                                              title="Maintainability Index">103.7</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\Base <span class="badge badge-light"
+                                                       title="Maintainability Index">114.95</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Config\Overload <span class="badge badge-light"
+                                                           title="Maintainability Index">111.18</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Controller\Action <span class="badge badge-light"
+                                                             title="Maintainability Index">114.57</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\SharedLayout <span class="badge badge-light"
+                                                             title="Maintainability Index">102.74</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Template\Traverse <span class="badge badge-light"
+                                                                  title="Maintainability Index">102.88</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Build <span class="badge badge-light"
+                                                          title="Maintainability Index">91.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Template\Path <span class="badge badge-light"
+                                                              title="Maintainability Index">114.64</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Template\Model <span class="badge badge-light"
+                                                               title="Maintainability Index">98.47</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Template\Render <span class="badge badge-light"
+                                                                title="Maintainability Index">108.99</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Template\Find <span class="badge badge-light"
+                                                              title="Maintainability Index">108.47</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Config\ViewLayout <span class="badge badge-light"
+                                                                  title="Maintainability Index">209.99</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Config\ViewModel <span class="badge badge-light"
+                                                                 title="Maintainability Index">97.32</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Model <span class="badge badge-light"
+                                                      title="Maintainability Index">102.87</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Render <span class="badge badge-light"
+                                                       title="Maintainability Index">98.16</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\View\Engine\PhpEngine <span class="badge badge-light"
+                                                                 title="Maintainability Index">90.64</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Response\Send <span class="badge badge-light"
+                                                         title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Unresolvable <span class="badge badge-light"
+                                                                 title="Maintainability Index">102.93</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Resolver <span class="badge badge-light"
+                                                             title="Maintainability Index">47.47</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Service <span class="badge badge-light"
+                                                           title="Maintainability Index">114.95</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Url\Route\Generator <span class="badge badge-light"
+                                                               title="Maintainability Index">78.67</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\User <span class="badge badge-light"
+                                                        title="Maintainability Index">114.24</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Config <span class="badge badge-light"
+                                                          title="Maintainability Index">114.24</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\View <span class="badge badge-light"
+                                                        title="Maintainability Index">100.5</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Session <span class="badge badge-light"
+                                                           title="Maintainability Index">110.45</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Url <span class="badge badge-light"
+                                                       title="Maintainability Index">113.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Messages <span class="badge badge-light"
+                                                            title="Maintainability Index">99.41</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Render <span class="badge badge-light"
+                                                          title="Maintainability Index">113.59</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Plugins\Log <span class="badge badge-light"
+                                                       title="Maintainability Index">113.73</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Url\Assemble <span class="badge badge-light"
+                                                        title="Maintainability Index">81.85</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Url\Generator <span class="badge badge-light"
+                                                         title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Url\Plugin <span class="badge badge-light"
+                                                      title="Maintainability Index">80.95</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>anonymous@000000000dc65d3600000000673e5bf4 <span class="badge badge-light"
+                                                                                 title="Maintainability Index">76.82</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\App <span class="badge badge-light"
+                                               title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Template\Config\TemplateModel <span class="badge badge-light"
+                                                                         title="Maintainability Index">101.1</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Template\Config\TemplateLayout <span class="badge badge-light"
+                                                                          title="Maintainability Index">109.86</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Template\Model <span class="badge badge-light"
+                                                          title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Template\Layout\Assign <span class="badge badge-light"
+                                                                  title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Template\Layout\Layout <span class="badge badge-light"
+                                                                  title="Maintainability Index">104.71</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Template\Layout <span class="badge badge-light"
+                                                           title="Maintainability Index">209.99</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Container <span class="badge badge-light"
+                                                              title="Maintainability Index">75.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Service <span class="badge badge-light"
+                                                            title="Maintainability Index">87.1</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Dispatch <span class="badge badge-light"
+                                                             title="Maintainability Index">107.95</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Resolver\Generator <span class="badge badge-light"
+                                                              title="Maintainability Index">94.62</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Mvc5\Session\PHPSession <span class="badge badge-light"
+                                                              title="Maintainability Index">211.63</span>
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+
+<script type="text/javascript">
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            chartMaintainability();
+
+            new Clusterize({
+                scrollId: 'clusterizeClassRank',
+                contentId: 'contentClassRank'
+            });
+
+            new Clusterize({
+                scrollId: 'clusterizePackages',
+                contentId: 'contentPackages'
+            });
+
+            // prepare json for packages pie
+            chartLicenses([{"name": "MIT", "value": 1}]);
+        }
+    };
+</script>

@@ -1,0 +1,574 @@
+---
+layout: phpmetrics
+---
+<h2>Package Relations</h2>
+<div id="chart-relations" class="mt-4"></div>
+
+<script type="text/javascript">
+
+
+    var relations = [
+    {
+        "name": "Mvc5",
+        "size": 3000,
+        "relations": [
+            "global",
+            "Mvc5\\Service",
+            "Mvc5\\Event",
+            "Mvc5\\Exception",
+            "Mvc5\\Config",
+            "Psr\\Container",
+            "Mvc5\\View",
+            "Mvc5\\Plugin"
+        ]
+    },
+    {
+        "name": "global",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Mvc5\\Service",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Config",
+            "Mvc5",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Event",
+        "size": 3000,
+        "relations": [
+            "Mvc5"
+        ]
+    },
+    {
+        "name": "Mvc5\\Exception",
+        "size": 3000,
+        "relations": [
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Config",
+        "size": 3000,
+        "relations": [
+            "global"
+        ]
+    },
+    {
+        "name": "Psr\\Container",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Mvc5\\View",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Service",
+            "Mvc5\\Template",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Plugin",
+        "size": 3000,
+        "relations": [
+            "global",
+            "Mvc5\\Plugin\\Gem",
+            "Mvc5\\Service"
+        ]
+    },
+    {
+        "name": "Mvc5\\Request\\Exception",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\Http\\Error",
+            "global",
+            "Mvc5\\View",
+            "Mvc5"
+        ]
+    },
+    {
+        "name": "Mvc5\\Http",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Config",
+            "Mvc5",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Http\\Error",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Request\\Exception\\Config",
+        "size": 3000,
+        "relations": [
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Request\\Service",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Config",
+            "Mvc5\\Http"
+        ]
+    },
+    {
+        "name": "Mvc5\\Request",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Http",
+            "Mvc5\\Cookie"
+        ]
+    },
+    {
+        "name": "Mvc5\\Cookie",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Config"
+        ]
+    },
+    {
+        "name": "Mvc5\\Request\\Error\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Mvc5\\Request\\Error",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\View",
+            "Mvc5",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Request\\Config",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Cookie",
+            "Mvc5\\Http"
+        ]
+    },
+    {
+        "name": "Mvc5\\Log",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Event"
+        ]
+    },
+    {
+        "name": "Mvc5\\Cookie\\Config",
+        "size": 3000,
+        "relations": [
+            "global",
+            "Mvc5\\Cookie"
+        ]
+    },
+    {
+        "name": "Mvc5\\Http\\Config",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http"
+        ]
+    },
+    {
+        "name": "Mvc5\\Plugins",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\Service",
+            "Mvc5\\Template",
+            "Mvc5\\Session"
+        ]
+    },
+    {
+        "name": "Mvc5\\Template",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Config",
+            "Mvc5"
+        ]
+    },
+    {
+        "name": "Mvc5\\Session",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Config",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Url",
+        "size": 3000,
+        "relations": [
+            "global",
+            "Mvc5\\Http"
+        ]
+    },
+    {
+        "name": "Mvc5\\Url\\Route",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\Route",
+            "Mvc5\\Route\\Definition"
+        ]
+    },
+    {
+        "name": "Mvc5\\Route",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "global",
+            "Mvc5\\Config"
+        ]
+    },
+    {
+        "name": "Mvc5\\Route\\Definition",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Route",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\Template\\Config",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Template"
+        ]
+    },
+    {
+        "name": "Mvc5\\Template\\Layout",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Template"
+        ]
+    },
+    {
+        "name": "Mvc5\\Resolver",
+        "size": 3000,
+        "relations": [
+            "Mvc5",
+            "Mvc5\\Event",
+            "global",
+            "Mvc5\\Plugin\\Gem",
+            "Mvc5\\Service",
+            "Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "Mvc5\\Plugin\\Gem",
+        "size": 3000,
+        "relations": [
+            "global",
+            "Mvc5",
+            "Mvc5\\Config"
+        ]
+    },
+    {
+        "name": "Mvc5\\Controller",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Mvc5\\View\\Template",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Template",
+            "global"
+        ]
+    },
+    {
+        "name": "Mvc5\\View\\Config",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Service",
+            "Mvc5\\View"
+        ]
+    },
+    {
+        "name": "Mvc5\\View\\Engine",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\View",
+            "Mvc5\\Template"
+        ]
+    },
+    {
+        "name": "Mvc5\\Response",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\Cookie",
+            "global",
+            "Mvc5",
+            "Mvc5\\Event"
+        ]
+    },
+    {
+        "name": "Mvc5\\Response\\Service",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\Cookie"
+        ]
+    },
+    {
+        "name": "Mvc5\\Response\\Emitter",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Response"
+        ]
+    },
+    {
+        "name": "Mvc5\\Response\\Config",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Cookie",
+            "Mvc5\\Http",
+            "Mvc5\\Response"
+        ]
+    },
+    {
+        "name": "Mvc5\\Plugin\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Mvc5\\Web",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Http",
+            "Mvc5\\Service",
+            "Mvc5\\View"
+        ]
+    },
+    {
+        "name": "Mvc5\\Route\\Dispatch",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Route",
+            "Mvc5\\Http",
+            "Mvc5\\Http\\Error"
+        ]
+    },
+    {
+        "name": "Mvc5\\Route\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Mvc5\\Route\\Match",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Route",
+            "Mvc5\\Http",
+            "Mvc5\\Http\\Error"
+        ]
+    },
+    {
+        "name": "Mvc5\\Route\\Match\\Plugin",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Route"
+        ]
+    },
+    {
+        "name": "Mvc5\\Session\\Config",
+        "size": 3000,
+        "relations": [
+            "Mvc5\\Session"
+        ]
+    }
+];
+
+    /**
+     * Thanks to http://bl.ocks.org/mbostock/raw/7607999/
+     */
+    function updateRelationsChart() {
+
+
+        var diameter = document.getElementById('chart-relations').offsetWidth,
+            radius = diameter / 2,
+            innerRadius = radius - 320;
+
+        var cluster = d3.layout.cluster()
+            .size([360, innerRadius])
+            .sort(null)
+            .value(function (d) {
+                return d.size;
+            });
+
+        var bundle = d3.layout.bundle();
+
+        var line = d3.svg.line.radial()
+            .interpolate("bundle")
+            .tension(.85)
+            .radius(function (d) {
+                return d.y;
+            })
+            .angle(function (d) {
+                return d.x / 180 * Math.PI;
+            });
+
+        var svg = d3.select("#chart-relations").append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .append("g")
+            .attr("transform", "translate(" + radius + "," + radius + ")");
+
+        var link = svg.append("g").selectAll(".link"),
+            node = svg.append("g").selectAll(".node");
+
+
+        var nodes = cluster.nodes(packageHierarchy(relations)),
+            links = packageImports(nodes);
+        link = link
+            .data(bundle(links))
+            .enter().append("path")
+            .each(function (d) {
+                d.source = d[0], d.target = d[d.length - 1];
+            })
+            .attr("class", "link")
+            .attr("d", line);
+
+        node = node
+            .data(nodes.filter(function (n) {
+                return !n.children;
+            }))
+            .enter().append("text")
+            .attr("class", "node")
+            .attr("dy", ".31em")
+            .attr("transform", function (d) {
+                return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)");
+            })
+            .style("text-anchor", function (d) {
+                return d.x < 180 ? "start" : "end";
+            })
+            .text(function (d) {
+                return d.key;
+            })
+            .on("mouseover", mouseovered)
+            .on("mouseout", mouseouted);
+
+
+//        d3.data(relations);
+
+        function mouseovered(d) {
+            node
+                .each(function (n) {
+                    n.target = n.source = false;
+                });
+
+            link
+                .classed("link--target", function (l) {
+                    if (l.target === d) return l.source.source = true;
+                })
+                .classed("link--source", function (l) {
+                    if (l.source === d) return l.target.target = true;
+                })
+                .filter(function (l) {
+                    return l.target === d || l.source === d;
+                })
+                .each(function () {
+                    this.parentNode.appendChild(this);
+                });
+
+            node
+                .classed("node--target", function (n) {
+                    return n.target;
+                })
+                .classed("node--source", function (n) {
+                    return n.source;
+                });
+        }
+
+        function mouseouted(d) {
+            link
+                .classed("link--target", false)
+                .classed("link--source", false);
+
+            node
+                .classed("node--target", false)
+                .classed("node--source", false);
+        }
+
+        d3.select(self.frameElement).style("height", diameter + "px");
+
+        // Lazily construct the package hierarchy from class names.
+        function packageHierarchy(classes) {
+            var map = {};
+
+            function find(name, data) {
+                name = (data ? name + ' ' : name);
+                var node = map[name];
+                if (!node) {
+                    node = map[name] = data || {name: name, children: []};
+                    if (name.length) {
+                        node.parent = find("");
+                        if (!node.parent.children) {
+                            node.parent.children = []; // fix anomalies
+                        }
+                        node.parent.children.push(node);
+                        node.key = name.trim();
+                    }
+                }
+                return node;
+            }
+
+            classes.forEach(function (d) {
+                find(d.name, d);
+            });
+
+            return map[""];
+        }
+
+        // Return a list of imports for the given array of nodes.
+        function packageImports(nodes) {
+            var map = {},
+                imports = [];
+
+            // Compute a map from name to node.
+            nodes.forEach(function (d) {
+                map[d.name] = d;
+            });
+
+            // For each import, construct a link from the source to target node.
+            nodes.forEach(function (d) {
+                if (d.relations) d.relations.forEach(function (i) {
+                    imports.push({source: map[d.name], target: map[i]});
+                });
+            });
+
+            return imports;
+        }
+
+
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            updateRelationsChart();
+        }
+    };
+
+</script>

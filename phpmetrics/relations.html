@@ -1,0 +1,2060 @@
+---
+layout: phpmetrics
+---
+<h2>Object Relations</h2>
+<div id="chart-relations" class="mt-4"></div>
+
+<script type="text/javascript">
+(function() {
+
+    var relations = [
+    {
+        "name": "\\Mvc5\\Iterator",
+        "size": 3000,
+        "relations": [
+            "\\Countable",
+            "\\Iterator"
+        ]
+    },
+    {
+        "name": "\\Countable",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Iterator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Exception\\Exception",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Error",
+            "\\Mvc5\\Http\\Error\\ServerError",
+            "\\Mvc5\\Http\\Request",
+            "\\Throwable"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Error",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\Error\\ServerError",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\HttpError",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Throwable",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Exception\\Config\\ExceptionLayout",
+        "size": 3000,
+        "relations": [
+            "\\Throwable"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Request\\Exception\\Controller",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response",
+            "\\Throwable",
+            "\\Mvc5\\View\\ViewLayout",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Response",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\ViewLayout",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Exception\\ViewLayout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\ViewLayout",
+            "\\Mvc5\\Request\\Exception\\ExceptionLayout",
+            "\\Throwable",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\ViewLayout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\View\\ViewLayout"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Request\\Exception\\ExceptionLayout",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\parent",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Service\\Container",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Config\\Model",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Config\\Model",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Service\\Share",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\HttpRequest",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Request\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Model",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Exception",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Error\\Config\\ErrorModel",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Error\\Controller",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Http\\Error",
+            "\\Mvc5\\Request\\Error\\ViewModel",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Request\\Error\\ViewModel",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\ViewModel",
+            "\\Mvc5\\Request\\Error\\ErrorModel",
+            "\\Mvc5\\Http\\Error",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Request\\Error\\Error",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\ViewModel",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\View\\ViewModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Request\\Error\\ErrorModel",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Config\\Request",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Cookie\\HttpCookies",
+            "\\Mvc5\\Http\\HttpHeaders",
+            "\\Mvc5\\Http\\HttpUri",
+            "\\Mvc5\\Cookie\\Cookies"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Cookie\\HttpCookies",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\HttpHeaders",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\HttpUri",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Cookie\\Cookies",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Request\\Error",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\anonymous@000000000dc6514600000000673e5bf4",
+        "size": 3000,
+        "relations": [
+            "\\Error",
+            "\\Throwable"
+        ]
+    },
+    {
+        "name": "\\Error",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Exception\\Exception",
+        "size": 3000,
+        "relations": [
+            "\\Throwable",
+            "\\static",
+            "\\exception",
+            "\\"
+        ]
+    },
+    {
+        "name": "\\static",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\exception",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Exception\\ErrorException",
+        "size": 3000,
+        "relations": [
+            "\\ErrorException",
+            "\\Mvc5\\Exception\\Throwable",
+            "\\self"
+        ]
+    },
+    {
+        "name": "\\ErrorException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Exception\\Throwable",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\self",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Exception\\DomainException",
+        "size": 3000,
+        "relations": [
+            "\\DomainException",
+            "\\Mvc5\\Exception\\Throwable"
+        ]
+    },
+    {
+        "name": "\\DomainException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Exception\\Generator",
+        "size": 3000,
+        "relations": [
+            "\\Throwable",
+            "\\static"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Exception\\InvalidArgumentException",
+        "size": 3000,
+        "relations": [
+            "\\InvalidArgumentException",
+            "\\Mvc5\\Exception\\Throwable"
+        ]
+    },
+    {
+        "name": "\\InvalidArgumentException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Exception\\RuntimeException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\RuntimeException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Container",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Service\\Container"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Service\\Container",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Log\\ThrowException",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Exception",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Log\\Logger",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Event\\Event"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Event\\Event",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Log\\ErrorLog",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Cookie\\PHPCookies",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Cookie\\Config\\PHPCookies",
+        "size": 3000,
+        "relations": [
+            "\\static",
+            "\\Mvc5\\Cookie\\Cookies"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Cookie\\Config\\HttpCookies",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Cookie\\Cookies"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Service\\Context",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Service\\Service",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Service\\Alias",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Service\\Facade",
+        "size": 3000,
+        "relations": [
+            "\\static",
+            "\\Mvc5\\Service\\Service",
+            "\\Mvc5\\Service\\Context"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Service\\Middleware",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Service\\Service",
+            "\\Closure"
+        ]
+    },
+    {
+        "name": "\\Closure",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Service\\Plugin",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Service\\Builder",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\ReflectionClass",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\name",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Event",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Event\\Event"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Uri",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\HttpRequest",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\HttpResponse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Error\\NotFound",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\HttpError",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Http\\Error"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Error\\MethodNotAllowed",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\Error\\BadRequest",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\Config\\Response",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\HttpHeaders",
+            "\\Mvc5\\Http\\Headers"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Headers",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\Config\\Uri",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\Config\\Request",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\HttpHeaders",
+            "\\Mvc5\\Http\\HttpUri",
+            "\\Mvc5\\Http\\Headers"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Http\\Config\\Headers",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\Config\\Error",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\StatusCode",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Http\\HttpMiddleware",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Exception",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Response",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Service",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Service\\Service"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\User",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\View",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Template\\TemplateLayout",
+            "\\Mvc5\\Template\\TemplateModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Template\\TemplateLayout",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Template\\TemplateModel",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Session",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Url",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Messages",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Session\\SessionMessages"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\SessionMessages",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Render",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugins\\Log",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Url\\Assemble",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Url\\Generator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Url\\Route\\Generator",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Uri",
+            "\\Mvc5\\Http\\HttpUri",
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Route\\Definition\\Compiler"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Route",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Route\\Definition\\Compiler",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Url\\Plugin",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Url\\Assemble"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\App",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Config",
+            "\\Mvc5\\Config\\Scope",
+            "\\Psr\\Container\\ContainerInterface",
+            "\\Serializable",
+            "\\Mvc5\\Service\\Manager"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Config\\Scope",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Psr\\Container\\ContainerInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Serializable",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Service\\Manager",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Template\\Config\\TemplateModel",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Template\\TemplateModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Template\\Config\\TemplateLayout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Template\\TemplateLayout"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Template\\Model",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Template\\TemplateModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Template\\Layout\\Assign",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Template\\Layout\\Layout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Template\\TemplateLayout"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Template\\Layout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Template\\TemplateLayout"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Container",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Service",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Resolver\\Unresolvable",
+            "\\Mvc5\\Signal"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Unresolvable",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Exception\\RuntimeException",
+            "\\static"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Signal",
+        "size": 3000,
+        "relations": [
+            "\\ReflectionFunction",
+            "\\ReflectionMethod",
+            "\\Mvc5\\Plugin\\SignalArgs",
+            "\\Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Dispatch",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Event\\Event"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Generator",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Resolver\\Unresolvable"
+        ]
+    },
+    {
+        "name": "\\anonymous@000000000dc65d3600000000673e5bf4",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Resolver",
+        "size": 3000,
+        "relations": [
+            "\\Closure",
+            "\\Mvc5\\Plugin\\Gem\\Child",
+            "\\Mvc5\\Plugin\\Gem\\Filter",
+            "\\Mvc5\\Plugin\\Gem\\Gem",
+            "\\",
+            "\\Mvc5\\Resolver\\Unresolvable",
+            "\\Mvc5\\Plugin\\Gem\\Plugin",
+            "\\ReflectionFunction"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Child",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Filter",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Gem",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Plugin",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\ReflectionFunction",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Resolver\\Build",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Service\\Builder"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Config\\Configuration",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\Iterator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\PropertyAccess",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\ReadOnly",
+        "size": 3000,
+        "relations": [
+            "\\Exception"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Config\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\ArrayAccess",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\Base",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\Overload",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Config\\Immutable",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Controller\\Action",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\SharedLayout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Overload",
+            "\\Mvc5\\View\\ViewLayout",
+            "\\Mvc5\\Service\\Service"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Overload",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Renderer",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\View\\View"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\View\\View",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Template\\Traverse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Template\\TemplateModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\View\\Template\\Path",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Template\\Model",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Template\\TemplateModel",
+            "\\this"
+        ]
+    },
+    {
+        "name": "\\this",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Template\\Render",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Template\\Find",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Config\\ViewLayout",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Config\\ViewModel",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Service\\Service",
+            "\\Mvc5\\View\\ViewModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\View\\ViewModel",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Model",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\View\\ViewModel",
+            "\\model",
+            "\\Mvc5\\ViewModel"
+        ]
+    },
+    {
+        "name": "\\model",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Render",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\View\\View",
+            "\\Mvc5\\Service\\Service",
+            "\\Mvc5\\View\\ViewEngine"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\View\\ViewEngine",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\View\\Engine\\PhpEngine",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\View\\ViewEngine",
+            "\\Mvc5\\Template\\TemplateModel"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Send",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Response\\Service\\Send",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Cookie\\PHPCookies"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Service\\Status",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Http\\Error",
+            "\\Mvc5\\Http\\StatusCode",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Service\\Version",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Status",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Response\\RedirectResponse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\HttpResponse",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\HttpResponse",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Response\\Response",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Response\\Emitter\\Callback",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\Emitter"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Emitter",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Response\\Emitter\\ReadFile",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\Emitter",
+            "\\Mvc5\\Response\\Emitter\\resource"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Emitter\\resource",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Response\\Emitter\\PassThru",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\Emitter"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Config\\HttpResponse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Cookie\\HttpCookies",
+            "\\Mvc5\\Http\\HttpHeaders",
+            "\\Mvc5\\Cookie\\Cookies",
+            "\\Mvc5\\Response\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Dispatch",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Event\\Event",
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\JsonExceptionResponse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\JsonResponse",
+            "\\Throwable",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\JsonResponse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\HttpResponse",
+            "\\parent",
+            "\\Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\JsonErrorResponse",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Response\\JsonResponse",
+            "\\Mvc5\\Http\\Error",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Response\\Version",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Event\\Model",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Event\\Generator",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Signal"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Event\\EventModel",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Signal"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Middleware",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\ReflectionMethod",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\SignalArgs",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\SignalArgs"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Response",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Plugin",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Plugin",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Plug",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Plug"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Plug",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Nullable",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Call",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Call",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Child",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Form",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Child",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Plugins",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Plugin",
+            "\\Mvc5\\Plugin\\Link",
+            "\\parent",
+            "\\Mvc5\\Plugin\\Args"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Link",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Args",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\FileInclude",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\FileInclude"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\FileInclude",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Copy",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Copy"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Copy",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Filter",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Filter"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Value",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Value",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Callback",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Scoped",
+            "\\Closure",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Scoped",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Calls",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Calls"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Calls",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Link",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\GlobalVar",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Value"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Factory",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Factory"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Factory",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Service",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Plugin",
+            "\\Mvc5\\Plugin\\Link",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Invoke",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Invoke"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Invoke",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\App",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Plugin",
+            "\\Mvc5\\Plugin\\Link",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Nothing",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Config"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Expect",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Expect",
+            "\\Throwable"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Expect",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config\\Child",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config\\Name",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config\\Config",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config\\Hydrator",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config\\Args",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Config\\Plugin",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\NullValue",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Value",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Provide",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Provide"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Provide",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Scope",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Call",
+            "\\Mvc5\\Plugin\\Link",
+            "\\Mvc5\\Plugin\\Args",
+            "\\parent",
+            "\\Mvc5\\Service\\Service"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Register",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Controller",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Child"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Param",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Param"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Param",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Call",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Invokable",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Invokable"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Invokable",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Session",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Register",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Maybe",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Call",
+            "\\parent",
+            "\\Mvc5\\Plugin\\Nothing"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Hydrator",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Plugin"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Shared",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Gem\\Shared"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Shared",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\SignalArgs",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Scoped",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\Gem\\Args",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\ScopedCall",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Call",
+            "\\Mvc5\\Plugin\\Scoped",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\ViewModel",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Plugin",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Plugin\\End",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Plugin\\Call",
+            "\\Mvc5\\Plugin\\Args",
+            "\\parent"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Send",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Context",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Service\\Context"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Status",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Service",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Controller",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Version",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Render",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\View\\View",
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Route",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Layout",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Response",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Web\\Error",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Response"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Definition\\Tokens",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Definition\\Build",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\class",
+            "\\Mvc5\\Exception"
+        ]
+    },
+    {
+        "name": "\\class",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Route\\Definition\\Regex",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Route\\Dispatch\\Router",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Error\\NotFound"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Config",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Model",
+            "\\Mvc5\\Route\\Route"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Config\\Route",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Route\\Dispatch",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Route\\Generator",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\this"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Wildcard",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Method",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Error\\MethodNotAllowed"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Path",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Controller",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Error\\NotFound"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Middleware",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Action",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Merge",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Plugin\\Params",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Plugin\\Optional",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Host",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Http\\Error\\NotFound"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Route\\Match\\Scheme",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Http\\Request",
+            "\\Mvc5\\Route\\Route",
+            "\\Mvc5\\Http\\Error\\BadRequest"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\Container",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Overload",
+            "\\Mvc5\\Session\\SessionContainer"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\SessionContainer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Session\\Config\\Container",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Session\\Session",
+            "\\Mvc5\\Session\\Model"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\Session",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Session\\Model",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Config\\Configuration"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\Config\\Messages",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Mvc5\\Session\\Config\\PHPSession",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Session\\Session"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\Messages",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Config",
+            "\\Mvc5\\Session\\SessionMessages"
+        ]
+    },
+    {
+        "name": "\\Mvc5\\Session\\PHPSession",
+        "size": 3000,
+        "relations": [
+            "\\Mvc5\\Session\\Session"
+        ]
+    }
+];
+
+    /**
+     * Thanks to http://bl.ocks.org/mbostock/raw/7607999/
+     */
+    function updateRelationsChart() {
+
+
+        var diameter = document.getElementById('chart-relations').offsetWidth,
+            radius = diameter / 2,
+            innerRadius = radius - 120;
+
+        var cluster = d3.layout.cluster()
+            .size([360, innerRadius])
+            .sort(null)
+            .value(function (d) {
+                return d.size;
+            });
+
+        var bundle = d3.layout.bundle();
+
+        var line = d3.svg.line.radial()
+            .interpolate("bundle")
+            .tension(.85)
+            .radius(function (d) {
+                return d.y;
+            })
+            .angle(function (d) {
+                return d.x / 180 * Math.PI;
+            });
+
+        var svg = d3.select("#chart-relations").append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .append("g")
+            .attr("transform", "translate(" + radius + "," + radius + ")");
+
+        var link = svg.append("g").selectAll(".link"),
+            node = svg.append("g").selectAll(".node");
+
+
+        var nodes = cluster.nodes(packageHierarchy(relations)),
+            links = packageImports(nodes);
+        link = link
+            .data(bundle(links))
+            .enter().append("path")
+            .each(function (d) {
+                d.source = d[0], d.target = d[d.length - 1];
+            })
+            .attr("class", "link")
+            .attr("d", line);
+
+        node = node
+            .data(nodes.filter(function (n) {
+                return !n.children;
+            }))
+            .enter().append("text")
+            .attr("class", "node")
+            .attr("dy", ".31em")
+            .attr("transform", function (d) {
+                return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)");
+            })
+            .style("text-anchor", function (d) {
+                return d.x < 180 ? "start" : "end";
+            })
+            .text(function (d) {
+                return d.key;
+            })
+            .on("mouseover", mouseovered)
+            .on("mouseout", mouseouted);
+
+
+//        d3.data(relations);
+
+        function mouseovered(d) {
+            node
+                .each(function (n) {
+                    n.target = n.source = false;
+                });
+
+            link
+                .classed("link--target", function (l) {
+                    if (l.target === d) return l.source.source = true;
+                })
+                .classed("link--source", function (l) {
+                    if (l.source === d) return l.target.target = true;
+                })
+                .filter(function (l) {
+                    return l.target === d || l.source === d;
+                })
+                .each(function () {
+                    this.parentNode.appendChild(this);
+                });
+
+            node
+                .classed("node--target", function (n) {
+                    return n.target;
+                })
+                .classed("node--source", function (n) {
+                    return n.source;
+                });
+        }
+
+        function mouseouted(d) {
+            link
+                .classed("link--target", false)
+                .classed("link--source", false);
+
+            node
+                .classed("node--target", false)
+                .classed("node--source", false);
+        }
+
+        d3.select(self.frameElement).style("height", diameter + "px");
+
+        // Lazily construct the package hierarchy from class names.
+        function packageHierarchy(classes) {
+            var map = {};
+
+            function find(name, data) {
+                name = (data ? name + ' ' : name);
+                var node = map[name], i;
+                if (!node) {
+                    node = map[name] = data || {name: name, children: []};
+                    if (name.length) {
+                        node.parent = find(name.substring(0, i = name.lastIndexOf("\\")));
+                        if (!node.parent.children) {
+                            node.parent.children = []; // fix anomalies
+                        }
+                        node.parent.children.push(node);
+                        node.key = name;//name.substring(i + 1);
+                    }
+                }
+                return node;
+            }
+
+            classes.forEach(function (d) {
+                find(d.name, d);
+            });
+
+            return map[""];
+        }
+
+        // Return a list of imports for the given array of nodes.
+        function packageImports(nodes) {
+            var map = {},
+                imports = [];
+
+            // Compute a map from name to node.
+            nodes.forEach(function (d) {
+                map[d.name] = d;
+            });
+
+            // For each import, construct a link from the source to target node.
+            nodes.forEach(function (d) {
+                if (d.relations) d.relations.forEach(function (i) {
+                    imports.push({source: map[d.name], target: map[i]});
+                });
+            });
+
+            return imports;
+        }
+
+
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            updateRelationsChart();
+        }
+    };
+})();
+</script>
