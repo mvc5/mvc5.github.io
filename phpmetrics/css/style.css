@@ -1,3 +1,8 @@
+
+.card {
+    min-width:16%;
+}
+
 /* -------- charts ---------------- */
 .tooltip {
     position: absolute;
