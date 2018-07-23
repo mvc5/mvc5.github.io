@@ -1,6 +1,29 @@
-
 .card {
-    min-width:18%;
+    text-align: center;
+}
+
+.card-title {
+    margin-top: 1.25rem;
+    margin-bottom:0;
+}
+
+.card-body {
+    padding-top:0;
+}
+
+.card h3 {
+    margin-top:0;
+}
+
+.cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+    grid-gap: .5rem .5rem;
+    margin-top: 1.5rem;
+}
+
+.cards-title-row .card-title {
+    min-height:4em;
 }
 
 /* -------- charts ---------------- */

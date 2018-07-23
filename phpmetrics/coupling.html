@@ -8,6 +8,8 @@ layout: phpmetrics
     effects.
 </div>
 <div class="table-responsive">
+<div class="clusterize small mt-4">
+    <div id="clusterizeCoupling" class="clusterize-scroll">
 <table class="js-sort-table table table-sm small mt-4">
     <thead>
     <tr>
@@ -17,7 +19,7 @@ layout: phpmetrics
         <th class="js-sort-number">Instability</th>
         <th class="js-sort-number">Class Rank</th>
     </thead>
-    <tbody>
+    <tbody id="contentCoupling">
     <tr>
         <td>Mvc5\Iterator</td>
         <td>0</td>
@@ -1505,3 +1507,17 @@ layout: phpmetrics
     </tbody>
 </table>
 </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            chartMaintainability();
+
+            new Clusterize({
+                scrollId: 'clusterizeCoupling',
+                contentId: 'contentCoupling'
+            });
+        }
+    };
+</script>

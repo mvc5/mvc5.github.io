@@ -2,12 +2,14 @@
 layout: phpmetrics
 ---
 <h2>Complexity and Defects</h2>
-<div class="mt-4 d-flex flex-column flex-md-row">
-        <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+<div class="cards cards-title-row">
+        <div class="card">
+            <div class="card-title">
             <h6 class="text-primary font-weight-bold">Average Weighted Method Count by Class
                 <small>(CC)</small>
             </h6>
+            </div>
+            <div class="card-body">
             <h3 class="text-success">6.04</h3>
             <span title="Last value: 6.04" class="badge badge-light">0 <svg fill="#000000"
                                                                                                 height="24"
@@ -18,9 +20,11 @@ layout: phpmetrics
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
 
-        <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-title">
             <h6 class="text-primary font-weight-bold">Average Cyclomatic Complexity by Class</h6>
+            </div>
+            <div class="card-body">
             <h3 class="text-success">4.1</h3>
             <span title="Last value: 4.1" class="badge badge-light">0 <svg fill="#000000"
                                                                                                height="24"
@@ -31,9 +35,11 @@ layout: phpmetrics
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
 
-        <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-title">
             <h6 class="text-primary font-weight-bold">Average Relative System Complexity</h6>
+            </div>
+            <div class="card-body">
             <h3 class="text-success">26.15</h3>
             <span title="Last value: 26.15" class="badge badge-light">0 <svg fill="#000000"
                                                                                                  height="24"
@@ -43,11 +49,13 @@ layout: phpmetrics
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
-        <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-title">
             <h6 class="text-primary font-weight-bold">Average Bugs by Class
                 <small>(Halstead)</small>
             </h6>
+            </div>
+            <div class="card-body">
             <h3 class="text-success">0.04</h3>
             <span title="Last value: 0.04" class="badge badge-light">0 <svg fill="#000000"
                                                                                                 height="24"
@@ -57,11 +65,13 @@ layout: phpmetrics
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
-        <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-title">
             <h6 class="text-primary font-weight-bold">Average Defects by Class
                 <small>(Kan)</small>
             </h6>
+            </div>
+            <div class="card-body">
             <h3 class="text-success">0.24</h3>
             <span title="Last value: 0.24" class="badge badge-light">0 <svg fill="#000000"
                                                                                                 height="24"
@@ -73,6 +83,8 @@ layout: phpmetrics
             </svg></span></div></div>
 </div>
 <div class="table-responsive">
+    <div class="clusterize small mt-4">
+        <div id="clusterizeComplexity" class="clusterize-scroll">
 <table class="js-sort-table table table-sm small mt-4">
     <thead>
     <tr>
@@ -88,6 +100,7 @@ layout: phpmetrics
         <th class="js-sort-number">Defects</th>
     </tr>
     </thead>
+    <tbody id="contentComplexity">
     <tr>
         <td>Mvc5\Iterator</td>
         <td>0</td>
@@ -2632,5 +2645,21 @@ layout: phpmetrics
         <td>0</td>
         <td>0.15</td>
     </tr>
+    </tbody>
 </table>
 </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            chartMaintainability();
+
+            new Clusterize({
+                scrollId: 'clusterizeComplexity',
+                contentId: 'contentComplexity'
+            });
+        }
+    };
+</script>

@@ -2,17 +2,21 @@
 layout: phpmetrics
 ---
 <h2>Overview</h2>
-<div class="mt-4 d-flex flex-column flex-md-row">
-        <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+<div class="cards cards-title-row">
+        <div class="card">
+            <div class="card-title">
                 <h6 class="font-weight-bold"><a href="/phpmetrics/violations/">Violations</a></h6>
                 <p class="text-muted">0 critical, 9 errors</p>
+            </div>
+            <div class="card-body">
                 <h3 class="text-success">38</h3>
             </div>
         </div>
-        <div class="text-center card mr-2 mb-2">
+        <div class="card">
+            <div class="card-title">
+                <h6 class="font-weight-bold"><a href="/phpmetrics/loc/">Lines of Code</a></h6>
+            </div>
             <div class="card-body">
-            <h6 class="font-weight-bold"><a href="/phpmetrics/loc/">Lines of Code</a></h6>
             <h3 class="text-success">7921</h3>
             <span title="Last value: 7921" class="badge badge-light">0 <svg fill="#000000"
                                                                                                 height="24"
@@ -22,9 +26,11 @@ layout: phpmetrics
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
-        <div class="text-center card mr-2 mb-2">
+        <div class="card">
+            <div class="card-title">
+                <h6 class="font-weight-bold"><a href="/phpmetrics/oop/">Classes</a></h6>
+            </div>
             <div class="card-body">
-            <h6 class="font-weight-bold"><a href="/phpmetrics/oop/">Classes</a></h6>
             <h3 class="text-success">212</h3>
             <span title="Last value: 212" class="badge badge-light">0 <svg fill="#000000"
                                                                                                height="24"
@@ -34,9 +40,11 @@ layout: phpmetrics
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
-        <div class="text-center card mr-2 mb-2">
+        <div class="card">
+            <div class="card-title">
+                <h6 class="font-weight-bold"><a href="/phpmetrics/complexity/">Average Cyclomatic Complexity by Class</a></h6>
+            </div>
             <div class="card-body">
-            <h6 class="font-weight-bold"><a href="/phpmetrics/complexity/">Average Cyclomatic Complexity by Class</a></h6>
             <h3 class="text-success">4.1</h3>
             <span title="Last value: 4.1" class="badge badge-light">0 <svg fill="#000000"
                                                                                                height="24"
@@ -46,9 +54,11 @@ layout: phpmetrics
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
             </svg></span></div></div>
-        <div class="text-center card mr-2 mb-2">
+        <div class="card">
+            <div class="card-title">
+                <h6 class="font-weight-bold"><a href="/phpmetrics/complexity/">Average Bugs by Class</a></h6>
+            </div>
             <div class="card-body">
-            <h6 class="font-weight-bold"><a href="/phpmetrics/complexity/">Average Bugs by Class</a></h6>
             <h3 class="text-success">0.04</h3>
             <span title="Last value: 0.04" class="badge badge-light">0 <svg fill="#000000"
                                                                                                 height="24"
@@ -1368,14 +1378,6 @@ layout: phpmetrics
                 scrollId: 'clusterizeClassRank',
                 contentId: 'contentClassRank'
             });
-
-            new Clusterize({
-                scrollId: 'clusterizePackages',
-                contentId: 'contentPackages'
-            });
-
-            // prepare json for packages pie
-            chartLicenses([{"name": "MIT", "value": 1}]);
         }
     };
 </script>

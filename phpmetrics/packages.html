@@ -2,13 +2,13 @@
 layout: phpmetrics
 ---
 <h2>Packages</h2>
-<div class="text-center card mt-4 mr-2 mb-2">
-    <div class="card-body">
-        <h6 class="text-primary font-weight-bold">Instability / Abstraction</h6>
-        <div id="distances" class="scattered-plot d-flex justify-content-center mt-4"></div>
-    </div>
+<div class="card mt-4">
+    <h6 class="text-primary font-weight-bold">Instability / Abstraction</h6>
+    <div id="distances" class="scattered-plot mt-4"></div>
 </div>
 <div class="table-responsive">
+<div class="clusterize small mt-4">
+    <div id="clusterizePackages" class="clusterize-scroll">
 <table class="js-sort-table table table-sm small mt-4">
     <thead>
     <tr>
@@ -23,6 +23,7 @@ layout: phpmetrics
         <th class="js-sort-number">Incoming Package&nbsp;Dep.</th>
     </tr>
     </thead>
+    <tbody id="contentPackages">
     <tr>
         <td>Mvc5</td>
         <td>14</td>
@@ -529,9 +530,22 @@ layout: phpmetrics
         <td>0</td>
         <td>0</td>
     </tr>
+    </tbody>
 </table>
 </div>
+</div>
+</div>
 <script type="text/javascript">
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            chartMaintainability();
+
+            new Clusterize({
+                scrollId: 'clusterizePackages',
+                contentId: 'contentPackages'
+            });
+        }
+    };
     /**
      * Thx to http://bl.ocks.org/weiglemc/6185069
      */

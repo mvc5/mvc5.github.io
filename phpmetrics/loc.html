@@ -3,13 +3,13 @@ layout: phpmetrics
 ---
 <h2>Size and Volume</h2>
 <div class="text-center card mt-4 mr-2 mb-2">
-    <div class="card-body">
-        <h6 class="text-primary font-weight-bold">Logical Lines of Code by Class</h6>
-        <div id="lloc-repartition" style="height: 200px"></div>
-        <div class="help" style="text-align: center">Percentage</div>
-    </div>
+    <h6 class="text-primary font-weight-bold">Logical Lines of Code by Class</h6>
+    <div id="lloc-repartition" style="height: 200px"></div>
+    <div class="help" style="text-align: center">Percentage</div>
 </div>
+<h3>Logical Lines of Code</h3>
 <div class="table-responsive">
+<div id="clusterizeLOC" class="clusterize-scroll">
 <table class="js-sort-table table table-sm small mt-4" id="table-length">
     <thead>
     <tr>
@@ -21,6 +21,7 @@ layout: phpmetrics
         <th class="js-sort-number">Comment Weight</th>
     </tr>
     </thead>
+    <tbody id="contentLOCResults" class="clusterize-content">
     <tr>
         <td>Mvc5\Iterator</td>
         <td>6</td>
@@ -1717,7 +1718,40 @@ layout: phpmetrics
         <td>0</td>
         <td>40.63</td>
     </tr>
+    </tbody>
 </table>
+</div>
+</div>
+<h3>Source Lines of Code</h3>
+<div>
+<cite class="d-block text-muted font-weight-light"><small>Generated using 'SLOCCount' by David A. Wheeler</small></cite>
+<pre>
+SLOC	Directory
+775     Route
+705     Plugin
+694     Resolver
+484     Http
+410     Request
+360     Session
+344     Response
+311     top_dir
+295     Url
+258     View
+254     Service
+226     Config
+151     Web
+145     Cookie
+138     Plugins
+129     Exception
+108     Event
+100     Template
+64      Log
+10      Controller
+
+
+Totals grouped by language:
+php:           5961 (100.00%)
+</pre>
 </div>
 <script>
     document.onreadystatechange = function () {
@@ -1842,6 +1876,11 @@ layout: phpmetrics
                 d.lloc = +d.lloc;
                 return d;
             }
+
+            new Clusterize({
+                scrollId: 'clusterizeLOC',
+                contentId: 'contentLOCResults'
+            });
         }
     };
 </script>

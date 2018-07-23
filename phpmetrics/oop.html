@@ -2,46 +2,60 @@
 layout: phpmetrics
 ---
 <h2>Object Oriented Metrics</h2>
-    <div class="mt-4 d-flex flex-column flex-md-row">
-            <div class="text-center card mr-2 mb-2">
-            <div class="card-body">
+    <div class="cards cards-title-row">
+            <div class="card">
+                <div class="card-title">
                 <h6 class="text-primary font-weight-bold">Classes</h6>
-                <h3 class="text-success">212<br><small>(100 %)</small></h3>
+                </div>
+                <div class="card-body">
+                <h3 class="text-success mb-0">212</h3>
+                <small class="d-block text-muted">(100 %)</small>
                 <span title="Last value: 212" class="badge badge-light">0 <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg></span>
-            </div></div>
-            <div class="text-center card mr-2 mb-2">
-                <div class="card-body">
+                </div></div>
+            <div class="card">
+                <div class="card-title">
                 <h6 class="text-primary font-weight-bold">Interfaces</h6>
-                <h3 class="text-success">55<br><small>(26 %)</small></h3>
+                </div>
+                <div class="card-body">
+                <h3 class="text-success mb-0">55</h3>
+                <small class="d-block text-muted">(26 %)</small>
                 <span title="Last value: 55" class="badge badge-light">0 <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg></span>
                 </div></div>
-            <div class="text-center card mr-2 mb-2">
+            <div class="card">
+                <div class="card-title">
+                    <h6 class="text-primary font-weight-bold">Average LCOM</h6>
+                </div>
                 <div class="card-body">
-                <h6 class="text-primary font-weight-bold">Average LCOM</h6>
                 <h3 class="text-success">1.38</h3>
                 <span title="Last value: 1.38" class="badge badge-light">0 <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M22 12l-4-4v3H3v2h15v3z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg></span>
                 </div></div>
-            <div class="text-center card mr-2 mb-2">
-                <div class="card-body">
+            <div class="card">
+                <div class="card-title">
                 <h6 class="text-primary font-weight-bold">Logical Lines of Code by Class</h6>
+                </div>
+                <div class="card-body">
                 <h3 class="text-success">21</h3>
                 </div></div>
-            <div class="text-center card mr-2 mb-2">
+            <div class="card">
+                <div class="card-title">
+                    <h6 class="text-primary font-weight-bold">Logical Lines of Code by Method</h6>
+                </div>
                 <div class="card-body">
-                <h6 class="text-primary font-weight-bold">Logical Lines of Code by Method</h6>
-                <h3 class="text-success">7</h3>
+                    <h3 class="text-success">7</h3>
                 </div></div>
     </div>
 <div class="table-responsive">
+<div class="clusterize small mt-4">
+    <div id="clusterizeOOP" class="clusterize-scroll">
 <table class="js-sort-table table table-sm small mt-4">
     <thead>
     <tr>
@@ -54,6 +68,7 @@ layout: phpmetrics
         <th class="js-sort-number">Difficulty</th>
     </tr>
     </thead>
+    <tbody id="contentOOP">
     <tr>
         <td>Mvc5\Iterator</td>
         <td>0</td>
@@ -1962,5 +1977,22 @@ layout: phpmetrics
         <td>0</td>
         <td>0</td>
     </tr>
+    </tbody>
 </table>
 </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            chartMaintainability();
+
+            new Clusterize({
+                scrollId: 'clusterizeOOP',
+                contentId: 'contentOOP'
+            });
+        }
+    };
+</script>
+
