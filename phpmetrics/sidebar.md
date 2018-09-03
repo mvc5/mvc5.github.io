@@ -8,5 +8,6 @@
     <a class="nav-link text-nowrap" href="{{ site.baseurl }}/phpmetrics/coupling">Coupling</a>
     <a class="nav-link text-nowrap" href="{{ site.baseurl }}/phpmetrics/packages">Packages</a>
     <a class="nav-link text-nowrap" href="{{ site.baseurl }}/phpmetrics/package_relations">Package Relations</a>
+    <a class="nav-link text-nowrap" href="{{ site.baseurl }}/phpmetrics/plugin_relations">Plugin Relations</a>
     <a class="nav-link text-nowrap" href="#"><small style="color:#aaa;">Back to top</small></a>
 </nav>
