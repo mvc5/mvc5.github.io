@@ -109,12 +109,15 @@ role: home
     </div>
 </section>
 <section class="container text-center pb-5">
-    <p class="py-5">
-        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/getting-started" role="button"><span class="fa fa-send"></span> Getting Started</a>
-        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/overview" role="button"><span class="fa fa-book"></span> Overview</a>
-        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/plugins" role="button"><span class="fa fa-plug"></span> Plugins</a>
-        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/phpmetrics" role="button"><img src="/phpmetrics/images/logo.png" width="16" height="16" alt="PHPMetrics"> PHPMetrics</a>
-        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="https://github.com/mvc5/mvc5" role="button"><span class="fa fa-github"></span> Github</a>
+    <p class="pt-5">
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/getting-started" role="button" title="Getting Started"><span class="fa fa-paper-plane"></span> Getting Started</a>
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/overview" role="button" title="Overview"><span class="fa fa-book"></span> Overview</a>
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/plugins" role="button" title="Plugins"><span class="fa fa-plug"></span> Plugins</a>
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="/phpmetrics" role="button" title="PHPMetrics"><img src="/phpmetrics/images/logo.png" width="16" height="16" alt="PHPMetrics"> PHPMetrics</a>
+    </p>
+    <p class="pb-5">
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="https://github.com/devosc/docker" role="button" title="Docker Project"><span class="fab fa-docker"></span> Docker Project</a>
+        <a style="margin:5px" class="btn btn-outline-secondary btn-lg" href="https://github.com/mvc5/mvc5" role="button" title="Github"><span class="fab fa-github"></span> Github</a>
     </p>
     <p>
         <a href="https://travis-ci.org/mvc5/mvc5"><img src="https://api.travis-ci.org/mvc5/mvc5.svg" alt="Build Status"></a>
