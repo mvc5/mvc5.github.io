@@ -30,6 +30,13 @@ role: home
             <div class="carousel-item">
                 <h1 class="display-4">
                     <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
+                    CSRF Protection
+                </h1>
+                <small class="font-italic">Routes are protected from CSRF attacks.</small>
+            </div>
+            <div class="carousel-item">
+                <h1 class="display-4">
+                    <img src="{{ site.baseUrl }}/images/mvc5.png" width="125" height="125" title="Mvc5 Framework">
                     JSON API
                 </h1>
                 <small class="font-italic">JSON requests are automatically decoded and HTTP errors and exceptions are automatically returned as a JSON response.</small>

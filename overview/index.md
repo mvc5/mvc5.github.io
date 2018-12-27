@@ -13,6 +13,7 @@ sidebar: true
 {% include_relative routes.md %}
 {% include_relative automatic-routes.md %}
 {% include_relative url-generator.md %}
+{% include_relative csrf-token.md %}
 {% include_relative json-api.md %}
 {% include_relative rest-api-methods.md %}
 {% include_relative action-controller.md %}

@@ -4,7 +4,8 @@ Routes can be configured with [actions](https://github.com/mvc5/mvc5/blob/master
 'resource' => [
     'path' => '/resource',
     'method' => ['GET', 'POST'],
-    'controller' => 'Resource\Controller'
+    'controller' => 'Resource\Controller',
+    'csrf_token' => false,
     'action' => [
         'POST' => function(Url $url) {
             return new Response\RedirectResponse($url(), 201);
