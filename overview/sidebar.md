@@ -17,6 +17,7 @@
             <a class="nav-link" href="#automatic-routes">Automatic Routes</a>
             <a class="nav-link" href="#url-generator">Url Generator</a>
         </nav>
+    <a class="nav-link" href="#route-authentication">Route Authentication</a>
     <a class="nav-link" href="#csrf-token">CSRF Token</a>
     <a class="nav-link" href="#json-api">JSON API</a>
     <a class="nav-link" href="#rest-api-methods">REST API Methods</a>
