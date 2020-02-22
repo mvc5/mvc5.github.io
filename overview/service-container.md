@@ -9,20 +9,15 @@ $app = new App([
     'services' => [
         'dashboard' => new Plugins(
             [
-                'home' => function($template) {
-                    return function($view, $form) use($template) {
-                        return $this->call($view, [$template, $form + ['message' => 'Demo Page']]);
-                    };
-                },
+                'home' => fn($template) => fn($view, $form) => 
+                    $this->call($view, [$template, $form + ['message' => 'Demo Page']]),
                 'template' => new Value('dashboard/index')
             ],
             new Link, //reference to parent container
             true //use current container as the scope for anonymous functions
         ),
-        'view' => function() {
-            return function($template, $var) {
+        'view' => fn() => function($template, $var) {
                 include $template;
-            };
         },
     ]
 ]);

@@ -6,12 +6,8 @@ An alternative to using an [event](https://github.com/mvc5/mvc5/blob/master/src/
 $config = include __DIR__ . '/../config/config.php';
 
 $config['middleware']['web'] = [
-    function($request, $response, $next) {
-        return $next($request->with('controller', function() { return 'Hello!'; }), $response);
-    },
-    function($request, $response, $next) {
-        return $next($request, $response->with('body', $request['controller']()));
-    },
+    fn($request, $response, $next) => $next($request->with('controller', fn() => 'Hello!'), $response),
+    fn($request, $response, $next) => $next($request, $response->with('body', $request['controller']())),
     function($request, $response, $next) {
         echo $response->body();
     }

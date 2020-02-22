@@ -5,12 +5,8 @@
 $config = include __DIR__ . '/../config/config.php';
 
 $config['events']['web'] = [
-    function($model, $msg) {
-        return $model . ' ' . $msg;
-    },
-    function($response, $model) {
-        return $response->with('body', $model);
-    },
+    fn($model, $msg) => $model . ' ' . $msg,
+    fn($response, $model) => $response->with('body', $model),
     function($response) {
         echo $response->body();
     }

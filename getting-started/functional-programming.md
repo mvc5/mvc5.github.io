@@ -52,11 +52,9 @@ function web($request, $response) {
 <p>Its <a href="https://github.com/mvc5/mvc5/blob/master/config/service.php#L79">configuration</a> can also be an <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a> that returns another <a href="http://php.net/manual/en/functions.anonymous.php">anonymous function</a> as the one to invoke.</p>
 
 ```php
-'web' => function() {
-    return function($request, $response) {
+'web' => fn() => function($request, $response) {
         var_dump($request->path());
-    };
-},
+}
 ```
 
 <p>However, a function can become large and separating it into a list of functions enables it to be extended with each function having their own individual dependencies. Consequently, the outcome of the function does not have to depend on the list of functions and by using an <a href="https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php">event</a> class, the outcome of each function and the function itself can be controlled.</p>
