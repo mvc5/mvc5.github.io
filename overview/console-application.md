@@ -14,7 +14,7 @@ use Home\ViewModel;
 
 class Example
 {
-    protected $model;
+    protected ViewModel $model;
 
     function __construct(ViewModel $model)
     {
