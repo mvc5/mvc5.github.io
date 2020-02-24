@@ -104,26 +104,26 @@ new GlobalVar('_COOKIE')
 A [global var](https://github.com/mvc5/mvc5/blob/master/src/Plugin/GlobalVar.php) plugin is a [value](#value) plugin that returns the value assigned to the PHP [<code>$GLOBALS</code>](http://php.net/manual/en/reserved.variables.globals.php) array for the specified parameter name.
 ##### [Hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php)
 ```php
-'route\dispatch' => new Hydrator(Mvc5\Route\Dispatch::class, ['service' => new Link])
+'messages' => new Hydrator(Mvc5\Session\Messages::class, ['info' => 'success'])
 ```
 A [hydrator](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Hydrator.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L201) to create an object with a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin name and a set of calls to invoke. Using null for the parameter name is a convenient way for it to be used as a parent plugin. When the array key of its calls configuration is a string, it is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L305) as the name of the method to call on the newly created object and passes its array value as a single [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) argument. However, if the string is prefixed with the $ symbol, the string is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L292) as the name of the object property to set. If a method needs to be called more than once, then an array of methods can be [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L309).
 ```php
-'route' => new Hydrator(
-    Mvc5\Route\Config::class, [['set', 'controller', 'Home\Controller'], ['set', 'name', 'home']]
+'config' => new Hydrator(
+    Mvc5\Config::class, [['set', 'controller', 'Home\Controller'], ['set', 'name', 'home']]
 )
 ```
 Additionally, any [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin can also be [called](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L326).
 ```php
-'route' => new Hydrator(Mvc5\Route\Config::class, [new Call('response.setStatus', [500])]),
+'route' => new Hydrator(Mvc5\Route\Config::class, [new Call(fn($a) => var_dump($a), [500])]),
 ```
 When an array configuration is used, the current object is passed to the called methods as a named argument called <code>item</code>. This can be changed by adding a value to the beginning of the array with the name of the parameter to use.
 ```php
 'service' => new Hydrator(
-    ArrayObject::class, ['$current', new Object, 'index' => 'foo', 'bar' => 'baz']
+    ArrayObject::class, [['$current', new TestObject, 'index' => 'foo', 'bar' => 'baz']]
 )
 ```
 ```php
-class Object
+class TestObject
 {
     function __invoke($index, $current, $bar)
     {
@@ -196,7 +196,7 @@ new Plug('controller\exception')
 A [plug](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plug.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L233) to return the value of another plugin configuration.
 ##### [Plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php)
 ```php
-'router' => new Plugin(Mvc5\Route\Router:class, [new Param('routes')], ['service' => new Link])
+'config' => new Plugin(Mvc5\Config::class, [['a' => '1']], [['set', 'b', '2'], ['set', 'c', '3']])
 ```
 A [plugin](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugin.php) is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L201) to instantiate a class object.  It requires the name of a [resolvable](https://github.com/mvc5/mvc5/blob/master/src/Resolvable.php) plugin and optionally, its constructor arguments and a set of calls to invoke. See the [hydrator](#hydrator) plugin for details on how to specify the calls to invoke.  
 ##### [Plugins](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Plugins.php)
