@@ -221,12 +221,9 @@ The [register](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Register.php)
 A [response](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Response.php) plugin is [used](https://github.com/mvc5/mvc5/blob/master/src/Resolver/Resolver.php#L201) to [dispatch](https://github.com/mvc5/mvc5/blob/master/src/Response/Dispatch.php) a [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php). It configures the [response dispatch plugin](https://github.com/mvc5/mvc5/blob/master/config/service.php#L44) with the name of the [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) to use and an optional [request](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php) and [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object. Each [event](https://github.com/mvc5/mvc5/blob/master/src/Event/Event.php) function can return a [request](https://github.com/mvc5/mvc5/blob/master/src/Request/Request.php) or [response](https://github.com/mvc5/mvc5/blob/master/src/Response/Response.php) object for the the next function to use.
 ##### [Scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php)
 ```php
-new Scope(
-  Request\Config::class, 
-  [new _Plugin(App::class, [[Arg::SERVICES => $plugins], null, true, true]), new Link]
-)
+new Scope(array $plugins, string $name)
 ```
-The [scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php) plugin is used to set the scope of an [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) to the class that is being created. A [closure](http://php.net/manual/en/class.closure.php) within the application's configuration will then have the same scope as the class being created and can access its protected properties.
+The [scope](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scope.php) plugin is used to set the scope of an [application](https://github.com/mvc5/mvc5/blob/master/src/App.php) to the class that is being created. The first parameter is an array service plugins for the application, and the second parameter is the name of the class to create, e.g. `ServerRequest`. Any plugins using a [closure](http://php.net/manual/en/class.closure.php) will then have the same scope as the class being created and can access its protected properties.
 ##### [Scoped](https://github.com/mvc5/mvc5/blob/master/src/Plugin/Scoped.php)
 ```php
 new Scoped($this)
