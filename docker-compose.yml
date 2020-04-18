@@ -14,9 +14,10 @@ services:
       - JEKYLL_GID=${GROUP_ID}
     image: jekyll/jekyll
     labels:
-      - traefik.docker.network=traefik_webgateway
-      - traefik.frontend.rule=Host:mvc5-github-pages
-      - traefik.port=4000
+      - "traefik.enable=true"
+      - "traefik.http.routers.mvc5-github-pages.entrypoints=websecure"
+      - "traefik.http.routers.mvc5-github-pages.rule=Host(`mvc5-github-pages`)"
+      - "traefik.http.routers.mvc5-github-pages.tls=true"
     networks:
       - public
     volumes:
